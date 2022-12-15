@@ -1,11 +1,12 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pengunjung extends CI_Controller {
+class Pengunjung extends CI_Controller
+{
     public function __construct()
-	{
-		parent::__construct();
-	}
+    {
+        parent::__construct();
+    }
 
     public function index()
     {
@@ -14,7 +15,10 @@ class Pengunjung extends CI_Controller {
         $this->load->view('pengunjung/footer');
         // $this->load->view('pengunjung/tampil');
     }
-
+    public function FunctionName(Type $var = null)
+    {
+        # code...
+    }
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */
