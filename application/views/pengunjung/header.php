@@ -9,24 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('pengunjung/img/favicon.png')?>">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('template_pengunjung/img/favicon.png')?>">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/bootstrap.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/owl.carousel.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/magnific-popup.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/font-awesome.min.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/themify-icons.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/nice-select.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/flaticon.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/gijgo.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/animate.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/slick.css')?>">
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/slicknav.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/bootstrap.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/owl.carousel.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/magnific-popup.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/font-awesome.min.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/themify-icons.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/nice-select.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/flaticon.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/gijgo.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/animate.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/slick.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/slicknav.css')?>">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
-    <link rel="stylesheet" href="<?= base_url('pengunjung/css/style.css')?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/style.css')?>">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 

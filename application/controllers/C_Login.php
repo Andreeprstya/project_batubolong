@@ -1,17 +1,20 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class C_Login extends CI_Controller {
-
+class c_login extends CI_Controller
+{
     public function __construct()
     {
         parent::__construct();
+        //$this->load->model('M_login');
+        
     }
-
-    public function index()
+   
+    public function login()
     {
-
+        $this->load->view('form_login');
+        // $this->load->view('pengunjung/tampil');
     }
 }
 
-/* End of file C_Login.php and path \application\controllers\C_Login.php */
+/* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */
