@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pengunjung extends CI_Controller
+class c_pengunjung extends CI_Controller
 {
     public function __construct()
     {
@@ -14,10 +14,6 @@ class Pengunjung extends CI_Controller
         $this->load->view('pengunjung/index');
         $this->load->view('pengunjung/footer');
         // $this->load->view('pengunjung/tampil');
-    }
-    public function FunctionName(Type $var = null)
-    {
-        # code...
     }
 }
 
