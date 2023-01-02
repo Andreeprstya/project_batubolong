@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Des 2022 pada 16.49
+-- Waktu pembuatan: 02 Jan 2023 pada 17.22
 -- Versi server: 10.4.21-MariaDB-log
 -- Versi PHP: 8.0.10
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_batubolong`
 --
+CREATE DATABASE IF NOT EXISTS `db_batubolong` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `db_batubolong`;
 
 -- --------------------------------------------------------
 
@@ -34,17 +36,19 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `level` int(11) NOT NULL
+  `level` int(11) NOT NULL,
+  `type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `level`) VALUES
-(1, 'admin', 'jago', 'adminjago123@gmail.com', 'admin', 'b18e948191620cea7803d0733584eee9', 1),
-(3, 'Admin', 'Ganteng', 'adminganteng123@gmail.com', 'adminkeren', 'b18e948191620cea7803d0733584eee9', 1),
-(4, 'Admin', 'Cantik', 'admincantik123@gmail.com', 'admincans', 'b18e948191620cea7803d0733584eee9', 1);
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `level`, `type`) VALUES
+(1, 'admin', 'jago', 'adminjago123@gmail.com', 'admin', 'b18e948191620cea7803d0733584eee9', 1, ''),
+(3, 'Admin', 'Ganteng', 'adminganteng123@gmail.com', 'adminkeren', 'b18e948191620cea7803d0733584eee9', 1, ''),
+(4, 'Admin', 'Cantik', 'admincantik123@gmail.com', 'admincans', 'b18e948191620cea7803d0733584eee9', 1, ''),
+(5, 'Surving', 'Mania', 'survingmania@gmail.com', 'survingmania', 'ab97df09055c55e6e57aac6d8f2c1360', 2, 'Penyewaan');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +68,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
