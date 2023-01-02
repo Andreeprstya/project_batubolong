@@ -8,7 +8,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form action="<?= base_url('admin/c_admin/auth')?>" method="post">
+                                        <form action="<?= base_url('index/auth')?>" method="post">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="text" placeholder="name@example.com" name="username" value="<?php if(isset($_COOKIE["loginId"])) { echo $_COOKIE["loginId"]; } ?>"/>
                                                 <label for="inputEmail">Username</label>
@@ -24,13 +24,13 @@
                                                 <label class="form-check-label" for="inputRememberPassword" >Remember Password</label>
                                             </div> -->
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-4">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <!--<a class="small" href="password.html">Forgot Password?</a>-->
                                                 <button class="btn btn-primary" type="submit">Login</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<?= base_url('admin/c_admin/register')?>">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="<?= base_url('index/register')?>">Need an account for stand? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

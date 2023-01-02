@@ -8,7 +8,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                                     <div class="card-body">
-                                        <form action="<?= base_url('admin/c_admin/r_auth')?>" method="post">
+                                        <form action="<?= base_url('index/r_auth')?>" method="post">
                                         <input type="hidden" name="id">
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
@@ -47,13 +47,19 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="mb-3">
+                                                <label for="inputEmail">Pilih Akun</label><br>
+                                                <?php echo form_error('type','<div class="alert alert-danger">','</div>') ?>
+                                                <input type="radio" name="type" value="Resto"/> Resto<br>
+                                                <input type="radio" name="type" value="Penyewaan"/> Penyewaan<br>
+                                            </div>
                                             <div class="mt-4 mb-0">
                                                 <div class="d-grid"><button class="btn btn-primary btn-block">Create Account</button></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<?= base_url('admin/c_admin/auth')?>">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="<?= base_url('index')?>">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>
