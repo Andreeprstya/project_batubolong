@@ -54,7 +54,7 @@ class index extends CI_Controller
 				$this->session->set_userdata('username', $cek->username);
 				$this->session->set_userdata('level', $cek->level);
 				switch ($cek->level) {
-					case 1 : 	redirect('admin/c_admin');  //admin
+					case 1 :	redirect('admin/c_admin');  //admin
 								break;
 					case 2 : 	redirect('stand/c_stand');  //stand
 								break;
@@ -93,6 +93,12 @@ class index extends CI_Controller
 				redirect('index');
 			}
     }
+
+	public function logout()
+	{
+		session_destroy();
+		redirect('index');
+	}
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */
