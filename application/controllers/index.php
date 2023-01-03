@@ -12,7 +12,7 @@ class index extends CI_Controller
    
     public function index()
     {
-        $this->load->view('layout/header');
+        $this->load->view('auth/header');
         $this->load->view('auth/login');
         $this->load->view('layout/footer');
     }
@@ -36,7 +36,7 @@ class index extends CI_Controller
 	{
 		$this->_rules();
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('layout/header');
+			$this->load->view('auth/header');
             $this->load->view('auth/login');
             $this->load->view('layout/footer');
 		}else{
@@ -76,7 +76,7 @@ class index extends CI_Controller
 
     public function register()
     {
-        $this->load->view('layout/header');
+        $this->load->view('auth/header');
         $this->load->view('auth/register');
         $this->load->view('layout/footer');
     }
@@ -85,7 +85,7 @@ class index extends CI_Controller
     {
         $this->r_rules();
 		if ($this->form_validation->run() == FALSE) {
-                $this->load->view('layout/header');
+                $this->load->view('auth/header');
                 $this->load->view('auth/register');
                 $this->load->view('layout/footer');
 			} else {
