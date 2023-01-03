@@ -91,6 +91,14 @@
                                 </nav>
                             </div> -->
                             <!-- <div class="sb-sidenav-menu-heading">Addons</div> -->
+                            <a class="nav-link" href="<?= base_url('admin/c_admin/topup')?>">
+                                <!-- <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div> -->
+                                Top-Up
+                            </a>
+                            <a class="nav-link" href="<?= base_url('admin/c_admin/scan')?>">
+                                <!-- <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div> -->
+                                Scan Tiket
+                            </a>
                             <a class="nav-link" href="<?= base_url('admin/c_admin/stand')?>">
                                 <!-- <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div> -->
                                 Stand

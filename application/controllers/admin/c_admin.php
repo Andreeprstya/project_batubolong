@@ -20,6 +20,8 @@ class c_admin extends CI_Controller {
         }
         
     }
+
+    #STAND
     public function stand()
     {    
         if(!isset($_SESSION['username'])){
@@ -30,8 +32,10 @@ class c_admin extends CI_Controller {
             $this->load->view('admin/stand',$data);
             $this->load->view('layout/footer');
         }
-        
-    }public function pengunjung()
+    }
+    
+    #PENGUNJUNG
+    public function pengunjung()
     {    
         if(!isset($_SESSION['username'])){
 		    redirect('index');
@@ -41,8 +45,34 @@ class c_admin extends CI_Controller {
             $this->load->view('admin/pengunjung',$data);
             $this->load->view('layout/footer');
         }
-        
-    }public function tiket()
+    }
+
+    #TIKET
+    public function tiket()
+    {    
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $data['tiket'] = $this->M_admin->datatiket();
+            $this->load->view('layout/header');
+            $this->load->view('admin/tiket',$data);
+            $this->load->view('layout/footer');
+        }
+    }
+    public function alltiket()
+    {    
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $data['tiket'] = $this->M_admin->dataalltiket();
+            $this->load->view('layout/header');
+            $this->load->view('admin/tiket',$data);
+            $this->load->view('layout/footer');
+        }
+    }
+
+    #PENDAPATAN
+    public function pendapatan()
     {    
         if(!isset($_SESSION['username'])){
 		    redirect('index');
@@ -52,7 +82,23 @@ class c_admin extends CI_Controller {
         $this->load->view('layout/footer');
         }
         
-    }public function pendapatan()
+    }
+    
+    #TOP-UP
+    public function topup()
+    {    
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+        $this->load->view('layout/header');
+        $this->load->view('admin/body');
+        $this->load->view('layout/footer');
+        }
+        
+    }
+    
+    #SCAN
+    public function scan()
     {    
         if(!isset($_SESSION['username'])){
 		    redirect('index');
