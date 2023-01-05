@@ -12,10 +12,14 @@ class c_stand extends CI_Controller {
     {
         if(!isset($_SESSION['username'])){
 		    redirect('index');
-        }else{
-        $this->load->view('layout_stand/header');
-        $this->load->view('stand/body');
-        $this->load->view('layout_stand/footer');
+        }elseif($_SESSION['type']=="Penyewaan"){
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/fasilitas_body');
+            $this->load->view('layout/footer');
+        }elseif($_SESSION['type']=="Resto") {
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/resto_body');
+            $this->load->view('layout/footer');
         }
     }
     public function menu_barang()

@@ -93,7 +93,7 @@
                             <!-- <div class="sb-sidenav-menu-heading">Addons</div> -->
                             <a class="nav-link" href="<?= base_url('stand/c_stand/menu_barang')?>">
                                 <!-- <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div> -->
-                                Menu Barang
+                                Barang
                             </a>
                             <a class="nav-link" href="<?= base_url('stand/c_stand/laporan')?>">
                                 Laporan
