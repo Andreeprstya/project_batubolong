@@ -53,6 +53,7 @@ class index extends CI_Controller
 			}else{
 				$this->session->set_userdata('username', $cek->username);
 				$this->session->set_userdata('level', $cek->level);
+				$this->session->set_userdata('type', $cek->type);
 				switch ($cek->level) {
 					case 1 :	redirect('admin/c_admin');  //admin
 								break;

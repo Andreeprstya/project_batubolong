@@ -10,9 +10,13 @@ class c_stand extends CI_Controller {
 
     public function index()
     {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
         $this->load->view('layout_stand/header');
         $this->load->view('stand/body');
         $this->load->view('layout_stand/footer');
+        }
     }
     public function menu_barang()
     {
