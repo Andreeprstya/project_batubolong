@@ -41,7 +41,7 @@ class M_admin extends CI_Model
         'saldo' => $total,
         );
         $this->db->where('id_user', $this->input->post('id'));
-        $result = $this->db->update('ssaldo', $topup);
+        $result = $this->db->update('saldo', $topup);
         return $result;
     }
                         
