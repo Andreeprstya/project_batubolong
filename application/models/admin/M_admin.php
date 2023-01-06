@@ -6,33 +6,43 @@ class M_admin extends CI_Model
     #STAND
     public function getstand()
     {
-        $this->db->select('*');
-		$result = $this->db->get_where('user', array('level' => '2'));
-		return $result;
+      $this->db->select('*');
+		  $result = $this->db->get_where('user', array('level' => '2'));
+		  return $result;
     }      
     
     #PENGUNJUNG
     public function getpengunjung()
     {
-        $this->db->select('*');
-		$result = $this->db->get_where('user', array('level' => '3'));
-		return $result;
+      $this->db->select('*');
+      $result = $this->db->get_where('user', array('level' => '3'));
+      return $result;
     }
 
     #TIKET
     public function datatiket()
     {
-        date_default_timezone_set('Asia/Singapore');
-		$today = date("Y-m-d");
-		$this->db->order_by('id_tiket', 'desc');
-		$result = $this->db->get_where('tiket', array('tanggal' => $today));
-		return $result;
+      date_default_timezone_set('Asia/Singapore');
+      $today = date("Y-m-d");
+      $this->db->order_by('id_tiket', 'desc');
+      $result = $this->db->get_where('tiket', array('tanggal' => $today));
+      return $result;
+      }
+      public function dataalltiket()
+      {
+      $this->db->select('*');
+      $result = $this->db->get('tiket');
+      return $result;
     }
-    public function dataalltiket()
+    public function tambahsaldo()
     {
-		$this->db->select('*');
-		$result = $this->db->get('tiket');
-		return $result;
+      $total = $this->input->post('total')-1000;
+      $topup = array(
+        'saldo' => $total,
+        );
+        $this->db->where('id_user', $this->input->post('id'));
+        $result = $this->db->update('ssaldo', $topup);
+        return $result;
     }
                         
 }

@@ -94,7 +94,28 @@ class c_admin extends CI_Controller {
         $this->load->view('admin/topup');
         $this->load->view('layout/footer');
         }
+    }
+    public function topup_rules()
+    {
+        $this->form_validation->set_rules('id','id','required');
+		$this->form_validation->set_rules('jumlah','jumlah','required|numeric|greater_than_equal_to[10000]');
         
+    }
+    public function prosestopup()
+    {
+        $this->topup_rules();
+		if ($this->form_validation->run() == FALSE) {
+			if(!isset($_SESSION['username'])){
+                redirect('index');
+            }else{
+            $this->load->view('layout/header');
+            $this->load->view('admin/topup');
+            $this->load->view('layout/footer');
+            }
+		}else{
+            $this->M_admin->tambahsaldo();
+            redirect('admin/c_admin/topup');
+        }
     }
     
     #SCAN

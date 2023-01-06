@@ -5,24 +5,29 @@
                             <li class="breadcrumb-item active">Halaman Top Up Saldo</li>
                         </ol>
                         <div class="card-body">
-                                         <form>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputIdPengunjung" type="text" placeholder="name@example.com" />
-                                                <label for="inputIdPengunjung">Nomor Pengunjung</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputJumlah" type="text" placeholder="name@example.com" />
-                                                <label for="inputJumlah">Jumlah</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputTotal" type="text" placeholder="name@example.com" />
-                                                <label for="inputTotal">Total Biaya</label>
-                                            </div>
-                                            
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="btn btn-primary" href="index.html">Submit</a>
-                                            </div>
-                                        </form>
+                            <form action="<?= base_url('admin/c_admin/prosestopup') ?>" method="post">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputIdPengunjung" type="text" name="id" />
+                                    <label for="inputIdPengunjung">Nomor Pengunjung</label>
+                                    <?php echo form_error('id','<div class="alert alert-danger">','</div>') ?>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputHarga" type="text" readonly value="1000" />
+                                    <label for="inputJumlah">Biaya Admin</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputJumlah" type="text" name="jumlah"/>
+                                    <label for="inputJumlah">Jumlah</label>
+                                    <?php echo form_error('jumlah','<div class="alert alert-danger">','</div>') ?>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <span class="form-control" id="Total" type="text" name="total"></span>
+                                    <label for="Total">Total Biaya</label>
+                                </div>     
+                                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </form>
                             <!-- <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Warning Card</div>
