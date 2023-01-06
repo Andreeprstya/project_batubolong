@@ -91,7 +91,7 @@ class c_admin extends CI_Controller {
 		    redirect('index');
         }else{
         $this->load->view('layout/header');
-        $this->load->view('admin/body');
+        $this->load->view('admin/topup');
         $this->load->view('layout/footer');
         }
         
