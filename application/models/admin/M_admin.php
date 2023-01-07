@@ -34,11 +34,21 @@ class M_admin extends CI_Model
       $result = $this->db->get('tiket');
       return $result;
     }
+
+    #TOP-UP
     public function tambahsaldo()
     {
-      $total = $this->input->post('total')-1000;
+      $topup = $this->input->post('jumlah');
+      $idpelanggan = $this->input->post('id');
+      $this->db->select('saldo');
+      $this->db->where('id_user', $idpelanggan);
+      $query = $this->db->get('saldo');
+      $sisa = $query->row();
+      $saldo = (int) $sisa + (int) $topup;
+      var_dump($sisa);
+      die;
       $topup = array(
-        'saldo' => $total,
+        'saldo' => $saldo,
         );
         $this->db->where('id_user', $this->input->post('id'));
         $result = $this->db->update('saldo', $topup);
