@@ -36,7 +36,30 @@ class M_auth extends CI_Model
             );
             $result = $this->db->insert('user', $insert);
             return $result;
-    }                        
+    }
+    
+    public function add_register_pengunjung()
+    {
+        $insert = array(
+            'id' => $this->input->post('id'),
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            'password' => md5($this->input->post('password')),
+            'level' => '3',
+            );
+        $this->db->insert('user', $insert);
+        $id_pengunjung = $this->db->insert_id();
+        $data = array(
+            'id_user'	=> $id_pengunjung,
+            'saldo'			=> '0',
+            'username'		=> $this->input->post('username'),
+        );
+        $result = $this->db->insert('saldo', $data);
+         
+        return $result;
+    }
                         
 }
 

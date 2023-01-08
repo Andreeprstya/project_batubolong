@@ -25,7 +25,7 @@
                                     <label for="Total">Total Biaya</label>
                                 </div>     
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <button class="btn btn-primary" type="submit">BAYAR</button>
                                 </div>
                             </form>
                             <!-- <div class="col-xl-3 col-md-6">

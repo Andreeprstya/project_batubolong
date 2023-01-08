@@ -13,7 +13,7 @@ class index extends CI_Controller
     public function index()
     {
         $this->load->view('auth/header');
-        $this->load->view('auth/login');
+        $this->load->view('auth/login_pengunjung');
         $this->load->view('layout/footer');
     }
 
@@ -29,7 +29,6 @@ class index extends CI_Controller
 		$this->form_validation->set_rules('email','email','required');
 		$this->form_validation->set_rules('first_name','first_name','required');
 		$this->form_validation->set_rules('last_name','last_name','required');
-		$this->form_validation->set_rules('type','type','required');
 	}
 
     public function auth()
@@ -59,7 +58,7 @@ class index extends CI_Controller
 								break;
 					case 2 : 	redirect('stand/c_stand');  //stand
 								break;
-                    case 2 : 	redirect('pengunjung/c_pengunjung');  //pengunjung
+                    case 3 : 	redirect('pengunjung/c_pengunjung');  //pengunjung
                                 break;
 					default:	
 								break;
@@ -75,10 +74,10 @@ class index extends CI_Controller
 		}
 	}
 
-    public function register()
+	public function register()
     {
         $this->load->view('auth/header');
-        $this->load->view('auth/register');
+        $this->load->view('auth/register_pengunjung');
         $this->load->view('layout/footer');
     }
     
@@ -87,10 +86,10 @@ class index extends CI_Controller
         $this->r_rules();
 		if ($this->form_validation->run() == FALSE) {
                 $this->load->view('auth/header');
-                $this->load->view('auth/register');
+                $this->load->view('auth/register_pengunjung');
                 $this->load->view('layout/footer');
 			} else {
-			    $this->M_auth->add_register();
+			    $this->M_auth->add_register_pengunjung();
 				redirect('index');
 			}
     }
@@ -100,6 +99,7 @@ class index extends CI_Controller
 		session_destroy();
 		redirect('index');
 	}
+
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */

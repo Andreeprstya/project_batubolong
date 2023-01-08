@@ -41,12 +41,11 @@ class M_admin extends CI_Model
       $topup = $this->input->post('jumlah');
       $idpelanggan = $this->input->post('id');
       $this->db->select('saldo');
+      $this->db->from('saldo');
       $this->db->where('id_user', $idpelanggan);
-      $query = $this->db->get('saldo');
-      $sisa = $query->row();
-      $saldo = (int) $sisa + (int) $topup;
-      var_dump($sisa);
-      die;
+      $query = $this->db->get();
+      $sisa = $query->row()->saldo;
+      $saldo = $sisa + $topup;
       $topup = array(
         'saldo' => $saldo,
         );
