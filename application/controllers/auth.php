@@ -32,14 +32,14 @@ class auth extends CI_Controller {
                 $this->load->view('layout/footer');
 			} else {
 			    $this->M_auth->add_register();
-				redirect('admin');
+				redirect('auth');
 			}
     }
 
 	public function logout()
 	{
 		session_destroy();
-		redirect('admin');
+		redirect('auth');
 	}
 }
 
