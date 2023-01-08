@@ -14,7 +14,6 @@
                             </div> -->
                         </div>
                             <button class="btn btn-primary md-3" href="" >Semua Tiket</button>
-                        <?php foreach ($tiket->result_array() as $key ): ?>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -24,28 +23,22 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>ID Tiket</th>
+                                            <th>No. Tiket</th>
                                             <th>Tanggal</th>
                                             <th>waktu</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th>ID Tiket</th>
-                                            <th>Tanggal</th>
-                                            <th>waktu</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                    <?php foreach ($tiket->result_array() as $key ): ?>
                                         <tr>
                                             <td><?php echo $key['id_tiket']?></td>
                                             <td><?php echo $key['tanggal']?></td>
                                             <td><?php echo $key['waktu']?></td>
                                         </tr>
+                                        <?php endforeach?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <?php endforeach?>
                     </div>
                 </main>

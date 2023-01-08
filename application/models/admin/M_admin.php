@@ -27,9 +27,9 @@ class M_admin extends CI_Model
       $this->db->order_by('id_tiket', 'desc');
       $result = $this->db->get_where('tiket', array('tanggal' => $today));
       return $result;
-      }
-      public function dataalltiket()
-      {
+    }
+    public function dataalltiket()
+    {
       $this->db->select('*');
       $result = $this->db->get('tiket');
       return $result;

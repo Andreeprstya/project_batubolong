@@ -18,19 +18,23 @@
             function hitungJumlah() {
                 var x = document.getElementById("inputHarga").value;
                 var y = document.getElementById("inputJumlah").value;
+                var yy = document.getElementById("inputbayar").value;
                 if (isNaN(y)) {
-                    document.getElementById("result").innerHTML = "Masukkan bilangan yang valid!";
+                    document.getElementById("inputJumlah").innerHTML = "Masukkan bilangan yang valid!";
                     return;
                 }
                 // Penanganan input yang kosong
                 if (y === "") {
                     y = y || 10000;
                 }
-                var z = (parseInt(x) + parseInt(y)).toLocaleString();
+                var z = (parseInt(x) + parseInt(y));
                 document.getElementById("Total").innerHTML = z;
+                var zz = (parseInt(yy) - parseInt(z)).toLocaleString();
+                document.getElementById("kembalian").innerHTML = zz;
             }
             document.getElementById("inputHarga").addEventListener("input", hitungJumlah);
             document.getElementById("inputJumlah").addEventListener("input", hitungJumlah);
+            document.getElementById("inputbayar").addEventListener("input", hitungJumlah);
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url('template_admin/js/scripts.js')?>"></script>
