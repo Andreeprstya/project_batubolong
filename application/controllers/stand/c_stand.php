@@ -22,21 +22,43 @@ class c_stand extends CI_Controller {
             $this->load->view('layout/footer');
         }
     }
-    public function menu_barang()
+
+    #RESTO
+    public function menu()
     {
-        $this->load->view('layout_stand/header');
-        $this->load->view('stand/menu_barang');
+        $this->load->view('layout_stand/resto_header');
+        $this->load->view('stand/menu');
         $this->load->view('layout_stand/footer');
     }
-    public function laporan()
+    public function laporan_resto()
     {
-        $this->load->view('layout_stand/header');
+        $this->load->view('layout_stand/resto_header');
         $this->load->view('stand/laporan');
         $this->load->view('layout_stand/footer');
     }
-    public function pendapatan()
+    public function pendapatan_resto()
     {
-        $this->load->view('layout_stand/header');
+        $this->load->view('layout_stand/resto_header');
+        $this->load->view('stand/pendapatan');
+        $this->load->view('layout_stand/footer');
+    }
+
+    #PENYEWAAN
+    public function barang()
+    {
+        $this->load->view('layout_stand/fasilitas_header');
+        $this->load->view('stand/menu_barang');
+        $this->load->view('layout_stand/footer');
+    }
+    public function laporan_penyewaan()
+    {
+        $this->load->view('layout_stand/fasilitas_header');
+        $this->load->view('stand/laporan');
+        $this->load->view('layout_stand/footer');
+    }
+    public function pendapatan_penyewaan()
+    {
+        $this->load->view('layout_stand/fasilitas_header');
         $this->load->view('stand/pendapatan');
         $this->load->view('layout_stand/footer');
     }
