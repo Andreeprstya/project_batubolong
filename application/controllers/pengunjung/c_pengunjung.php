@@ -20,6 +20,18 @@ class c_pengunjung extends CI_Controller
         $this->load->view('pengunjung/stand');
         $this->load->view('pengunjung/footer');
     }
+    public function ticket()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/ticket');
+        $this->load->view('pengunjung/footer');
+    }
+    public function history()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/history');
+        $this->load->view('pengunjung/footer');
+    }
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */

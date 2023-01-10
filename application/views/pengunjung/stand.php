@@ -28,39 +28,46 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="<?= base_url('template_pengunjung/img/destination/1.png')?>" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Italy </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
+                    <a href="">
                     <div class="single_destination">
                         <div class="thumb">
                             <img src="<?= base_url('template_pengunjung/img/destination/2.png')?>" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
+                            <p class="d-flex align-items-center">Stand A </p>
                             
                         </div>
                     </div>
+                    </a>
                 </div>
-               
+                
                 <div class="col-lg-4 col-md-6">
+                    <a href="">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('template_pengunjung/img/destination/5.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/2.png')?>" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
+                            <p class="d-flex align-items-center">Stand B </p>
                             
                         </div>
                     </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="<?= base_url('template_pengunjung/img/destination/2.png')?>" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Stand C </p>
+                            
+                        </div>
+                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     
