@@ -45,7 +45,7 @@
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="<?= base_url('pengunjung/img/logo.png')?>" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/logo.png')?>" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/1.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/1.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
@@ -214,7 +214,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/2.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/2.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
@@ -225,7 +225,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/3.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/3.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
@@ -236,7 +236,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/4.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/4.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
@@ -247,7 +247,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/5.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/5.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
@@ -258,7 +258,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/destination/6.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/destination/6.png')?>" alt="">
                         </div>
                         <div class="content">
                             <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>

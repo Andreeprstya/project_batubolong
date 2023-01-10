@@ -12,11 +12,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/1.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/1.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>California</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>California</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -38,11 +38,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/2.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/2.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>Korola Megna</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>Korola Megna</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -64,11 +64,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/3.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/3.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>London</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>London</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -90,11 +90,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/4.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/4.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>Miami Beach</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>Miami Beach</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -116,11 +116,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/5.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/5.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>California</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>California</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -142,11 +142,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/place/6.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/place/6.png')?>" alt="">
                             <a href="#" class="prise">$500</a>
                         </div>
                         <div class="place_info">
-                            <a href="<?= base_url('pengunjung/destination_details.html')?>"><h3>Saintmartine Iceland</h3></a>
+                            <a href="<?= base_url('template_pengunjung/destination_details.html')?>"><h3>Saintmartine Iceland</h3></a>
                             <p>United State of America</p>
                             <div class="rating_days d-flex justify-content-between">
                                 <span class="d-flex justify-content-center align-items-center">
@@ -201,7 +201,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_travel text-center">
                         <div class="icon">
-                            <img src="<?= base_url('pengunjung/img/svg_icon/1.svg')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/svg_icon/1.svg')?>" alt="">
                         </div>
                         <h3>Comfortable Journey</h3>
                         <p>A wonderful serenity has taken to the possession of my entire soul.</p>
@@ -210,7 +210,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_travel text-center">
                         <div class="icon">
-                            <img src="<?= base_url('pengunjung/img/svg_icon/2.svg')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/svg_icon/2.svg')?>" alt="">
                         </div>
                         <h3>Luxuries Hotel</h3>
                         <p>A wonderful serenity has taken to the possession of my entire soul.</p>
@@ -219,7 +219,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_travel text-center">
                         <div class="icon">
-                            <img src="<?= base_url('pengunjung/img/svg_icon/3.svg')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/svg_icon/3.svg')?>" alt="">
                         </div>
                         <h3>Travel Guide</h3>
                         <p>A wonderful serenity has taken to the possession of my entire soul.</p>
@@ -241,7 +241,7 @@
                                 <div class="col-lg-8">
                                     <div class="single_testmonial text-center">
                                         <div class="author_thumb">
-                                            <img src="<?= base_url('pengunjung/img/testmonial/author.png')?>" alt="">
+                                            <img src="<?= base_url('template_pengunjung/img/testmonial/author.png')?>" alt="">
                                         </div>
                                         <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                                         <div class="testmonial_author">
@@ -256,7 +256,7 @@
                                 <div class="col-lg-8">
                                     <div class="single_testmonial text-center">
                                         <div class="author_thumb">
-                                            <img src="pengunjung/img/testmonial/author.png" alt="">
+                                            <img src="template_pengunjung/img/testmonial/author.png" alt="">
                                         </div>
                                         <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                                         <div class="testmonial_author">
@@ -271,7 +271,7 @@
                                 <div class="col-lg-8">
                                     <div class="single_testmonial text-center">
                                         <div class="author_thumb">
-                                            <img src="<?= base_url('pengunjung/img/testmonial/author.png')?>" alt="">
+                                            <img src="<?= base_url('template_pengunjung/img/testmonial/author.png')?>" alt="">
                                         </div>
                                         <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
                                         <div class="testmonial_author">
@@ -302,7 +302,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/trip/1.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/trip/1.png')?>" alt="">
                         </div>
                         <div class="info">
                             <div class="date">
@@ -318,7 +318,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/trip/2.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/trip/2.png')?>" alt="">
                         </div>
                         <div class="info">
                             <div class="date">
@@ -334,7 +334,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src="<?= base_url('pengunjung/img/trip/3.png')?>" alt="">
+                            <img src="<?= base_url('template_pengunjung/img/trip/3.png')?>" alt="">
                         </div>
                         <div class="info">
                             <div class="date">

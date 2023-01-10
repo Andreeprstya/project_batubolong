@@ -6,7 +6,7 @@
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="img/footer_logo.png" alt="">
+                                    <img src="<?= base_url('template_pengunjung/img/footer_logo.png')?>" alt="">
                                 </a>
                             </div>
                             <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
@@ -83,32 +83,32 @@
                             <div class="instagram_feed">
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/1.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/1.png')?>" alt="">
                                     </a>
                                 </div>
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/2.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/2.png')?>" alt="">
                                     </a>
                                 </div>
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/3.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/3.png')?>" alt="">
                                     </a>
                                 </div>
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/4.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/4.png')?>" alt="">
                                     </a>
                                 </div>
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/5.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/5.png')?>" alt="">
                                     </a>
                                 </div>
                                 <div class="single_insta">
                                     <a href="#">
-                                        <img src="img/instagram/6.png" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/instagram/6.png')?>" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -152,37 +152,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
     <!-- JS here -->
-    <script src="<?= base_url('assets_p/js/vendor/modernizr-3.5.0.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/vendor/jquery-1.12.4.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/popper.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/bootstrap.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/owl.carousel.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/isotope.pkgd.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/ajax-form.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/waypoints.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.counterup.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/imagesloaded.pkgd.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/scrollIt.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.scrollUp.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/wow.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/nice-select.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.slicknav.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.magnific-popup.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/plugins.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/gijgo.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/slick.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/vendor/modernizr-3.5.0.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/vendor/jquery-1.12.4.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/popper.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/bootstrap.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/owl.carousel.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/isotope.pkgd.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/ajax-form.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/waypoints.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.counterup.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/imagesloaded.pkgd.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/scrollIt.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.scrollUp.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/wow.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/nice-select.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.slicknav.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.magnific-popup.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/plugins.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/gijgo.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/slick.min.js')?>"></script>
    
 
     
     <!--contact js-->
-    <script src="<?= base_url('assets_p/js/contact.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.ajaxchimp.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.form.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/jquery.validate.min.js')?>"></script>
-    <script src="<?= base_url('assets_p/js/mail-script.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/contact.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.ajaxchimp.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.form.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/jquery.validate.min.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/mail-script.js')?>"></script>
 
 
-    <script src="<?= base_url('assets_p/js/main.js')?>"></script>
+    <script src="<?= base_url('template_pengunjung/js/main.js')?>"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
