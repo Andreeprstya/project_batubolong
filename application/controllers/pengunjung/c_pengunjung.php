@@ -13,7 +13,12 @@ class c_pengunjung extends CI_Controller
         $this->load->view('pengunjung/header');
         $this->load->view('pengunjung/index');
         $this->load->view('pengunjung/footer');
-        // $this->load->view('pengunjung/tampil');
+    }
+    public function stand()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/stand');
+        $this->load->view('pengunjung/footer');
     }
 }
 
