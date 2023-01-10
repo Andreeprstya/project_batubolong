@@ -29,7 +29,7 @@
             </div>
             <div class="row">
             <div class="col-lg-4 col-md-6">
-                    <a href="">
+                    <a href="<?= base_url('pengunjung/c_pengunjung/menustand')?>">
                     <div class="single_destination">
                         <div class="thumb">
                             <img src="<?= base_url('template_pengunjung/img/destination/2.png')?>" alt="">

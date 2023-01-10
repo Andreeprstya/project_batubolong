@@ -14,18 +14,42 @@ class c_pengunjung extends CI_Controller
         $this->load->view('pengunjung/index');
         $this->load->view('pengunjung/footer');
     }
+
     public function stand()
     {
         $this->load->view('pengunjung/header');
         $this->load->view('pengunjung/stand');
         $this->load->view('pengunjung/footer');
     }
+
+    public function menustand()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/menustand');
+        $this->load->view('pengunjung/footer');
+    }
+
     public function ticket()
     {
         $this->load->view('pengunjung/header');
         $this->load->view('pengunjung/ticket');
         $this->load->view('pengunjung/footer');
     }
+
+    public function tunai()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/tunai');
+        $this->load->view('pengunjung/footer');
+    }
+
+    public function nontunai()
+    {
+        $this->load->view('pengunjung/header');
+        $this->load->view('pengunjung/nontunai');
+        $this->load->view('pengunjung/footer');
+    }
+
     public function history()
     {
         $this->load->view('pengunjung/header');

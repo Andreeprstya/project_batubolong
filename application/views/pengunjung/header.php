@@ -59,8 +59,8 @@
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/ticket')?>">ticket</a></li>
                                             <li><a href="#">top up <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                        <li><a href="destination_details.html">Tunai</a></li>
-                                                        <li><a href="elements.html">Non Tunai</a></li>
+                                                        <li><a href="<?= base_url('pengunjung/c_pengunjung/tunai')?>">Tunai</a></li>
+                                                        <li><a href="<?= base_url('pengunjung/c_pengunjung/nontunai')?>">Non Tunai</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/history')?>">History</a></li>
