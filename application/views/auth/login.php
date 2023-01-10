@@ -30,7 +30,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<?= base_url('admin/register')?>">Need an account for stand? Sign up!</a></div>
+                                        <div class="small"><a href="<?= base_url('auth/register')?>">Need an account for stand? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

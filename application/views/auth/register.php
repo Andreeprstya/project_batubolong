@@ -59,7 +59,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<?= base_url('index')?>">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="<?= base_url('auth')?>">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>
