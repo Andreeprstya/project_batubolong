@@ -22,17 +22,26 @@ class auth extends CI_Controller {
         $this->load->view('auth/register');
         $this->load->view('layout/footer');
     }
+    public function r_rules()
+	{
+		$this->form_validation->set_rules('username','username','required');
+		$this->form_validation->set_rules('password','password','required');
+		$this->form_validation->set_rules('email','email','required');
+		$this->form_validation->set_rules('first_name','first_name','required');
+		$this->form_validation->set_rules('last_name','last_name','required');
+		$this->form_validation->set_rules('type','last_name','required');
+	}
     
     public function r_auth()
     {
         $this->r_rules();
 		if ($this->form_validation->run() == FALSE) {
-                $this->load->view('auth/header');
-                $this->load->view('auth/register');
+                $this->load->view('layout/header');
+                $this->load->view('admin/tambah_stand');
                 $this->load->view('layout/footer');
 			} else {
 			    $this->M_auth->add_register();
-				redirect('auth');
+				redirect('admin/c_admin/stand');
 			}
     }
 

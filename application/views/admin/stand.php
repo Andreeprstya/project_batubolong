@@ -17,7 +17,7 @@
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
                     Data Stand
-                    <a href="<?= base_url('auth/register') ?>"><button class="btn btn-primary float-end">Tambah
+                    <a href="<?= base_url('admin/c_admin/tambah_stand') ?>"><button class="btn btn-primary float-end">Tambah
                             Stand</button></a>
                 </div>
                 <div class="card-body">

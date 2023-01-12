@@ -36,6 +36,8 @@
             document.getElementById("inputJumlah").addEventListener("input", hitungJumlah);
             document.getElementById("inputbayar").addEventListener("input", hitungJumlah);
         </script>
+        <script src="<?= base_url('template_admin/css/sweetalert2/sweetalert.min.js')?>"></script>
+        <script src="<?= base_url('template_admin/js/sweetalert.js')?>"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?= base_url('template_admin/js/scripts.js')?>"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>

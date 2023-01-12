@@ -13,7 +13,7 @@ class M_auth extends CI_Model
 						->or_where('email', $username)
 						->where('password', md5($password))
 						->limit(1)
-						->get('user');
+						->get('tb_user');
 
 		if ($result->num_rows() > 0) {
 			return $result->row();
@@ -34,7 +34,7 @@ class M_auth extends CI_Model
             'level' => '2',
             'type' => $this->input->post('type'),
             );
-            $result = $this->db->insert('user', $insert);
+            $result = $this->db->insert('tb_user', $insert);
             return $result;
     }
     
@@ -49,14 +49,14 @@ class M_auth extends CI_Model
             'password' => md5($this->input->post('password')),
             'level' => '3',
             );
-        $this->db->insert('user', $insert);
+        $this->db->insert('tb_user', $insert);
         $id_pengunjung = $this->db->insert_id();
         $data = array(
             'id_user'	=> $id_pengunjung,
             'saldo'			=> '0',
             'username'		=> $this->input->post('username'),
         );
-        $result = $this->db->insert('saldo', $data);
+        $result = $this->db->insert('tb_saldo', $data);
          
         return $result;
     }

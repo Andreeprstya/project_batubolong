@@ -33,6 +33,17 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    
+    public function tambah_stand()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $this->load->view('layout/header');
+            $this->load->view('admin/tambah_stand');
+            $this->load->view('layout/footer');
+        }
+    }
 
     #PENGUNJUNG
     public function pengunjung()
