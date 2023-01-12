@@ -10,7 +10,7 @@ class M_auth extends CI_Model
          
 		$result = $this->db
 						->where('username', $username)
-						->or_where('email', $username)
+						//->or_where('email', $username)
 						->where('password', md5($password))
 						->limit(1)
 						->get('user');
