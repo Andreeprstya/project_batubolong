@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2023 at 06:18 AM
+-- Generation Time: Jan 12, 2023 at 06:36 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -150,15 +150,17 @@ CREATE TABLE `tb_stand` (
   `nama_pemilik` varchar(100) NOT NULL,
   `tipe_stand` varchar(50) NOT NULL,
   `keterangan` text NOT NULL,
-  `gambar` varchar(50) NOT NULL
+  `gambar` varchar(50) NOT NULL,
+  `username` varchar(40) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_stand`
 --
 
-INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`) VALUES
-(1, 'Stand budi ', 'Budi Utomo', 'Pemesanan', 'stand jualan tahu', 'budi.jpg');
+INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`, `username`, `password`) VALUES
+(1, 'Stand budi ', 'Budi Utomo', 'Pemesanan', 'stand jualan tahu', 'budi.jpg', 'stand1', 'stand1');
 
 -- --------------------------------------------------------
 

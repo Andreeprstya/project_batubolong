@@ -25,11 +25,11 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>Id Stand</th>
                                 <th>Nama Toko</th>
                                 <th>Nama Pemilik</th>
-                                <th>Username</th>
-                                <th>Email</th>
                                 <th>Tipe Stand</th>
+                                <th>Keterangan</th>
                                 <th>Gambar</th>
                                 <th>Action</th>
                             </tr>
@@ -37,11 +37,11 @@
                         <tbody>
                             <?php foreach ($stand->result_array() as $key) : ?>
                             <tr>
-                                <td><?php echo $key['first_name'] ?></td>
-                                <td><?php echo $key['last_name'] ?></td>
-                                <td><?php echo $key['username'] ?></td>
-                                <td><?php echo $key['email'] ?></td>
-                                <td><?php echo $key['type'] ?></td>
+                                <td><?php echo $key['id_stand'] ?></td>
+                                <td><?php echo $key['nama_stand'] ?></td>
+                                <td><?php echo $key['nama_pemilik'] ?></td>
+                                <td><?php echo $key['tipe_stand'] ?></td>
+                                <td><?php echo $key['keterangan'] ?></td>
                                 <td><?php echo $key['gambar'] ?></td>
                                 <td>
                                     <button class="btn btn-success">Edit</button>
