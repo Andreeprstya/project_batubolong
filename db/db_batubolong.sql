@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2023 at 05:36 AM
+-- Generation Time: Jan 12, 2023 at 06:00 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -149,7 +149,8 @@ CREATE TABLE `tb_stand` (
   `nama_stand` varchar(100) NOT NULL,
   `nama_pemilik` varchar(100) NOT NULL,
   `tipe_stand` varchar(50) NOT NULL,
-  `keterangan` text NOT NULL
+  `keterangan` text NOT NULL,
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
