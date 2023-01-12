@@ -26,17 +26,17 @@
                             <div class="row">
                             <div class="col-lg-12">
                                     <div class="single_input">
-                                        <input name="" id="" cols="30" rows="10"placeholder="Jumlah" ></input>
+                                        <input  name="" id="inputHarga" cols="30" rows="10"placeholder="Jumlah" ></input>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="single_input">
-                                        <input name="" id="" cols="30" rows="10"placeholder="Harga" ></input>
+                                        <input class="form-control" name="" id="inputJumlah" cols="30" rows="10"placeholder="Harga" ></input>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="single_input">
-                                        <input name="" id="" cols="30" rows="10"placeholder="Total" ></input>
+                                        <span class="form-control" name="" id="Total" cols="30" rows="10"placeholder="Total" ></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
