@@ -6,16 +6,20 @@
                         <h3>Cara Melakukan Top Up Tunai</h3>
                         
                         <div class="single_destination">
-                            <h4>Day-01</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>01<p>Sampaikan ke penjaga loket untuk melakukan top up</p></h4>
+                            
                         </div>
                         <div class="single_destination">
-                            <h4>Day-02</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>02<p>Tunjukan kode ke penjaga loket</p></h4>
+                            
                         </div>
                         <div class="single_destination">
-                            <h4>Day-03</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>03</h4>
+                            <p>Lakukan pembayaran sebesar Rp.????? dalam kurun waktu 24 jam</p>
+                        </div>
+                        <div class="single_destination">
+                            <h4>04</h4>
+                            <p>Saldo akan bertambah automatis sebelum kurun waktu 1x24 jam</p>
                         </div>
                     </div>
                     
