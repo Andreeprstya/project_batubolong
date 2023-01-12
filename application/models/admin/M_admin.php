@@ -7,7 +7,7 @@ class M_admin extends CI_Model
   public function getstand()
   {
     $this->db->select('*');
-    $result = $this->db->get_where('tb_user', array('level' => '2'));
+    $result = $this->db->get_where('tb_stand'); //, array('level' => '2')
     return $result;
   }
 

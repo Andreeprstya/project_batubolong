@@ -17,18 +17,20 @@
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
                     Data Stand
-                    <a href="<?= base_url('admin/c_admin/tambah_stand') ?>"><button class="btn btn-primary float-end">Tambah
+                    <a href="<?= base_url('admin/c_admin/tambah_stand') ?>"><button
+                            class="btn btn-primary float-end">Tambah
                             Stand</button></a>
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>Nama Toko</th>
+                                <th>Nama Pemilik</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Sebagai</th>
+                                <th>Tipe Stand</th>
+                                <th>Gambar</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,8 +42,9 @@
                                 <td><?php echo $key['username'] ?></td>
                                 <td><?php echo $key['email'] ?></td>
                                 <td><?php echo $key['type'] ?></td>
+                                <td><?php echo $key['gambar'] ?></td>
                                 <td>
-                                    <button class="btn btn-success floa">Edit</button>
+                                    <button class="btn btn-success">Edit</button>
                                     <button class="btn btn-danger">Hapus</button>
                                 </td>
                             </tr>

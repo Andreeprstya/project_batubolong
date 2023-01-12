@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2023 at 06:00 AM
+-- Generation Time: Jan 12, 2023 at 06:18 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -153,6 +153,13 @@ CREATE TABLE `tb_stand` (
   `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tb_stand`
+--
+
+INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`) VALUES
+(1, 'Stand budi ', 'Budi Utomo', 'Pemesanan', 'stand jualan tahu', 'budi.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -255,6 +262,12 @@ ALTER TABLE `tb_saldo`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- Indexes for table `tb_stand`
+--
+ALTER TABLE `tb_stand`
+  ADD PRIMARY KEY (`id_stand`);
+
+--
 -- Indexes for table `tb_tiket`
 --
 ALTER TABLE `tb_tiket`
@@ -311,6 +324,12 @@ ALTER TABLE `tb_penyewaan`
 --
 ALTER TABLE `tb_saldo`
   MODIFY `id_saldo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tb_stand`
+--
+ALTER TABLE `tb_stand`
+  MODIFY `id_stand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_tiket`
