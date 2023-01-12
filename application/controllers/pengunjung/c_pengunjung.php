@@ -6,6 +6,8 @@ class c_pengunjung extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('M_pengunjung');
+        
     }
  
 
@@ -26,8 +28,9 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo']=$this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/stand');
+            $this->load->view('pengunjung/stand',$data);
             $this->load->view('pengunjung/footer');
         }
     }
@@ -48,8 +51,9 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo']=$this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/ticket');
+            $this->load->view('pengunjung/ticket',$data);
             $this->load->view('pengunjung/footer');
         }
     }

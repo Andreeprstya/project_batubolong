@@ -3,10 +3,11 @@
   <div class="where_togo_area">
         <div class="container">
             <div class="row align-items-center">
-                
+                    <?php foreach ($saldo->result_array() as $key) : ?>
                     <div class="form_area">
-                        <h3>Saldo Anda : </h3>
+                        <h3>Saldo Anda : <?= $key['saldo']?></h3>
                     </div>
+                    <?php endforeach ?>
                 
                
             </div>
@@ -20,7 +21,7 @@
                     
                    
                     <div class="contact_join">
-                        <h3>Top Up</h3>
+                        <h3>Beli Ticket</h3>
                         <form action="#">
                             <div class="row">
                             <div class="col-lg-12">

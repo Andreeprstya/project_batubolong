@@ -2,10 +2,11 @@
 <div class="where_togo_area">
     <div class="container">
         <div class="row align-items-center">
-
-            <div class="form_area">
-                <h3>Saldo Anda : </h3>
-            </div>
+            <?php foreach ($saldo->result_array() as $key) : ?>
+                <div class="form_area">
+                    <h3>Saldo Anda : <?= $key['saldo']?></h3>
+                </div>
+                <?php endforeach ?>
 
 
         </div>
