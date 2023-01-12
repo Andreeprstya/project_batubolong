@@ -69,6 +69,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/history') ?>">History</a>
+                                            <li><a href="<?= base_url('auth/logout') ?>">Logout</a>
                                             </li>
                                         </ul>
                                     </nav>
