@@ -34,14 +34,14 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="text" placeholder="Username" name="username"/>
+                                                        <input class="form-control" id="inputUsername" type="text" placeholder="Username" name="username"/>
                                                         <label for="inputPassword">Username</label>
                                                         <?php echo form_error('username','<div class="alert alert-danger">','</div>') ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Password" name="password"/>
+                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="password"/>
                                                         <label for="inputPasswordConfirm">Password</label>
                                                         <?php echo form_error('password','<div class="alert alert-danger">','</div>') ?>
                                                     </div>

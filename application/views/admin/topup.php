@@ -31,7 +31,7 @@
                                 <div class="form-floating mb-3">
                                     <span class="form-control" id="kembalian" type="text"></span>
                                     <label for="kembalian">Kembalian</label>
-                                </div>  
+                                </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <button class="btn btn-primary" type="submit">Top-Up</button>
                                 </div>

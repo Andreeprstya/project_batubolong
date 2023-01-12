@@ -22,14 +22,6 @@ class index extends CI_Controller
 		$this->form_validation->set_rules('username','username','required');
 		$this->form_validation->set_rules('password','password','required');
 	}
-    public function r_rules()
-	{
-		$this->form_validation->set_rules('username','username','required');
-		$this->form_validation->set_rules('password','password','required');
-		$this->form_validation->set_rules('email','email','required');
-		$this->form_validation->set_rules('first_name','first_name','required');
-		$this->form_validation->set_rules('last_name','last_name','required');
-	}
 
     public function auth()
 	{
