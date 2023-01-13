@@ -105,6 +105,17 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    public function nontunai()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $this->load->view('layout/header');
+            $this->load->view('admin/nontunai');
+            $this->load->view('layout/footer');
+        }
+    }
+
     public function topup_rules()
     {
         $this->form_validation->set_rules('id', 'id', 'required');
