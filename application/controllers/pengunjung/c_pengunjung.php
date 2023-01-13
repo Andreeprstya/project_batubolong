@@ -6,7 +6,7 @@ class c_pengunjung extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_pengunjung');
+        $this->load->model('pengunjung/M_pengunjung');
         
     }
  
@@ -46,6 +46,7 @@ class c_pengunjung extends CI_Controller
         }
     }
 
+    #TIKET
     public function ticket()
     {
         if (!isset($_SESSION['username'])) {
@@ -56,6 +57,21 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/ticket',$data);
             $this->load->view('pengunjung/footer');
         }
+    }
+    public function belitiket()
+    {
+        $this->M_pengunjung->beli_tiket();
+		redirect('pengunjung/c_pengunjung/ticket');
+        
+        // $this->t_rules();
+		// if ($this->form_validation->run() == FALSE) {
+        //         $this->load->view('auth/header');
+        //         $this->load->view('auth/register_pengunjung');
+        //         $this->load->view('layout/footer');
+		// 	} else {
+		// 	    $this->M_pengunjung->beli_tiket();
+		// 		redirect('index');
+		// 	}
     }
 
     public function tunai()

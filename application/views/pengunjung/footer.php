@@ -126,9 +126,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- JS here -->
         <script>
             function hitungJumlah() {
-                var x = document.getElementById("inputHarga").value;
-                var y = document.getElementById("inputJumlah").value;
-                if (isNaN(y)) {
+                var x = document.getElementById("inputJumlah").value;
+                var y = document.getElementById("inputHarga").value;
+                if (isNaN(x)) {
                     document.getElementById("inputJumlah").innerHTML = "Masukkan bilangan yang valid!";
                     return;
                 }
@@ -136,7 +136,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 if (y === "") {
                     y = y || 10000;
                 }
-                var z = (parseInt(x) * parseInt(y));
+                var z = (parseInt(x) * parseInt(y)).toLocaleString();
                 document.getElementById("Total").innerHTML = z;
             }
             document.getElementById("inputHarga").addEventListener("input", hitungJumlah);
