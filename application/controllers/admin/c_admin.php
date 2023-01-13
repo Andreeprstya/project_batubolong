@@ -33,6 +33,17 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    public function edit_stand()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['stand'] = $this->M_admin->getstand();
+            $this->load->view('layout/header');
+            $this->load->view('admin/edit_stand');
+            $this->load->view('layout/footer');
+        }
+    }
     
     public function tambah_stand()
     {
