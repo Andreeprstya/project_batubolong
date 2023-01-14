@@ -54,3 +54,6 @@
             </div>
         </div>
     </div>
+    <div class="travel_variation_area">
+        
+        </div>
