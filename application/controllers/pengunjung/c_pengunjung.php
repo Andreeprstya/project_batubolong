@@ -7,7 +7,6 @@ class c_pengunjung extends CI_Controller
     {
         parent::__construct();
         $this->load->model('pengunjung/M_pengunjung');
-        
     }
  
 
@@ -60,8 +59,16 @@ class c_pengunjung extends CI_Controller
     }
     public function belitiket()
     {
-        $this->M_pengunjung->beli_tiket();
-		redirect('pengunjung/c_pengunjung/ticket');
+        $cek_saldo = $this->M_pengunjung->beli_tiket();
+        if ($cek_saldo===NULL) {
+            echo "<SCRIPT language=Javascript>
+			        alert('Saldo Lu Gak Cukup Tolol!, Sana Top-up Dulu!')
+		        </script>";
+		    echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
+        }else{
+            $this->M_pengunjung->beli_tiket();
+            //redirect('pengunjung/c_pengunjung/ticket');
+        }		
         
         // $this->t_rules();
 		// if ($this->form_validation->run() == FALSE) {

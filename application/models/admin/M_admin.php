@@ -46,11 +46,11 @@ class M_admin extends CI_Model
     $query = $this->db->get();
     $sisa = $query->row()->saldo;
     $saldo = $sisa + $topup;
-    $topup = array(
+    $topup_saldo = array(
       'saldo' => $saldo,
     );
     $this->db->where('id_user', $this->input->post('id'));
-    $result = $this->db->update('tb_saldo', $topup);
+    $result = $this->db->update('tb_saldo', $topup_saldo);
     return $result;
   }
 }

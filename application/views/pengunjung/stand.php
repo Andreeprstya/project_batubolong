@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <?php foreach ($saldo->result_array() as $key) : ?>
                 <div class="form_area">
-                    <h3>Saldo Anda : <?= $key['saldo']?></h3>
+                        <h3>Saldo Anda : Rp.<?= number_format($key['saldo'], 0,',','.')?></h3>
                 </div>
                 <?php endforeach ?>
 
