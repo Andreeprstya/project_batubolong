@@ -22,7 +22,7 @@
                             Stand</button></a>
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table class="table table-hover table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Id Stand</th>
