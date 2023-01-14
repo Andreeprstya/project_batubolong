@@ -90,6 +90,38 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    public function x_rules()
+	{
+		$this->form_validation->set_rules('first_name','first_name','required');
+		$this->form_validation->set_rules('last_name','last_name','required');
+		$this->form_validation->set_rules('email','email','required');
+		$this->form_validation->set_rules('username','username','required');
+        $this->form_validation->set_rules('password','password','required');
+        $this->form_validation->set_rules('level','level','required');
+       
+	}
+    public function tambah_pengunjung()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $this->load->view('layout/header');
+            $this->load->view('admin/tambah_pengunjung');
+            $this->load->view('layout/footer');
+        }
+    }
+    public function prosestambah_pengunjung()
+    {
+        $this->x_rules();
+		if ($this->form_validation->run() == FALSE) {
+                $this->load->view('layout/header');
+                $this->load->view('admin/tambah_pengunjung');
+                $this->load->view('layout/footer');
+			} else {
+			    $this->M_admin->add_register_pengunjung();
+				redirect('admin/c_admin/pengunjung');
+			}
+    }
 
     #TIKET
     public function tiket()

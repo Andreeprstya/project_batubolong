@@ -48,6 +48,22 @@ class M_admin extends CI_Model
     $result = $this->db->get_where('tb_user', array('level' => '3'));
     return $result;
   }
+  public function add_register_pengunjung()
+  {
+      $insert = array(
+        'id' => $this->input->post('id'),
+        'first_name' => $this->input->post('first_name'),
+        'last_name' => $this->input->post('last_name'),
+        'email' => $this->input->post('email'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password'),
+        'level' => $this->input->post('level'),
+        
+        );
+      $result = $this->db->insert('tb_user', $insert);
+      return $result;
+    
+  }
 
   #TIKET
   public function datatiket()
