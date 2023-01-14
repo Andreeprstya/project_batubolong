@@ -10,6 +10,36 @@ class M_admin extends CI_Model
     $result = $this->db->get_where('tb_stand'); //, array('level' => '2')
     return $result;
   }
+  public function add_register_stand()
+  {
+    $config['upload_path']          = './img/';
+    $config['allowed_types']        = 'gif|jpg|jpeg|png';
+    $config['max_size']             = 100000; // 1MB
+    $config['max_width']            = 100000;
+    $config['max_height']           = 100000;
+
+    $this->load->library('upload');
+    $this->upload->initialize($config);
+
+    if (!$this->upload->do_upload('gambar')) {
+      return;
+    } else {
+      $gambar = $this->upload->data();
+      $gambar = $gambar['file_name'];
+      $insert = array(
+        'id_stand' => $this->input->post('id_stand'),
+        'nama_stand' => $this->input->post('nama_stand'),
+        'nama_pemilik' => $this->input->post('nama_pemilik'),
+        'tipe_stand' => $this->input->post('tipe_stand'),
+        'keterangan' => $this->input->post('keterangan'),
+        'gambar' => $gambar,
+        'username' => $this->input->post('nama_stand'),
+        'password' => md5($this->input->post('nama_stand')),
+        );
+      $result = $this->db->insert('tb_stand', $insert);
+      return $result;
+    }
+  }
 
   #PENGUNJUNG
   public function getpengunjung()

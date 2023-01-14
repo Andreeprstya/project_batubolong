@@ -64,6 +64,14 @@ class M_pengunjung extends CI_Model
         $filename = "Tiket.pdf";
         $pdf->Output($filename, 'D');
     }
+
+    #STAND
+    public function getstand()
+    {
+        $this->db->select('*');
+        $result = $this->db->get_where('tb_stand');
+        return $result;
+    }
 }
 
 

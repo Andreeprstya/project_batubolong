@@ -5,12 +5,7 @@
             <li class="breadcrumb-item active">Halaman Tambah Stand</li>
         </ol>
         <div class="card-body">
-            <form action="<?= base_url('auth/r_auth') ?>" method="post">
-                <div class="form-floating mb-3">
-                    <input class="form-control" id="inputIdPengunjung" type="text" name="id_stand" />
-                    <label for="inputIdPengunjung">Id Stand</label>
-                    <?php echo form_error('id_stand', '<div class="alert alert-danger">', '</div>') ?>
-                </div>
+            <form action="<?= base_url('admin/c_admin/prosestambah_stand') ?>" method="post" enctype="multipart/form-data">
                 <div class="form-floating mb-3">
                     <input class="form-control" id="inputIdPengunjung" type="text" name="nama_stand" />
                     <label for="inputIdPengunjung">Nama Stand</label>
@@ -44,3 +39,5 @@
                     <a href="<?= base_url('admin/c_admin/stand') ?>" class="btn btn-danger">Kembali</a>
                 </div>
             </form>
+        </div>
+    </div>

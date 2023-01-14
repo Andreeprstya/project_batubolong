@@ -22,12 +22,14 @@ class c_pengunjung extends CI_Controller
 
     }
 
+    #STAND
     public function stand()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
             $data['saldo']=$this->M_pengunjung->getsaldo();
+            $data['stand']=$this->M_pengunjung->getstand();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/stand',$data);
             $this->load->view('pengunjung/footer');

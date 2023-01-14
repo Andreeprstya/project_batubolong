@@ -56,6 +56,28 @@ class c_admin extends CI_Controller
         }
     }
 
+    public function r_rules()
+	{
+		$this->form_validation->set_rules('nama_stand','nama_stand','required');
+		$this->form_validation->set_rules('nama_pemilik','nama_pemilik','required');
+		$this->form_validation->set_rules('tipe_stand','tipe_stand','required');
+		$this->form_validation->set_rules('keterangan','keterangan','required');
+		//$this->form_validation->set_rules('gambar','gambar','required');
+	}
+    
+    public function prosestambah_stand()
+    {
+        $this->r_rules();
+		if ($this->form_validation->run() == FALSE) {
+                $this->load->view('layout/header');
+                $this->load->view('admin/tambah_stand');
+                $this->load->view('layout/footer');
+			} else {
+			    $this->M_admin->add_register_stand();
+				redirect('admin/c_admin/stand');
+			}
+    }
+
     #PENGUNJUNG
     public function pengunjung()
     {
