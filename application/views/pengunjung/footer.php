@@ -124,6 +124,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script> -->
     <!-- JS here -->
+        <script>
+            function hitungJumlah() {
+                var x = document.getElementById("inputJumlah").value;
+                var y = document.getElementById("inputHarga").value;
+                if (isNaN(x)) {
+                    document.getElementById("inputJumlah").innerHTML = "Masukkan bilangan yang valid!";
+                    return;
+                }
+                // Penanganan input yang kosong
+                if (y === "") {
+                    y = y || 10000;
+                }
+                var z = (parseInt(x) * parseInt(y)).toLocaleString();
+                document.getElementById("Total").innerHTML = z;
+            }
+            document.getElementById("inputHarga").addEventListener("input", hitungJumlah);
+            document.getElementById("inputJumlah").addEventListener("input", hitungJumlah);
+        </script>
     <script src="<?= base_url('template_pengunjung/js/vendor/modernizr-3.5.0.min.js')?>"></script>
     <script src="<?= base_url('template_pengunjung/js/vendor/jquery-1.12.4.min.js')?>"></script>
     <script src="<?= base_url('template_pengunjung/js/popper.min.js')?>"></script>

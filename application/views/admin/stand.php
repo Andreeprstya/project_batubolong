@@ -22,7 +22,7 @@
                             Stand</button></a>
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table class="table table-hover table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Id Stand</th>
@@ -44,7 +44,7 @@
                                 <td><?php echo $key['keterangan'] ?></td>
                                 <td><?php echo $key['gambar'] ?></td>
                                 <td>
-                                    <button class="btn btn-success">Edit</button>
+                                    <a class="btn btn-success" type="submit" href="<?= base_url('admin/c_admin/edit_stand')?>">Edit</a>
                                     <button class="btn btn-danger">Hapus</button>
                                 </td>
                             </tr>

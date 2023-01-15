@@ -6,8 +6,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
-                                <h3>Indonesia</h3>
-                                <p>Pixel perfect design with awesome contents</p>
+                                <h3>Batu Bolong</h3>
+                                <p>Your happiness is our happiness too</p>
                                 
                             </div>
                         </div>
@@ -19,8 +19,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
-                                <h3>Australia</h3>
-                                <p>Pixel perfect design with awesome contents</p>
+                            <h3>Batu Bolong</h3>
+                                <p>Your happiness is our happiness too</p>
                             </div>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-md-12">
                             <div class="slider_text text-center">
-                                <h3>Switzerland</h3>
-                                <p>Pixel perfect design with awesome contents</p>
+                                <h3>Batu Bolong</h3>
+                                <p>Your happiness is our happiness too</p>
                             </div>
                         </div>
                     </div>

@@ -42,6 +42,7 @@ class index extends CI_Controller
 					  </script>";
 					  echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
 			}else{
+				$this->session->set_userdata('id', $cek->id);
 				$this->session->set_userdata('username', $cek->username);
 				$this->session->set_userdata('level', $cek->level);
 				$this->session->set_userdata('type', $cek->type);

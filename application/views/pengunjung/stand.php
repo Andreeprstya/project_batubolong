@@ -2,11 +2,11 @@
 <div class="where_togo_area">
     <div class="container">
         <div class="row align-items-center">
-            <?php foreach ($saldo->result_array() as $key) : ?>
+        <?php foreach ($saldo->result_array() as $key) : ?>
                 <div class="form_area">
-                    <h3>Saldo Anda : <?= $key['saldo']?></h3>
+                    <h3>Saldo Anda : Rp.<?= number_format($key['saldo'], 0,',','.')?></h3>
                 </div>
-                <?php endforeach ?>
+                <?php endforeach ?>   
 
 
         </div>
@@ -28,20 +28,22 @@
             </div>
         </div>
         <div class="row">
+            <?php foreach ($stand->result_array() as $keyy ): ?>
             <div class="col-lg-4 col-md-6">
-                <a href="<?= base_url('pengunjung/c_pengunjung/menustand') ?>">
-                    <div class="single_destination">
+                <a href="">
+                    <div class="single_place">
                         <div class="thumb">
-                            <img src="<?= base_url('template_pengunjung/img/destination/2.png') ?>" alt="">
+                            <img src="<?= base_url('') . 'img/' . $keyy['gambar']?>" width="275" height="183" alt="">
                         </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Stand A </p>
-
+                        <div class="place_info">
+                            <h3><?php echo $keyy['nama_stand']?></h3></a>
+                            <p><?php echo $keyy['nama_pemilik']?></p>
+                            
                         </div>
                     </div>
-                </a>
-            </div>
-
+                    </a>
+                </div>
+            <?php endforeach?>
         </div>
     </div>
 </div>

@@ -10,6 +10,36 @@ class M_admin extends CI_Model
     $result = $this->db->get_where('tb_stand'); //, array('level' => '2')
     return $result;
   }
+  public function add_register_stand()
+  {
+    $config['upload_path']          = './img/';
+    $config['allowed_types']        = 'gif|jpg|jpeg|png';
+    $config['max_size']             = 100000; // 1MB
+    $config['max_width']            = 100000;
+    $config['max_height']           = 100000;
+
+    $this->load->library('upload');
+    $this->upload->initialize($config);
+
+    if (!$this->upload->do_upload('gambar')) {
+      return;
+    } else {
+      $gambar = $this->upload->data();
+      $gambar = $gambar['file_name'];
+      $insert = array(
+        'id_stand' => $this->input->post('id_stand'),
+        'nama_stand' => $this->input->post('nama_stand'),
+        'nama_pemilik' => $this->input->post('nama_pemilik'),
+        'tipe_stand' => $this->input->post('tipe_stand'),
+        'keterangan' => $this->input->post('keterangan'),
+        'gambar' => $gambar,
+        'username' => $this->input->post('nama_stand'),
+        'password' => md5($this->input->post('nama_stand')),
+        );
+      $result = $this->db->insert('tb_stand', $insert);
+      return $result;
+    }
+  }
 
   #PENGUNJUNG
   public function getpengunjung()
@@ -17,6 +47,22 @@ class M_admin extends CI_Model
     $this->db->select('*');
     $result = $this->db->get_where('tb_user', array('level' => '3'));
     return $result;
+  }
+  public function add_register_pengunjung()
+  {
+      $insert = array(
+        'id' => $this->input->post('id'),
+        'first_name' => $this->input->post('first_name'),
+        'last_name' => $this->input->post('last_name'),
+        'email' => $this->input->post('email'),
+        'username' => $this->input->post('username'),
+        'password' => $this->input->post('password'),
+        'level' => $this->input->post('level'),
+        
+        );
+      $result = $this->db->insert('tb_user', $insert);
+      return $result;
+    
   }
 
   #TIKET
@@ -46,11 +92,11 @@ class M_admin extends CI_Model
     $query = $this->db->get();
     $sisa = $query->row()->saldo;
     $saldo = $sisa + $topup;
-    $topup = array(
+    $topup_saldo = array(
       'saldo' => $saldo,
     );
     $this->db->where('id_user', $this->input->post('id'));
-    $result = $this->db->update('tb_saldo', $topup);
+    $result = $this->db->update('tb_saldo', $topup_saldo);
     return $result;
   }
 }

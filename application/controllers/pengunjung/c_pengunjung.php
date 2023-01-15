@@ -6,8 +6,7 @@ class c_pengunjung extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('M_pengunjung');
-        
+        $this->load->model('pengunjung/M_pengunjung');
     }
  
 
@@ -23,12 +22,14 @@ class c_pengunjung extends CI_Controller
 
     }
 
+    #STAND
     public function stand()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
             $data['saldo']=$this->M_pengunjung->getsaldo();
+            $data['stand']=$this->M_pengunjung->getstand();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/stand',$data);
             $this->load->view('pengunjung/footer');
@@ -46,6 +47,7 @@ class c_pengunjung extends CI_Controller
         }
     }
 
+    #TIKET
     public function ticket()
     {
         if (!isset($_SESSION['username'])) {
@@ -56,6 +58,29 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/ticket',$data);
             $this->load->view('pengunjung/footer');
         }
+    }
+    public function belitiket()
+    {
+        $cek_saldo = $this->M_pengunjung->beli_tiket();
+        if ($cek_saldo===NULL) {
+            echo "<SCRIPT language=Javascript>
+			        alert('Saldo Lu Gak Cukup Tolol!, Sana Top-up Dulu!')
+		        </script>";
+		    echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
+        }else{
+            $this->M_pengunjung->beli_tiket();
+            //redirect('pengunjung/c_pengunjung/ticket');
+        }		
+        
+        // $this->t_rules();
+		// if ($this->form_validation->run() == FALSE) {
+        //         $this->load->view('auth/header');
+        //         $this->load->view('auth/register_pengunjung');
+        //         $this->load->view('layout/footer');
+		// 	} else {
+		// 	    $this->M_pengunjung->beli_tiket();
+		// 		redirect('index');
+		// 	}
     }
 
     public function tunai()

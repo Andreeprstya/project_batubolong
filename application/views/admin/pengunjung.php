@@ -17,9 +17,12 @@
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Data Pengunjung
+                                <a href="<?= base_url('admin/c_admin/tambah_pengunjung') ?>"><button
+                            class="btn btn-primary float-end">Tambah
+                            Pengunjung</button></a>
                             </div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table class="table table-hover table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>First Name</th>
@@ -35,6 +38,10 @@
                                             <td><?php echo $key['last_name']?></td>
                                             <td><?php echo $key['username']?></td>
                                             <td><?php echo $key['email']?></td>
+                                            <td>
+                                                <a class="btn btn-success" type="submit" href="<?= base_url('admin/c_admin/tambah_pengunjung')?>">Edit</a>
+                                                <button class="btn btn-danger">Hapus</button>
+                                            </td>
                                         </tr>
                                         <?php endforeach?>
                                     </tbody>
