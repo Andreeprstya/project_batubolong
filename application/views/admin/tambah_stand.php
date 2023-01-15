@@ -22,7 +22,7 @@
                     <?php echo form_error('nama_pemilik', '<div class="alert alert-danger">', '</div>') ?>
                 </div>
                 <div class="mb-3">
-                    <label for="inputEmail">Pilih Tipe</label><br>
+                    <label for="inputEmail">Pilih Tipe :</label><br>
                     <?php echo form_error('tipe_stand', '<div class="alert alert-danger">', '</div>') ?>
                     <input type="radio" name="tipe_stand" value="Resto" /> Resto<br>
                     <input type="radio" name="tipe_stand" value="Penyewaan" /> Penyewaan<br>
