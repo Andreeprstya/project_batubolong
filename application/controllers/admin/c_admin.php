@@ -160,9 +160,9 @@ class c_admin extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['tiket'] = $this->M_admin->dataalltiket();
+            $data['tiket'] = $this->M_admin->datalltiket();
             $this->load->view('layout/header');
-            $this->load->view('admin/tiket', $data);
+            $this->load->view('admin/semuatiket', $data);
             $this->load->view('layout/footer');
         }
     }

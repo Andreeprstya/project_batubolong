@@ -6,14 +6,18 @@
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
                         </ol> -->
-                        <div class="card mb-4">
-                            <!-- <div class="card-body">
+                        <!-- <div class="card mb-4">
+                            <div class="card-body">
                                 DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
                                 <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
                                 .
-                            </div> -->
+                            </div>
+                        </div> -->
+                        <div class="mb-3">
+                            <a href="<?= base_url('admin/c_admin/alltiket') ?>">
+                                <button class="btn btn-primary md-3" >Semua Tiket</button>
+                            </a>
                         </div>
-                            <button class="btn btn-primary md-3" href="" >Semua Tiket</button>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>

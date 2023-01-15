@@ -37,7 +37,15 @@ class M_admin extends CI_Model
         'username' => $this->input->post('nama_stand'),
         'password' => md5($this->input->post('nama_stand')),
       );
-      $result = $this->db->insert('tb_stand', $insert);
+      $this->db->insert('tb_stand', $insert);
+      $insert_user = array(
+        'first_name' => $this->input->post('nama_stand'),
+        'username' => $this->input->post('nama_stand'),
+        'password' => md5($this->input->post('nama_stand')),
+        'level' => '2',
+        'type' => $this->input->post('tipe_stand'),
+      );
+      $result = $this->db->insert('tb_user', $insert_user);
       return $result;
     }
   }

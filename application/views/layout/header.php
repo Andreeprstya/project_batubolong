@@ -79,7 +79,7 @@
                             <a class="nav-link" href="<?= base_url('admin/c_admin/pendapatan')?>">
                                 Pendapatan
                             </a>
-                            <a class="nav-link" href="<?= base_url('auth/logout')?>">
+                            <a class="nav-link" href="<?= base_url('index')?>">
                                 <!-- <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div> -->
                                 Logout
                             </a>
