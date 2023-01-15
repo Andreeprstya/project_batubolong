@@ -33,12 +33,12 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
-    public function ubah_stand()
+    public function ubah_stand($id)
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['stand'] = $this->M_admin->getstand();
+            $data['stand'] = $this->M_admin->getdetailstand($id);
             $this->load->view('layout/header');
             $this->load->view('admin/edit_stand', $data);
             $this->load->view('layout/footer');
@@ -47,18 +47,15 @@ class c_admin extends CI_Controller
 
     public function edit_stand($id)
     {
-        // $rules = $this->M_admin->validation();
-
-        // $this->form_validation->set_rules($rules);
-
+        $this->r_rules();
         if ($this->form_validation->run() == FALSE) {
-            $data['tb_stand'] = $this->M_admin->getDetailStand($id);
+            $data['stand'] = $this->M_admin->getdetailstand($id);
             $this->load->view('layout/header');
             $this->load->view('admin/edit_stand', $data);
             $this->load->view('layout/footer');
         } else {
             $this->M_admin->editStand();
-            redirect('admin/c_admin/edit_stand');
+            redirect('admin/c_admin/stand');
         }
     }
 

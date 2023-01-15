@@ -10,6 +10,7 @@ class M_admin extends CI_Model
     $result = $this->db->get_where('tb_stand'); //, array('level' => '2')
     return $result;
   }
+
   public function add_register_stand()
   {
     $config['upload_path']          = './img/';
@@ -40,25 +41,49 @@ class M_admin extends CI_Model
       return $result;
     }
   }
-  public function getDetailStand($id)
+  public function getdetailstand($id)
   {
-    $this->db->where('id_stand', $id);
-    $result = $this->db->get('tb_stand');
-    return $result;
+    $this->db->where('id_stand',$id);
+		$result = $this->db->get('tb_stand') -> result_array();
+		return $result[0];
   }
 
   public function editStand()
   {
-    $edit = array(
-      'nama_stand' => $this->input->post('nama_stand'),
-      'nama_pemilik' => $this->input->post('nama_pemilik'),
-      'tipe_stand' => $this->input->post('tipe_stand'),
-      'keterangan' => $this->input->post('keterangan'),
-      'gambar' => $this->input->post('gambar'),
-    );
-    $this->db->where('id_stand', $this->input->post('id_stand'));
-    $result = $this->db->update('tb_stand', $edit);
-    return $result;
+    $config['upload_path']          = './img/';
+    $config['allowed_types']        = 'gif|jpg|jpeg|png';
+    $config['max_size']             = 100000; // 1MB
+    $config['max_width']            = 100000;
+    $config['max_height']           = 100000;
+
+    $this->load->library('upload');
+    $this->upload->initialize($config);
+
+			if (!$this->upload->do_upload('gambar')) {
+					$edit = array(
+              'nama_stand' => $this->input->post('nama_stand'),
+              'nama_pemilik' => $this->input->post('nama_pemilik'),
+              'tipe_stand' => $this->input->post('tipe_stand'),
+              'keterangan' => $this->input->post('keterangan'),
+              'gambar' => $this->input->post('gambarlama'),
+						);
+            $this->db->where('id_stand', $this->input->post('id_stand'));
+            $result = $this->db->update('tb_stand', $edit);
+            return $result;
+				} else {
+					$gambar = $this->upload->data();
+					$gambar = $gambar['file_name'];
+					$edit = array(
+              'nama_stand' => $this->input->post('nama_stand'),
+              'nama_pemilik' => $this->input->post('nama_pemilik'),
+              'tipe_stand' => $this->input->post('tipe_stand'),
+              'keterangan' => $this->input->post('keterangan'),
+              'gambar' => $gambar,
+							);
+              $this->db->where('id_stand', $this->input->post('id_stand'));
+              $result = $this->db->update('tb_stand', $edit);
+              return $result;
+				}
   }
 
   public function delete_stand($id)
