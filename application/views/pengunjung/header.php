@@ -45,7 +45,7 @@
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="<?= base_url('template_pengunjung/img/logo.png') ?>" alt="">
+                                        <img src="<?= base_url('template_pengunjung/img/Logo_baru.png') ?>" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
 
-                          
+
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>

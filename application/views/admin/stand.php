@@ -44,8 +44,10 @@
                                 <td><?php echo $key['keterangan'] ?></td>
                                 <td><?php echo $key['gambar'] ?></td>
                                 <td>
-                                    <a class="btn btn-success" type="submit" href="<?= base_url('admin/c_admin/edit_stand')?>">Edit</a>
-                                    <button class="btn btn-danger">Hapus</button>
+                                    <a class="btn btn-success" type="submit"
+                                        href="<?= base_url('admin/c_admin/ubah_stand/' . $key['id_stand']) ?>">Edit</a>
+                                    <a class="btn btn-danger" type="submit"
+                                        href="<?php echo base_url('admin/c_admin/delete_stand/' . $key['id_stand']) ?>">Delete</a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
