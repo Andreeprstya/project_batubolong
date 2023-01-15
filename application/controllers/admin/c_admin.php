@@ -205,7 +205,9 @@ class c_admin extends CI_Controller
     {
         $this->form_validation->set_rules('id', 'id', 'required');
         $this->form_validation->set_rules('jumlah', 'jumlah', 'required|numeric|greater_than_equal_to[10000]');
+        $this->form_validation->set_rules('bayar', 'bayar', 'required');
     }
+
     public function prosestopup()
     {
         $this->topup_rules();
@@ -219,7 +221,10 @@ class c_admin extends CI_Controller
             }
         } else {
             $this->M_admin->tambahsaldo();
-            redirect('admin/c_admin/topup');
+            echo "<SCRIPT language=Javascript>
+			        alert('Top-Up Saldo Berhasil!')
+		        </script>";
+		    echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
         }
     }
 

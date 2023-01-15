@@ -25,8 +25,9 @@
                                     <label for="Total">Total Biaya</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputbayar" type="text"/>
+                                    <input class="form-control" id="inputbayar" type="text" name="bayar"/>
                                     <label for="inputbayar">Bayar</label>
+                                    <?php echo form_error('bayar','<div class="alert alert-danger">','</div>') ?>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <span class="form-control" id="kembalian" type="text"></span>

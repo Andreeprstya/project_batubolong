@@ -118,7 +118,6 @@ class M_admin extends CI_Model
       'username' => $this->input->post('username'),
       'password' => $this->input->post('password'),
       'level' => $this->input->post('level'),
-
     );
     $result = $this->db->insert('tb_user', $insert);
     return $result;
@@ -133,9 +132,11 @@ class M_admin extends CI_Model
     $result = $this->db->get_where('tb_tiket', array('tanggal' => $today));
     return $result;
   }
+
   public function datalltiket()
   {
     $this->db->select('*');
+		$this->db->order_by('id_tiket', 'desc');
     $result = $this->db->get('tb_tiket');
     return $result;
   }
@@ -143,6 +144,15 @@ class M_admin extends CI_Model
   #TOP-UP
   public function tambahsaldo()
   {
+    date_default_timezone_set('Asia/Singapore');
+    $pendapatan = array(
+      'sumber' => 'Top-Up',
+      'tanggal' => date("Y-m-d"),
+      'waktu' => date("H:i:s"),
+      'pendapatan' => '1000'
+    );
+    $this->db->insert('tb_pendapatan', $pendapatan);
+
     $topup = $this->input->post('jumlah');
     $idpelanggan = $this->input->post('id');
     $this->db->select('saldo');

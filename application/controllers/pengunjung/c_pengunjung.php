@@ -68,8 +68,8 @@ class c_pengunjung extends CI_Controller
 		        </script>";
 		    echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
         }else{
-            $this->M_pengunjung->beli_tiket();
-            //redirect('pengunjung/c_pengunjung/ticket');
+            // $this->M_pengunjung->beli_tiket();
+            redirect('pengunjung/c_pengunjung/ticket');
         }		
         
         // $this->t_rules();

@@ -22,38 +22,38 @@
                    
                     <div class="contact_join">
                         <h3>Beli Ticket</h3>
-                        <form action="<?= base_url('pengunjung/c_pengunjung/belitiket')?>" method="post">
-                            <div class="row">
-                            <div class="col-lg-12">
-                                    <div class="single_input">
-                                        <input  name="jumlah" id="inputJumlah" cols="30" rows="10"placeholder="Jumlah" ></input>
+                            <form action="<?= base_url('pengunjung/c_pengunjung/belitiket')?>" method="post">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="single_input">
+                                            <input  name="jumlah" id="inputJumlah" cols="30" rows="10"placeholder="Jumlah" ></input>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="harga" value="10000"/>
+                                    <div class="col-lg-12">
+                                        <div class="single_input">
+                                            <input class="form-control" id="inputHarga" cols="30" rows="10" placeholder="Harga : 10.000" readonly></input>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="single_input">
+                                            Total Bayar : <span name="" id="Total" cols="30" rows="10"placeholder="Total" ></span>
+                                        </div>
+                                    </div>
+                                    <?php date_default_timezone_set('Asia/Singapore') ?>
+                                    <input type="hidden" name="tanggal" value="<?php echo date("Y-m-d"); ?>">
+                                    <input type="hidden" name="jam" value="<?php echo date("H:i:s"); ?>">
+                                    <div class="col-lg-12">
+                                        <div class="submit_btn">
+                                            <button class="boxed-btn4" type="submit">submit</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="single_input">
-                                        <input class="form-control" name="harga" id="inputHarga" cols="30" rows="10"placeholder="Harga : 10.000" readonly></input>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="single_input">
-                                        Total Bayar : <span name="" id="Total" cols="30" rows="10"placeholder="Total" ></span>
-                                    </div>
-                                </div>
-                                <?php date_default_timezone_set('Asia/Singapore') ?>
-                                <input type="hidden" name="tanggal" value="<?php echo date("Y-m-d"); ?>">
-                                <input type="hidden" name="jam" value="<?php echo date("H:i:s"); ?>">
-                                <div class="col-lg-12">
-                                    <div class="submit_btn">
-                                        <button class="boxed-btn4" type="submit">submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="travel_variation_area">
-        
-        </div>
+</div>

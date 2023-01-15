@@ -23,17 +23,26 @@ class M_pengunjung extends CI_Model
         $query = $this->db->get();
         $saldo = $query->row()->saldo;
         $jmlh = $this->input->post('jumlah');
-        $total = $jmlh*10000;
+        $harga = $this->input->post('harga');
+        $total = $jmlh*$harga;
         $saldo_akhir = $saldo-$total;
         if ($saldo_akhir < 0) {
-            
+            return;
         }else{
             $topup_saldo = array(
                 'saldo' => $saldo_akhir,
             );
             $this->db->where('id_user', $id);
-            $result = $this->db->update('tb_saldo', $topup_saldo);
-            for ($i=0; $i < $jmlh; $i++) { 
+            $this->db->update('tb_saldo', $topup_saldo);
+            for ($i=0; $i < $jmlh; $i++) {
+                $pendapatan = array(
+                    'sumber' => 'Tiket',
+                    'tanggal' => $this->input->post('tanggal'),
+                    'waktu' => $this->input->post('jam'),
+                    'pendapatan' => $harga,
+                  );
+                $this->db->insert('tb_pendapatan', $pendapatan);
+
                 $insert = array(
                     'tanggal' => $this->input->post('tanggal'),
                     'waktu' => $this->input->post('jam'),
@@ -41,14 +50,7 @@ class M_pengunjung extends CI_Model
                     'status' => 'Invalid',
                 );
                 $result = $this->db->insert('tb_tiket', $insert);
-                $this->load->library('cetak_pdf');
-                $pdf = new FPDF('L','mm',array(50,150));
-                $pdf->AddPage();
-                $pdf->SetFont('Arial','B',16);
-                $pdf->Cell(0,7,'DAFTAR BARANG',0,1,'C');
-                $pdf->Cell(10,7,'',0,1);
             }
-            $pdf->Output('./db/hasil.pdf', 'F');
             return $result;
         }
     }

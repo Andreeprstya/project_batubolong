@@ -17,7 +17,7 @@
 
 
 <!-- popular_destination_area_start  -->
-<div class="popular_destination_area">
+<div class="destination_details_info">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
@@ -27,23 +27,25 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <?php foreach ($stand->result_array() as $keyy ): ?>
-            <div class="col-lg-4 col-md-6">
-                <a href="">
-                    <div class="single_place">
-                        <div class="thumb">
-                            <img src="<?= base_url('') . 'img/' . $keyy['gambar']?>" width="275" height="183" alt="">
+        <div class="card-body">
+            <div class="row">
+                <?php foreach ($stand->result_array() as $keyy ): ?>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="">
+                                <div class="single_place">
+                                    <div class="thumb">
+                                        <img src="<?= base_url('') . 'img/' . $keyy['gambar']?>" width="275" height="183" alt="">
+                                    </div>
+                                    <div class="place_info">
+                                        <h3><?php echo $keyy['nama_stand']?></h3></a>
+                                        <p><?php echo $keyy['nama_pemilik']?></p>
+                                        <p><?php echo $keyy['tipe_stand']?></p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                        <div class="place_info">
-                            <h3><?php echo $keyy['nama_stand']?></h3></a>
-                            <p><?php echo $keyy['nama_pemilik']?></p>
-                            
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            <?php endforeach?>
+                <?php endforeach?>
+            </div>
         </div>
     </div>
 </div>
