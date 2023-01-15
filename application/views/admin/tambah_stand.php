@@ -5,7 +5,9 @@
             <li class="breadcrumb-item active">Halaman Tambah Stand</li>
         </ol>
         <div class="card-body">
-            <form action="<?= base_url('admin/c_admin/prosestambah_stand') ?>" method="post" enctype="multipart/form-data">
+
+            <form action="<?= base_url('admin/c_admin/prosestambah_stand') ?>" method="post"
+                enctype="multipart/form-data">
                 <div class="form-floating mb-3">
                     <input class="form-control" id="inputIdPengunjung" type="text" name="nama_stand" />
                     <label for="inputIdPengunjung">Nama Stand</label>

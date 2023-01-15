@@ -5,6 +5,7 @@
             <li class="breadcrumb-item active">Halaman Edit Stand</li>
         </ol>
         <div class="card-body">
+
             <?php foreach ($stand->result_array() as $key) {
             ?>
             <form action="<?php echo base_url('admin/c_admin/edit_stand/') . $key['id_stand'] ?>" method="post"
