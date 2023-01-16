@@ -71,15 +71,22 @@
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/history') ?>">History</a>
                                             <li><a href="<?= base_url('index') ?>">Logout</a>
                                             </li>
+                                            
                                         </ul>
+                                        
                                     </nav>
                                 </div>
+                                
                             </div>
-
-
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
+                            <div class="">
+                                
                             </div>
+                            <div class="seach_icon">
+                                <a  data-target="#exampleModalCenter" href="<?= base_url('pengunjung/c_pengunjung/profile') ?>">
+                                    <i class="fa fa-user"></i>
+                                </a>
+                            </div>
+                            
                         </div>
                     </div>
 
