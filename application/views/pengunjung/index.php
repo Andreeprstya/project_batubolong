@@ -54,25 +54,31 @@
 <div class="travel_variation_area">
     <div class="container">
         <div class="row">
-            <div href="<?= base_url("pengunjung/c_pengunjung/stand/") ?>" class="col-lg-4 col-md-6">
-                <div class="single_travel text-center">
-                    <div class="icon">
-                        <img src="<?= base_url('template_pengunjung/img/icon_stand.png') ?>" alt="">
+            <div class="col-lg-4 col-md-6">
+                <a href="<?= base_url("pengunjung/c_pengunjung/stand/") ?>">
+                    <div class="single_travel text-center">
+                        <div class="icon">
+                            <img src="<?= base_url('template_pengunjung/img/icon_stand.png') ?>" alt="">
+                        </div>
+                        <h3>Stand</h3>
+                        <p>Terdapat berbagai stand yang menarik</p>
                     </div>
-                    <h3>Stand</h3>
-                    <p>Terdapat berbagai stand yang menarik</p>
-                </div>
+                </a>
             </div>
-            <div href="<?= base_url("pengunjung/c_pengunjung/ticket/") ?>" class="col-lg-4 col-md-6">
-                <div class="single_travel text-center">
-                    <div class="icon">
-                        <img src="<?= base_url('template_pengunjung/img/icon_tiket.png') ?>" alt="">
+
+            <div class="col-lg-4 col-md-6">
+                <a href="<?= base_url("pengunjung/c_pengunjung/ticket/") ?>">
+                    <div class="single_travel text-center">
+                        <div class="icon">
+                            <img src="<?= base_url('template_pengunjung/img/icon_tiket.png') ?>" alt="">
+                        </div>
+                        <h3>Tiket</h3>
+                        <p>Proses pembelian tiket yang mudah</p>
                     </div>
-                    <h3>Tiket</h3>
-                    <p>Proses pembelian tiket yang mudah</p>
-                </div>
+                </a>
             </div>
-            <div href="<?= base_url("pengunjung/c_pengunjung/index/") ?>" class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
+                <a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>">
                 <div class="single_travel text-center">
                     <div class="icon">
                         <img src="<?= base_url('template_pengunjung/img/icon_topup.png') ?>" alt="">
@@ -80,6 +86,7 @@
                     <h3>Top Up</h3>
                     <p>Fitur top up yang memudahkan transaksi</p>
                 </div>
+                </a>
             </div>
         </div>
     </div>
