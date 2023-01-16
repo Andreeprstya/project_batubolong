@@ -33,7 +33,7 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('index')?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -78,10 +78,6 @@
                             </a>
                             <a class="nav-link" href="<?= base_url('admin/c_admin/pendapatan')?>">
                                 Pendapatan
-                            </a>
-                            <a class="nav-link" href="<?= base_url('index')?>">
-                                <!-- <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div> -->
-                                Logout
                             </a>
                         </div>
                     </div>

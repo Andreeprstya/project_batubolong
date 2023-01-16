@@ -173,10 +173,16 @@ class c_admin extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['pendapatan'] = $this->M_admin->getpendapatan();
             $this->load->view('layout/header');
-            $this->load->view('admin/body');
+            $this->load->view('admin/pendapatan', $data);
             $this->load->view('layout/footer');
         }
+    }
+
+    public function getpendapatan()
+    {
+        
     }
 
     #TOP-UP
