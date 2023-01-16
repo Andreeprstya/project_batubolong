@@ -6,6 +6,7 @@ class c_stand extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('stand/M_stand');
     }
 
     public function index()
@@ -23,13 +24,49 @@ class c_stand extends CI_Controller {
         }
     }
 
-    #RESTO
+    #RESTORAN
+    #MENU
     public function menu()
     {
-        $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/menu');
-        $this->load->view('layout_stand/footer');
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $data['menu']=$this->M_stand->getmenu();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/menu',$data);
+            $this->load->view('layout_stand/footer');
+        }
     }
+    public function tambahmenu()
+    {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/tambah_menu');
+            $this->load->view('layout_stand/footer');
+        }
+    }
+    public function r_rules()
+    {
+        $this->form_validation->set_rules('nama_menu', 'nama_menu', 'required');
+        $this->form_validation->set_rules('harga', 'harga', 'required');
+        $this->form_validation->set_rules('tipe_menu', 'tipe_menu', 'required');
+        //$this->form_validation->set_rules('gambar','gambar','required');
+    }
+    public function prosestambah_stand()
+    {
+        $this->r_rules();
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/tambah_menu');
+            $this->load->view('layout_stand/footer');
+        } else {
+            $this->M_stand->add_menu();
+            redirect('stand/c_stand/menu');
+        }
+    }
+
     public function laporan_resto()
     {
         $this->load->view('layout_stand/resto_header');
@@ -46,9 +83,13 @@ class c_stand extends CI_Controller {
     #PENYEWAAN
     public function barang()
     {
-        $this->load->view('layout_stand/fasilitas_header');
-        $this->load->view('stand/menu_barang');
-        $this->load->view('layout_stand/footer');
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/menu_barang');
+            $this->load->view('layout_stand/footer');
+        }
     }
     public function laporan_penyewaan()
     {
