@@ -74,6 +74,18 @@ class M_pengunjung extends CI_Model
         $result = $this->db->get_where('tb_stand');
         return $result;
     }
+    public function getstand_menu($id)
+    {
+        $this->db->select('*');
+        $result = $this->db->get_where('tb_menu', array('id_stand' => $id));
+        return $result;
+    }
+    public function getdetailstand($id)
+    {
+        $this->db->select('*');
+        $result = $this->db->get_where('tb_stand', array('id_stand' => $id));
+        return $result;
+    }
 }
 
 

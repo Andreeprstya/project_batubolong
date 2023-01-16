@@ -45,14 +45,25 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
-    public function detail_stand()
+    public function detail_stand($id)
     {
-        if (!isset($_SESSION['username'])) {
-            redirect('index');
-        } else {
-            $data['stand'] = $this->M_pengunjung->getstand();
+        $this->db->select('tipe_stand');
+        $query=$this->db->get_where('tb_stand',array('id_stand'=>$id));
+        $tipe=$query->row()->tipe_stand;
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }elseif($tipe=="Penyewaan"){
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $data['stand'] = $this->M_pengunjung->getstand_sewa($id);
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/detail_stand',$data);
+            $this->load->view('pengunjung/detail_stand_sewa',$data);
+            $this->load->view('pengunjung/footer');
+        }elseif($tipe=="Resto") {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $data['stand'] = $this->M_pengunjung->getdetailstand($id);
+            $data['menu'] = $this->M_pengunjung->getstand_menu($id);
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/detail_stand_menu',$data);
             $this->load->view('pengunjung/footer');
         }
     }
