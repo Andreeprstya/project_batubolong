@@ -18,8 +18,22 @@
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
                         </div>
                     </div>
-                    
-                    
+                    <form >
+                    <div class="single_destination">
+                        
+                        <h4>Day-03</h4>
+                            <p>Upload Bukti Pembayaran</p>
+                            <input type="file" name="bukti_pembayaran" class="form-control">
+                        
+                    </div>
+                    <center><div class="mt-3">
+                        <div class="">
+                            <div class="submit_btn">
+                                <button class="boxed-btn4" type="submit">submit</button>
+                            </div>
+                        </div>
+                    </center>
+                    </div>
                 </div>
             </div>
         </div>
