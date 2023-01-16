@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/slicknav.css') ?>">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
-    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/styles.css') ?>">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 

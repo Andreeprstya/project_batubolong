@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-12 col-md-12">
-                        <div class="slider_text text-center">
+                        <div class="slider_text text-center ">
                             <h3>Batu Bolong</h3>
                             <p>Your happiness is our happiness too</p>
 
