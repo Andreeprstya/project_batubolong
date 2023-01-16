@@ -28,19 +28,28 @@
                                 </div>
                             </div>
                         </div> -->
-                        <a href="tambah" class="btn btn-success mt-3">TAMBAH DAFTAR MENU</a>
+                        <a href="<?= base_url('stand/c_stand/tambahmenu')?>" class="btn btn-success mt-3">TAMBAH DAFTAR MENU</a>
                         <div class="row mt-3">
-                        <div class="card border-dark">
-                        <img src="#" width="275" height="183" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title font-weight-bold">Nama</h5>
-                        <label class="card-text harga">Rp. harga</label><br>
-                            <h1></h1>
-                            <!-- <?php if ($key['status']<=0): ?>
-                            <a class="btn btn-danger btn-sm btn-block" href="<?= base_url('kasir/dashboard/TidakTersedia/'.$key['id_menu'])?>"><font color="white">Tidak Tersedia</font></a>
-                            <?php else: ?>
-                            <a class="btn btn-success btn-sm btn-block" href="<?= base_url('kasir/dashboard/Tersedia/'.$key['id_menu'])?>"><font color="white">Tersedia</font></a>
-                            <?php endif ?> -->
+                            <?php foreach ($menu->result_array() as $key ): ?>
+                                <div class="col-md-3">
+                                    <div class="card border-dark">
+                                    <img src="<?= base_url('') . 'img_menu/' . $key['gambar']?>" width="275" height="183" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title font-weight-bold"><?php echo $key['nama_menu']?></h5>
+                                        <label class="card-text harga">Rp. <?php echo number_format($key['harga'], 0,',','.')?></label><br>
+                                        <br>
+                                            <a href="<?php echo base_url('ProjectName/ubah/'.$key['id_menu'])?>" class="btn btn-primary btn-sm">EDIT</a>
+                                            <a href="<?php echo base_url('ProjectName/delete/'.$key['id_menu'])?>" class="btn btn-danger btn-sm">HAPUS</a>
+                                        
+                                        <h1></h1>
+                                        <!-- <?php if ($key['status']<=0): ?>
+                                            <a class="btn btn-danger btn-sm btn-block" href="<?= base_url('ProjectName/TidakTersedia/'.$key['id_menu'])?>"><font color="white">Tidak Tersedia</font></a>
+                                        <?php else: ?>
+                                            <a class="btn btn-success btn-sm btn-block" href="<?= base_url('ProjectName/Tersedia/'.$key['id_menu'])?>"><font color="white">Tersedia</font></a>
+                                        <?php endif ?> -->
+                                    </div>
+                                    </div>
+                                    <h1></h1>
+                                </div>
+                                <?php endforeach?>
                         </div>
-                        </div>
-                    </div>
