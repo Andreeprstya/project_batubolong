@@ -29,10 +29,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('stand/c_stand/profile')?>">Profile</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('index/logout')?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -102,10 +101,7 @@
                                 Pendapatan
                             </a>
                         
-                            <a class="nav-link" href="<?= base_url('index/logout')?>">
-                                <!-- <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div> -->
-                                Logout
-                            </a>
+                            
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
