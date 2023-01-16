@@ -158,7 +158,6 @@
 <script src="<?= base_url('template_pengunjung/js/gijgo.min.js') ?>"></script>
 <script src="<?= base_url('template_pengunjung/js/slick.min.js') ?>"></script>
 
-<script src="http://maps.googleapis.com/maps/api/js"></script>
 
 
 
