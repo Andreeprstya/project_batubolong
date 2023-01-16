@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2023 pada 06.06
+-- Waktu pembuatan: 16 Jan 2023 pada 08.43
 -- Versi server: 10.4.21-MariaDB-log
 -- Versi PHP: 8.0.10
 
@@ -75,12 +75,20 @@ CREATE TABLE `tb_histori` (
 
 CREATE TABLE `tb_menu` (
   `id_menu` int(11) NOT NULL,
-  `nama_menu` int(11) NOT NULL,
+  `nama_menu` varchar(50) NOT NULL,
   `harga` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `gambar` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL
+  `kategori` varchar(11) NOT NULL,
+  `gambar` varchar(50) NOT NULL,
+  `id_stand` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_menu`
+--
+
+INSERT INTO `tb_menu` (`id_menu`, `nama_menu`, `harga`, `kategori`, `gambar`, `id_stand`) VALUES
+(3, 'Nasi Goreng', 12000, 'Makanan', 'images_(15).jpeg', 6),
+(4, 'Mei Goreng', 15000, 'Makanan', 'OBerry_Jam.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -456,7 +464,7 @@ ALTER TABLE `tb_histori`
 --
 ALTER TABLE `tb_menu`
   ADD PRIMARY KEY (`id_menu`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `id_user` (`id_stand`);
 
 --
 -- Indeks untuk tabel `tb_pembelian`
@@ -533,7 +541,7 @@ ALTER TABLE `tb_histori`
 -- AUTO_INCREMENT untuk tabel `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pembelian`
@@ -597,7 +605,7 @@ ALTER TABLE `tb_barang`
 -- Ketidakleluasaan untuk tabel `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  ADD CONSTRAINT `tb_menu_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id`);
+  ADD CONSTRAINT `tb_menu_ibfk_1` FOREIGN KEY (`id_stand`) REFERENCES `tb_user` (`id`);
 
 --
 -- Ketidakleluasaan untuk tabel `tb_saldo`
