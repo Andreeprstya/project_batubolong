@@ -98,8 +98,9 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/tunai');
+            $this->load->view('pengunjung/tunai',$data);
             $this->load->view('pengunjung/footer');
         }
     }
@@ -109,19 +110,21 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/nontunai');
+            $this->load->view('pengunjung/nontunai',$data);
             $this->load->view('pengunjung/footer');
         }
     }
-
+    #HISTORY
     public function history()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/history');
+            $this->load->view('pengunjung/history',$data);
             $this->load->view('pengunjung/footer');
         }
     }

@@ -1,3 +1,17 @@
+<div class="where_togo_area">
+    <div class="container">
+        <div class="row align-items-center">
+       
+        <?php foreach ($saldo->result_array() as $key) : ?>
+                    <div class="form_area">
+                        <h3>Saldo Anda : Rp.<?= number_format($key['saldo'], 0,',','.')?></h3>
+                    </div>
+                    <?php endforeach ?>
+
+        </div>
+    </div>
+</div>
+<!-- where_togo_area_end  -->
 <div class="destination_details_info">
         <div class="container">
             <div class="row justify-content-center">

@@ -4,7 +4,6 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Daftar Menu</li><br>
                         </ol>
-                            masih maintenance..........
                         <div class="row">
                            
                         </div>
@@ -38,8 +37,8 @@
                                         <h5 class="card-title font-weight-bold"><?php echo $key['nama_menu']?></h5>
                                         <label class="card-text harga">Rp. <?php echo number_format($key['harga'], 0,',','.')?></label><br>
                                         <br>
-                                            <a href="<?php echo base_url('ProjectName/ubah/'.$key['id_menu'])?>" class="btn btn-primary btn-sm">EDIT</a>
-                                            <a href="<?php echo base_url('ProjectName/delete/'.$key['id_menu'])?>" class="btn btn-danger btn-sm">HAPUS</a>
+                                            <a href="<?php echo base_url('stand/c_stand/ubah/'.$key['id_menu'])?>" class="btn btn-primary btn-sm">EDIT</a>
+                                            <a href="<?php echo base_url('stand/c_stand/delete_menu/'.$key['id_menu'])?>" class="btn btn-danger btn-sm">HAPUS</a>
                                         
                                         <h1></h1>
                                         <!-- <?php if ($key['status']<=0): ?>
