@@ -145,13 +145,23 @@ class M_admin extends CI_Model
   public function tambahsaldo()
   {
     date_default_timezone_set('Asia/Singapore');
+    $tgl = date("Y-m-d");
+    $waktu = date("H:i:s");
     $pendapatan = array(
       'sumber' => 'Top-Up',
-      'tanggal' => date("Y-m-d"),
-      'waktu' => date("H:i:s"),
+      'tanggal' => $tgl,
+      'waktu' => $waktu,
       'pendapatan' => '1000'
     );
     $this->db->insert('tb_pendapatan', $pendapatan);
+
+    $history = array(
+      'Tipe' => 'Tunai',
+      'tanggal' => $tgl,
+      'waktu' => $waktu,
+      'jumlah' => $this->input->post('jumlah')
+    );
+    $this->db->insert('tb_histori', $history);
 
     $topup = $this->input->post('jumlah');
     $idpelanggan = $this->input->post('id');
