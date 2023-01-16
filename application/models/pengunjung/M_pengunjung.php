@@ -86,6 +86,19 @@ class M_pengunjung extends CI_Model
         $result = $this->db->get_where('tb_stand', array('id_stand' => $id));
         return $result;
     }
+    public function addcart($id)
+    {
+        $this->db->where('id_menu', $id);
+		$menu = $this->db->get('tb_menu')->result_array();
+		$data = array(
+			'id'		=> $menu[0]['id_menu'],
+			'qty'		=> 1,
+			'price'		=> $menu[0]['harga'],
+			'name'		=> $menu[0]['nama_menu']
+		);
+		$result=$this->cart->insert($data);
+        return $result;
+    }
 }
 
 

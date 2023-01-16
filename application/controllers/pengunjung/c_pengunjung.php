@@ -67,6 +67,29 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+    public function deletecart($rowid)
+	{	
+		$this->cart->remove($rowid);
+		redirect('pengunjung/c_pengunjung/pesanan');
+	}
+	public function addcart($id)
+	{
+        $this->db->select('id_stand');
+        $query=$this->db->get_where('tb_menu',array('id_menu'=>$id));
+        $tipe=$query->row()->id_stand;
+		$this->M_pengunjung->addcart($id);
+		redirect('pengunjung/c_pengunjung/detail_stand/'.$tipe);
+	}
+    public function pesanan($id)
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/pesanan_pembeli');
+            $this->load->view('pengunjung/footer');
+        }
+    }
 
     #TIKET
     public function ticket()
@@ -139,6 +162,8 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+
+    #PROFILE
     public function profile()
     {
         if (!isset($_SESSION['username'])) {
@@ -149,7 +174,6 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
-   
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */
