@@ -66,7 +66,37 @@ class c_stand extends CI_Controller {
             redirect('stand/c_stand/menu');
         }
     }
+    public function ubah($id)
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['menu'] = $this->M_stand->getdetailmenu($id);
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/ubah_menu', $data);
+            $this->load->view('layout_stand/footer');
+        }
+    }
+    public function edit_menu($id)
+    {
+        $this->r_rules();
+        if ($this->form_validation->run() == FALSE) {
+            $data['menu'] = $this->M_stand->getdetailmenu($id);
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/ubah_menu', $data);
+            $this->load->view('layout_stand/footer');
+        } else {
+            $this->M_stand->editmenu();
+            redirect('stand/c_stand/menu');
+        }
+    } 
+    public function delete_menu($id)
+    {
+        $this->M_stand->delete_menu($id);
+        redirect('stand/c_stand/menu');
+    }
 
+    #LAPORAN
     public function laporan_resto()
     {
         $this->load->view('layout_stand/resto_header');
