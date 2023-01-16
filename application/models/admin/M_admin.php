@@ -168,6 +168,16 @@ class M_admin extends CI_Model
     $result = $this->db->update('tb_saldo', $topup_saldo);
     return $result;
   }
+
+  #PENDAPATAN
+  public function getpendapatan()
+  {
+    date_default_timezone_set('Asia/Singapore');
+    $today = date("Y-m-d");
+    $this->db->order_by('id_pendapatan', 'desc');
+    $result = $this->db->get_where('tb_pendapatan', array('tanggal' => $today));
+    return $result;
+  }
 }
 
 
