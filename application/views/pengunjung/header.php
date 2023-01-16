@@ -69,7 +69,6 @@
                                                 </ul>
                                             </li>
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/history') ?>">History</a>
-                                            <li><a href="<?= base_url('index') ?>">Logout</a>
                                             </li>
                                             
                                         </ul>
@@ -78,14 +77,34 @@
                                 </div>
                                 
                             </div>
-                            <div class="">
-                                
+                            <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                <div class="number">
+                                        <p> <i></i></p>
+                                    </div>
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/profile') ?>"> <i class="fa fa-user fa-2x"></i> </a></li>
+                                           
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="number">
+                                        <p> <i></i></p>
+                                    </div>
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                   
+                                            <li><a href="<?= base_url('index') ?>"> <i class="fa fa-sign-out fa-2x"></i> </a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="number">
+                                        <p> <i></i></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="seach_icon">
-                                <a  data-target="#exampleModalCenter" href="<?= base_url('pengunjung/c_pengunjung/profile') ?>">
-                                    <i class="fa fa-user"></i>
-                                </a>
-                            </div>
+                           
                             
                         </div>
                     </div>

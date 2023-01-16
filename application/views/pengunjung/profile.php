@@ -1,15 +1,4 @@
 
-  <!-- where_togo_area_start  -->
-  <div class="where_togo_area">
-        <div class="container">
-            <div class="row align-items-center">
-                   
-                
-               
-            </div>
-        </div>
-    </div>
-    <!-- where_togo_area_end  -->
 <div class="destination_details_info">
         <div class="container">
             <div class="row justify-content-center">
