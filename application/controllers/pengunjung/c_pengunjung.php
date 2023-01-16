@@ -115,6 +115,16 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+    public function profile()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/profile');
+            $this->load->view('pengunjung/footer');
+        }
+    }
 }
 
 /* End of file Pengunjung.php and path \application\controllers\Pengunjung.php */
