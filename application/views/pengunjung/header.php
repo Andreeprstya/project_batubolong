@@ -95,7 +95,7 @@
                                     <div class="social_links d-none d-xl-block">
                                         <ul>
                                    
-                                            <li><a href="<?= base_url('index') ?>"> <i class="fa fa-sign-out fa-2x"></i> </a></li>
+                                            <li><a href="<?= base_url('index/logout') ?>"> <i class="fa fa-sign-out fa-2x"></i> </a></li>
                                             
                                         </ul>
                                     </div>
