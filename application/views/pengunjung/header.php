@@ -62,7 +62,14 @@
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/stand') ?>">stand</a>
                                             </li>
 
-                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/ticket') ?>">ticket</a>
+                                           
+                                            <li><a href="#">Ticket <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="<?= base_url('pengunjung/c_pengunjung/ticket') ?>">Beli Ticket</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url('pengunjung/c_pengunjung/cekticket') ?>">Cek Ticket
+                                                            </a></li>
+                                                </ul>
                                             </li>
                                             <li><a href="#">top up <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">

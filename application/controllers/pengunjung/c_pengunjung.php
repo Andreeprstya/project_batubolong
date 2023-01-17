@@ -159,6 +159,17 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+    public function cekticket()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/cekticket', $data);
+            $this->load->view('pengunjung/footer');
+        }
+    }
     public function belitiket()
     {
         $cek_saldo = $this->M_pengunjung->beli_tiket();

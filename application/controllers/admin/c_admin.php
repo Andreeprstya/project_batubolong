@@ -191,6 +191,7 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+   
     public function alltiket()
     {
         if (!isset($_SESSION['username'])) {
