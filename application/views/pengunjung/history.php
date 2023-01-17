@@ -1,17 +1,3 @@
-<!-- where_togo_area_start  -->
-<div class="where_togo_area">
-    <div class="container">
-        <div class="row align-items-center">
-       
-
-
-        </div>
-    </div>
-</div>
-<!-- where_togo_area_end  -->
-
-
-
 <!-- popular_destination_area_start  -->
 <div class="destination_details_info">
     <div class="container">
@@ -24,26 +10,19 @@
             </div>
         </div>
         <div class="card-body">
+        <?php foreach ($history->result_array() as $key) : ?>
         <table class="table table-hover table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Tanggal :</th>
-                                <th> ascascsa</th>
-                               
-                            </tr>
-                            <tr>
-                                <th>Top Up :</th>
-                                <th>asccascasc </th>
-                               
-                            </tr>
-                            <tr>
-                                <th>Pembayaran Ticket :</th>
-                                <th> ascsascasc</th>
-                               
-                            </tr>
-                        </thead>
-                        
-                    </table>
+            <thead>
+                <tr>
+                    <b><th colspan="2"><?= $key['tanggal'] ?><p class="right" ><?= $key['waktu'] ?></p></th></b>
+                </tr>
+                <tr>
+                    <th><p><?= $key['Tipe'] ?></p></th>
+                    <th class="right"><p>Rp.<?= number_format($key['jumlah'], 0, ',', '.') ?></p></th>
+                </tr>
+            </thead>
+        </table>
+        <?php endforeach ?>
         </div>
     </div>
 </div>

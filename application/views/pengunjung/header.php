@@ -29,7 +29,12 @@
     <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/styless.css') ?>">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
+<style type="text/css">
+.left { text-align: left;}
+.right { text-align: right;}
+.center { text-align: center;}
+.justify { text-align: justify;}
+</style>
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>

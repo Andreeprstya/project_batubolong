@@ -177,6 +177,7 @@ class M_admin extends CI_Model
 
     $history = array(
       'Tipe' => 'Tunai',
+      'id_user' => $this->input->post('id'),
       'tanggal' => $tgl,
       'waktu' => $waktu,
       'jumlah' => $this->input->post('jumlah')

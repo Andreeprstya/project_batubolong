@@ -211,7 +211,7 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $data['history'] = $this->M_pengunjung->gethistory();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/history',$data);
             $this->load->view('pengunjung/footer');

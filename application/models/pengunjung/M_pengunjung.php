@@ -221,6 +221,15 @@ class M_pengunjung extends CI_Model
         $result = $this->db->update('tb_user', $edit);    
         return $result;
     }
+
+    #HISTORY
+    public function gethistory()
+    {
+        $id = $_SESSION['id'];
+        $this->db->select('*');
+        $result = $this->db->get_where('tb_histori',array('id_user'=>$id)); //, array('level' => '2')
+        return $result;
+    }
 }
 
 
