@@ -167,6 +167,12 @@ class M_admin extends CI_Model
     $result = $this->db->get('tb_tiket');
     return $result;
   }
+  public function cariTiket()
+  {
+    $cari = $this->input->GET('id_tiket');
+    $data = $this->db->query("SELECT * from tb_tiket where id_tiket = $cari");
+    return $data->result();
+  }
 
   #TOP-UP
   public function tambahsaldo()

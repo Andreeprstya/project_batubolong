@@ -270,6 +270,14 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+
+    public function cari_tiket($id)
+    {
+        $data['cari'] = $this->M_admin->cariTiket();
+        $this->load->view('layout/header');
+        $this->load->view('admin/scan',$data);
+        $this->load->view('layout/footer');
+    }
 }
 
 /* End of file Admin.php and path \application\controllers\Admin.php */
