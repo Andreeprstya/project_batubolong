@@ -31,7 +31,7 @@
             <div class="row">
                 <?php foreach ($stand->result_array() as $keyy) : ?>
                 <div class="col-lg-4 col-md-6">
-                    <a href="<?= base_url("pengunjung/c_pengunjung/detail_stand/") ?>">
+                    <a href="<?= base_url("pengunjung/c_pengunjung/detail_stand/") . $keyy['id_stand']?>">
                         <div class="single_place">
                             <div class="thumb">
                                 <img src="<?= base_url('') . 'img/' . $keyy['gambar'] ?>" width="275" height="183"

@@ -138,6 +138,11 @@
     document.getElementById("inputHarga").addEventListener("input", hitungJumlah);
     document.getElementById("inputJumlah").addEventListener("input", hitungJumlah);
 </script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 <script src="<?= base_url('template_pengunjung/js/vendor/modernizr-3.5.0.min.js') ?>"></script>
 <script src="<?= base_url('template_pengunjung/js/vendor/jquery-1.12.4.min.js') ?>"></script>
 <script src="<?= base_url('template_pengunjung/js/popper.min.js') ?>"></script>
