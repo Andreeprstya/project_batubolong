@@ -3,6 +3,35 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_admin extends CI_Model
 {
+  #PROFILE
+  public function getprofile()
+  {
+    $this->db->select('*');
+    $result = $this->db->get_where('tb_user'); //, array('level' => '2')
+    return $result;
+  }
+
+  public function getdetailprofile($id)
+  {
+    $this->db->where('id',$id);
+		$result = $this->db->get('tb_user') -> result_array();
+		return $result[0];
+  }
+
+  public function editProfile()
+  {
+					$edit = array(
+              'first_name' => $this->input->post('first_name'),
+              'last_name' => $this->input->post('last_name'),
+              'username' => $this->input->post('username'),
+              'password' => $this->input->post('password'),
+							);
+              $this->db->where('id', $this->input->post('id'));
+              $result = $this->db->update('tb_user', $edit);
+              return $result;
+				}
+  
+
   #STAND
   public function getstand()
   {

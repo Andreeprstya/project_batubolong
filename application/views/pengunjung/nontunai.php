@@ -20,23 +20,31 @@
                         <h3>Cara Melakukan Top Up Non Tunai</h3>
                         
                         <div class="single_destination">
-                            <h4>Day-01</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>01</h4>
+                            <p>Login ke mBangking anda. Pilih bayar, kemudian pilih Top Up</p>
                         </div>
                         <div class="single_destination">
-                            <h4>Day-02</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>02</h4>
+                            <p>Pilih penyedia layanan : Pesona Batu Bolong dan masukkan nomor virtual 1234</p>
                         </div>
                         <div class="single_destination">
-                            <h4>Day-03</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                            <h4>03</h4>
+                            <p>Masukkan nominal Top Up sebesar Rp 10.000 </p>
+                        </div>
+                        <div class="single_destination">
+                            <h4>04</h4>
+                            <p>Kirim bukti pembayaran ke dalam system</p>
+                        </div>
+                        <div class="single_destination">
+                            <h4>05</h4>
+                            <p>Saldo akan bertambah otomatis paling lama 1x24 jam</p>
                         </div>
                     </div>
                     <form >
                     <div class="single_destination">
                         
-                        <h4>Day-03</h4>
-                            <p>Upload Bukti Pembayaran</p>
+                        <h4>Upload Bukti Pembayaran</h4>
+                            
                             <input type="file" name="bukti_pembayaran" class="form-control">
                         
                     </div>

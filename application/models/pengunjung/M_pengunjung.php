@@ -198,9 +198,31 @@ class M_pengunjung extends CI_Model
 
         $filename = "STRUCK.pdf";
         $result=$pdf->Output($filename, 'D');
-        return $result;
     }
+    
+    #PROFILE
+    public function getdetailprofile($id)
+    {
+        $this->db->where('id', $id);
+        $result = $this->db->get('tb_user')->result_array();
+        return $result[0];
+    }
+
+    public function editProfile()
+    {
+        $edit = array(
+            'first_name' => $this->input->post('first_name'),
+            'last_name' => $this->input->post('last_name'),
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            
+        );
+        $this->db->where('id', $this->input->post('id'));
+        $result = $this->db->update('tb_user', $edit);    
+        return $result;
+        }
 }
+
 
 
 /* End of file M_pengunjung_model.php and path \application\models\M_pengunjung_model.php */

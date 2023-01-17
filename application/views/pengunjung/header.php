@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/slicknav.css') ?>">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
-    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/styles.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/styless.css') ?>">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
@@ -44,7 +44,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>">
                                         <img src="<?= base_url('template_pengunjung/img/Logo_berwarna.png') ?>" alt="">
                                     </a>
                                 </div>
@@ -61,8 +61,7 @@
                                             </li>
                                             <li><a href="#">top up <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a
-                                                            href="<?= base_url('pengunjung/c_pengunjung/tunai') ?>">Tunai</a>
+                                                    <li><a href="<?= base_url('pengunjung/c_pengunjung/tunai') ?>">Tunai</a>
                                                     </li>
                                                     <li><a href="<?= base_url('pengunjung/c_pengunjung/nontunai') ?>">Non
                                                             Tunai</a></li>
@@ -70,23 +69,23 @@
                                             </li>
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/history') ?>">History</a>
                                             </li>
-                                            
+
                                         </ul>
-                                        
+
                                     </nav>
                                 </div>
-                                
+
                             </div>
                             <div class="col-xl-4 col-lg-4 d-none d-lg-block">
                                 <div class="social_wrap d-flex align-items-center justify-content-end">
-                                <div class="number">
+                                    <div class="number">
                                         <p> <i></i></p>
                                     </div>
                                     <div class="social_links d-none d-xl-block">
                                         <ul>
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/profile') ?>"> <i class="fa fa-user fa-2x"></i> </a></li>
-                                           
-                                            
+
+
                                         </ul>
                                     </div>
                                     <div class="number">
@@ -94,9 +93,9 @@
                                     </div>
                                     <div class="social_links d-none d-xl-block">
                                         <ul>
-                                   
+
                                             <li><a href="<?= base_url('index/logout') ?>"> <i class="fa fa-sign-out fa-2x"></i> </a></li>
-                                            
+
                                         </ul>
                                     </div>
                                     <div class="number">
@@ -104,8 +103,8 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            
+
+
                         </div>
                     </div>
 
