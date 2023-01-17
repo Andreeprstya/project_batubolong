@@ -3,11 +3,7 @@
     <div class="container">
         <div class="row align-items-center">
        
-        <?php foreach ($saldo->result_array() as $key) : ?>
-                    <div class="form_area">
-                        <h3>Saldo Anda : Rp.<?= number_format($key['saldo'], 0,',','.')?></h3>
-                    </div>
-                    <?php endforeach ?>
+
 
         </div>
     </div>
@@ -31,13 +27,19 @@
         <table class="table table-hover table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No </th>
-                                <th> </th>
-                                <th> </th>
-                                <th> </th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                                <th>Tanggal :</th>
+                                <th> ascascsa</th>
+                               
+                            </tr>
+                            <tr>
+                                <th>Top Up :</th>
+                                <th>asccascasc </th>
+                               
+                            </tr>
+                            <tr>
+                                <th>Pembayaran Ticket :</th>
+                                <th> ascsascasc</th>
+                               
                             </tr>
                         </thead>
                         
