@@ -94,9 +94,6 @@
                                 <!-- <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div> -->
                                 Menu
                             </a>
-                            <a class="nav-link" href="<?= base_url('stand/c_stand/laporan_resto')?>">
-                                Laporan
-                            </a>
                             <a class="nav-link" href="<?= base_url('stand/c_stand/pendapatan_resto')?>">
                                 Pendapatan
                             </a>

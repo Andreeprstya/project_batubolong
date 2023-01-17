@@ -103,6 +103,7 @@ class M_pengunjung extends CI_Model
     }
     public function addpemesanan()
     {
+        $id_stand = $_SESSION['id_stand'];
         $id_pengunjung = $this->input->post('id_pengunjung');
         $this->db->select('saldo');
         $this->db->from('tb_saldo');
@@ -125,6 +126,7 @@ class M_pengunjung extends CI_Model
             $data = array(
                 'id_pemesanan' => $this->input->post('id_pemesanan'),
                 'id_pengunjung' => $this->input->post('id_pengunjung'),
+                'id_stand' => $id_stand,
                 'total' => $this->input->post('total'),
                 'jumlah' => $this->input->post('jumlah'),
                 'tanggal' => $tgl,
@@ -158,7 +160,7 @@ class M_pengunjung extends CI_Model
 
         }
         $this->load->library('cetak_pdf');
-        $pdf = new FPDF('L','mm',array(100,100));
+        $pdf = new FPDF('L','mm',array(120,120));
         $pdf->AddPage();
         $pdf->SetFont('Arial','B',16);
         $pdf->Cell(0,5,$nama,0,1,'C');
@@ -169,28 +171,19 @@ class M_pengunjung extends CI_Model
         $pdf->SetLineWidth(0);
         $pdf->Line(0,31,190,31);
 
-        $this->db->select('*');
-        $query=$this->db->get_where('tb_detailpesanan', array('id_pemesanan'=>$this->input->post('id_pengunjung')));
-        $pesanan = $query->result();
         $total=0;
+        $pdf->SetFont('Arial','B',10);
         //disini ya
-        foreach ($this->cart->contents() as $key) {
-            $pdf->SetFont('Arial','B',10);
-            $pdf->Cell(40,25,$key['name']);
-            $pdf->SetFont('Arial','B',10);
+        foreach ($this->cart->contents() as $key) :
+            $pdf->Cell(20,6,'',0,1,'C');
+            $pdf->Cell(40,25,$key['name'],'C');
             $pdf->Cell(10,25,$key['qty'],'C');
             $totalharga=$key['price']*$key['qty'];
-            $pdf->SetFont('Arial','B',10);
             $pdf->Cell(5,25,'*','C');
-            $pdf->SetFont('Arial','B',10);
             $pdf->Cell(15,25,$key['price'],'C');
-            $pdf->SetFont('Arial','B',10);
-            $pdf->Cell(-1,25,$totalharga,'C');
-            $total+=$totalharga;
-        }
-
-        $pdf->SetLineWidth(0);
-        $pdf->Line(80,44,95,44);
+            $pdf->Cell(1,25,$totalharga,'C');
+        endforeach;
+        $total+=$totalharga;
         $pdf->SetFont('Arial','B',10);
         $pdf->Cell(50,45,$total,0,1);
         $pdf->SetFont('Arial','B',10);

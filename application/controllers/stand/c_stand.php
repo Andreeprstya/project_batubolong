@@ -143,17 +143,11 @@ class c_stand extends CI_Controller {
         redirect('stand/c_stand/menu');
     }
 
-    #LAPORAN
-    public function laporan_resto()
-    {
-        $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/laporan');
-        $this->load->view('layout_stand/footer');
-    }
+    #PENDAPATAN resto
     public function pendapatan_resto()
     {
         $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/pendapatan');
+        $this->load->view('stand/pendapatan_RESTO');
         $this->load->view('layout_stand/footer');
     }
 
@@ -168,16 +162,12 @@ class c_stand extends CI_Controller {
             $this->load->view('layout_stand/footer');
         }
     }
-    public function laporan_penyewaan()
-    {
-        $this->load->view('layout_stand/fasilitas_header');
-        $this->load->view('stand/laporan');
-        $this->load->view('layout_stand/footer');
-    }
+
+    #PENDAPATAN SEWA
     public function pendapatan_penyewaan()
     {
         $this->load->view('layout_stand/fasilitas_header');
-        $this->load->view('stand/pendapatan');
+        $this->load->view('stand/pendapatan_sewa');
         $this->load->view('layout_stand/footer');
     }
 }

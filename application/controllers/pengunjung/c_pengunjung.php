@@ -141,7 +141,8 @@ class c_pengunjung extends CI_Controller
             echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
         }else{
             $this->M_pengunjung->cetakstruk();
-            redirect('pengunjung/c_pengunjung/deleteall_cart');
+            $this->cart->destroy();
+            //redirect('pengunjung/c_pengunjung/deleteall_cart');
         }
 		
     }

@@ -30,10 +30,10 @@
         <br>
         <?= $items?>
         <br>
-        <?php foreach ($menu->result_array() as $key ): ?>
         <a href="<?= base_url('pengunjung/c_pengunjung/pesanan/'.$key['id_stand'])?>" class="btn btn-primary btn-sm">Lihat Pesanan</a>
         <h1></h1>
         <div class="row mt-3">
+        <?php foreach ($menu->result_array() as $key ): ?>
                 <div class="col-md-3">
                     <div class="card border-dark">
                     <img src="<?= base_url('') . 'img_menu/' . $key['gambar']?>" width="275" height="183" class="card-img-top" alt="...">
