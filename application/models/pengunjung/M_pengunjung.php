@@ -199,7 +199,7 @@ class M_pengunjung extends CI_Model
         $filename = "STRUCK.pdf";
         $result=$pdf->Output($filename, 'D');
     }
-    
+
     #PROFILE
     public function getdetailprofile($id)
     {
@@ -220,7 +220,7 @@ class M_pengunjung extends CI_Model
         $this->db->where('id', $this->input->post('id'));
         $result = $this->db->update('tb_user', $edit);    
         return $result;
-        }
+    }
 }
 
 
