@@ -14,7 +14,7 @@ class index extends CI_Controller
     {
         $this->load->view('auth/header');
         $this->load->view('auth/login_pengunjung');
-        $this->load->view('layout/footer');
+        // $this->load->view('layout/footer');
     }
 
     public function _rules()
@@ -29,7 +29,7 @@ class index extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('auth/header');
             $this->load->view('auth/login');
-            $this->load->view('layout/footer');
+            // $this->load->view('layout/footer');
 		}else{
 			$username=$this->input->post('username');
 			$password=md5($this->input->post('password'));
@@ -68,10 +68,10 @@ class index extends CI_Controller
 	}
 
 	public function register()
-    {
-        $this->load->view('auth/header');
+	{
+		$this->load->view('auth/header');
         $this->load->view('auth/register_pengunjung');
-        $this->load->view('layout/footer');
+		//$this->load->view('layout/footer');
     }
     
     public function r_auth()
@@ -80,7 +80,7 @@ class index extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
                 $this->load->view('auth/header');
                 $this->load->view('auth/register_pengunjung');
-                $this->load->view('layout/footer');
+                // $this->load->view('layout/footer');
 			} else {
 			    $this->M_auth->add_register_pengunjung();
 				redirect('index');
