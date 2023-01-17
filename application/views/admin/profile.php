@@ -5,41 +5,29 @@
             <li class="breadcrumb-item active">Halaman Edit Profile</li>
         </ol>
         <div class="card-body">
-        <form action="<?php echo base_url('admin/c_admin/edit_profile') . $profile['id'] ?>" method="post">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="single_input">
-                                    <input name="first_name" id="input_first_name" cols="30" rows="10" value="<?php echo $profile['first_name'] ?>"></input>
+        <form action="<?php echo base_url('admin/c_admin/edit_profile/') . $profile['id'] ?>" method="post">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputIdPengunjung" type="text" name="first_name" value="<?php echo $profile['first_name'] ?>"/>
+                                    <label for="inputIdPengunjung">First Name</label>
+                                    <?php echo form_error('id','<div class="alert alert-danger">','</div>') ?>
                                 </div>
-                            </div>
-                            <div class=" col-lg-12">
-                                <div class="single_input">
-                                    <input name="first_name" id="input_last_name" cols="30" rows="10" value="<?php echo $profile['last_name'] ?>"></input>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputIdPengunjung" type="text" name="last_name" value="<?php echo $profile['last_name'] ?>"/>
+                                    <label for="inputIdPengunjung">Last Name</label>
+                                    <?php echo form_error('id','<div class="alert alert-danger">','</div>') ?>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single_input">
-                                    <input name="email" id="input_email" cols="30" rows="10" value="<?php echo $profile['email'] ?>"></input>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputIdPengunjung" type="text" name="username" value="<?php echo $profile['username'] ?>"/>
+                                    <label for="inputIdPengunjung">Username</label>
+                                    <?php echo form_error('id','<div class="alert alert-danger">','</div>') ?>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="single_input">
-                                    <input name="username" id="input_username" cols="30" rows="10" value="<?php echo $profile['username'] ?>"></input>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="inputIdPengunjung" type="text" name="password" value="<?php echo $profile['password'] ?>"/>
+                                    <label for="inputIdPengunjung">Password</label>
+                                    <?php echo form_error('id','<div class="alert alert-danger">','</div>') ?>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="submit_btn">
-                                    <button class="boxed-btn4">
-                                        <a href="<?= base_url('admin/c_admin/') ?>">Simpan</a>
-                                    </button>
+                                <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                    <button class="btn btn-primary" type="submit">Simpan</button>
                                 </div>
-                                <br>
-                                <div class="submit_btn">
-                                    <button class="boxed-btn3">
-                                        <a href="<?= base_url('admin/c_admin/') ?>">Kembali</a>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                            </form>
     </div>

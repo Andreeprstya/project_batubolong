@@ -23,6 +23,32 @@ class c_stand extends CI_Controller {
             $this->load->view('layout/footer');
         }
     }
+    #PROFILE
+    public function profile($id)
+     {
+         if (!isset($_SESSION['username'])) {
+             redirect('profile');
+         } else {
+             $data['profile']=$this->M_stand->getdetailprofile($id);
+             $this->load->view('layout_stand/header');
+             $this->load->view('stand/profile',$data);
+             $this->load->view('layout_stand/footer');
+         }
+     }
+     public function edit_profile($id)
+     {
+        $this->M_admin->editProfile($id);
+        redirect('stand/c_stand/profile/'.$_SESSION['id']);
+        //  if ($this->form_validation->run() == FALSE) {
+        //      $data['profile'] = $this->M_admin->getdetailprofile($id);
+        //      $this->load->view('admin/header');
+        //      $this->load->view('admin/profile', $data);
+        //      $this->load->view('admin/footer');
+        //  } else {
+        //      $this->M_admin->editProfile();
+        //      redirect('admin/c_admin/profile/');
+        //  }
+     }
 
     #RESTORAN
     #MENU

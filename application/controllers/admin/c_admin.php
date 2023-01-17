@@ -24,12 +24,12 @@ class c_admin extends CI_Controller
      public function profile($id)
      {
          if (!isset($_SESSION['username'])) {
-             redirect('index');
+             redirect('profile');
          } else {
              $data['profile']=$this->M_admin->getdetailprofile($id);
-             $this->load->view('admin/header');
+             $this->load->view('layout/header');
              $this->load->view('admin/profile',$data);
-             $this->load->view('admin/footer');
+             $this->load->view('layout/footer');
          }
      }
      public function edit_profile($id)
