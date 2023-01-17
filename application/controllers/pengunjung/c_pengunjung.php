@@ -219,12 +219,23 @@ class c_pengunjung extends CI_Controller
     }
 
     #PROFILE
-    public function profile($id)
+    public function profile()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['profile']=$this->M_pengunjung->getdetailprofile($id);
+            $data['profile']=$this->M_pengunjung->getdetailprofile();
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/tampil_profile',$data);
+            $this->load->view('pengunjung/footer');
+        }
+    }
+    public function ubah_profile()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['profile']=$this->M_pengunjung->getdetailprofile();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/profile',$data);
             $this->load->view('pengunjung/footer');
@@ -234,7 +245,7 @@ class c_pengunjung extends CI_Controller
     public function edit_profile($id)
     {
         $this->M_pengunjung->editProfile($id);
-        redirect('pengunjung/c_pengunjung/profile/'.$id);
+        redirect('pengunjung/c_pengunjung/profile');
         // if ($this->form_validation->run() == FALSE) {
         //     $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
         //     $this->load->view('pengunjung/header');

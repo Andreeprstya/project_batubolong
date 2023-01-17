@@ -201,8 +201,9 @@ class M_pengunjung extends CI_Model
     }
 
     #PROFILE
-    public function getdetailprofile($id)
+    public function getdetailprofile()
     {
+        $id=$_SESSION['id'];
         $this->db->where('id', $id);
         $result = $this->db->get('tb_user')->result_array();
         return $result[0];
