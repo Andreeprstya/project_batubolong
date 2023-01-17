@@ -24,21 +24,42 @@ class c_stand extends CI_Controller {
         }
     }
     #PROFILE
-    public function profile($id)
+    public function profile()
      {
-         if (!isset($_SESSION['username'])) {
-             redirect('profile');
-         } else {
-             $data['profile']=$this->M_stand->getdetailprofile($id);
-             $this->load->view('layout_stand/header');
-             $this->load->view('stand/profile',$data);
-             $this->load->view('layout_stand/footer');
-         }
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }elseif($_SESSION['type']=="Penyewaan"){
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/tampil_profile_sewa',$data);
+            $this->load->view('layout/footer');
+        }elseif($_SESSION['type']=="Resto") {
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/tampil_profile_resto',$data);
+            $this->load->view('layout/footer');
+        }
+     }
+     public function ubah_profile()
+     {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }elseif($_SESSION['type']=="Penyewaan"){
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/profile_sewa',$data);
+            $this->load->view('layout/footer');
+        }elseif($_SESSION['type']=="Resto") {
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/profile_resto',$data);
+            $this->load->view('layout/footer');
+        }
      }
      public function edit_profile($id)
      {
-        $this->M_admin->editProfile($id);
-        redirect('stand/c_stand/profile/'.$_SESSION['id']);
+        $this->M_stand->editProfile($id);
+        redirect('stand/c_stand/profile');
         //  if ($this->form_validation->run() == FALSE) {
         //      $data['profile'] = $this->M_admin->getdetailprofile($id);
         //      $this->load->view('admin/header');
