@@ -22,6 +22,7 @@
                     <p>DAFTAR MENU STAND 
                     </p>
                 </div>
+        <a href="<?= base_url('pengunjung/c_pengunjung/kembali_stand')?>" class="btn btn-danger btn-sm">Kembali</a>
         <br>
         <?php $items = 'Total Item: '.($this->cart->total_items()) ?>
         <?php $keranjang = 'Menu Yang Di Pilih: '.count($this->cart->contents()) ?>

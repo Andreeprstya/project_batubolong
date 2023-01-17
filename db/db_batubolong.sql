@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Jan 2023 pada 08.43
+-- Waktu pembuatan: 17 Jan 2023 pada 10.50
 -- Versi server: 10.4.21-MariaDB-log
 -- Versi PHP: 8.0.10
 
@@ -42,6 +42,43 @@ CREATE TABLE `tb_barang` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tb_detailpesanan`
+--
+
+CREATE TABLE `tb_detailpesanan` (
+  `id_detail` int(11) NOT NULL,
+  `id_pemesanan` int(11) NOT NULL,
+  `menu` varchar(50) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `harga` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_detailpesanan`
+--
+
+INSERT INTO `tb_detailpesanan` (`id_detail`, `id_pemesanan`, `menu`, `jumlah`, `harga`) VALUES
+(1, 2, 'Nasi Goreng dfag', 3, 12000),
+(2, 2, 'Ayam Bakar', 1, 15000),
+(3, 3, 'Nasi Goreng dfag', 3, 12000),
+(4, 3, 'Ayam Bakar', 1, 15000),
+(5, 4, 'Nasi Goreng dfag', 3, 12000),
+(6, 4, 'Ayam Bakar', 1, 15000),
+(7, 5, 'Nasi Goreng dfag', 3, 12000),
+(8, 5, 'Ayam Bakar', 1, 15000),
+(9, 6, 'Nasi Goreng dfag', 3, 12000),
+(10, 6, 'Ayam Bakar', 1, 15000),
+(11, 7, 'Nasi Goreng dfag', 2, 12000),
+(12, 8, 'Nasi Goreng dfag', 1, 12000),
+(13, 9, 'Nasi Goreng dfag', 1, 12000),
+(14, 10, 'Nasi Goreng dfag', 1, 12000),
+(15, 11, 'Nasi Goreng dfag', 1, 12000),
+(16, 12, 'Nasi Goreng dfag', 1, 12000),
+(17, 13, 'Nasi Goreng dfag', 1, 12000);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tb_fasilitas`
 --
 
@@ -67,6 +104,13 @@ CREATE TABLE `tb_histori` (
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tb_histori`
+--
+
+INSERT INTO `tb_histori` (`id_histori`, `Tipe`, `tanggal`, `waktu`, `jumlah`) VALUES
+(1, 'Tunai', '2023-01-16', '16:54:20', 10000);
+
 -- --------------------------------------------------------
 
 --
@@ -87,8 +131,8 @@ CREATE TABLE `tb_menu` (
 --
 
 INSERT INTO `tb_menu` (`id_menu`, `nama_menu`, `harga`, `kategori`, `gambar`, `id_stand`) VALUES
-(3, 'Nasi Goreng', 12000, 'Makanan', 'images_(15).jpeg', 6),
-(4, 'Mei Goreng', 15000, 'Makanan', 'OBerry_Jam.jpg', 6);
+(3, 'Nasi Goreng dfag', 12000, 'Makanan', 'WhatsApp_Image_2023-01-08_at_22_36_15.jpeg', 6),
+(5, 'Mei Goreng', 19500, 'Makanan', 'OBerry_Jam1.jpg', 7);
 
 -- --------------------------------------------------------
 
@@ -114,13 +158,32 @@ CREATE TABLE `tb_pembelian` (
 
 CREATE TABLE `tb_pemesanan` (
   `id_pemesanan` int(11) NOT NULL,
-  `id_menu` int(11) NOT NULL,
+  `waktu` time NOT NULL,
   `id_pengunjung` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `jumlah` int(11) NOT NULL,
   `total` double NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_pemesanan`
+--
+
+INSERT INTO `tb_pemesanan` (`id_pemesanan`, `waktu`, `id_pengunjung`, `tanggal`, `jumlah`, `total`, `status`) VALUES
+(1, '17:19:14', 7, '2023-01-17', 4, 51, 'Selesai'),
+(2, '17:23:59', 7, '2023-01-17', 4, 51, 'Selesai'),
+(3, '17:24:14', 7, '2023-01-17', 4, 51, 'Selesai'),
+(4, '17:24:59', 7, '2023-01-17', 4, 51, 'Selesai'),
+(5, '17:25:10', 7, '2023-01-17', 4, 51, 'Selesai'),
+(6, '17:25:33', 7, '2023-01-17', 4, 51, 'Selesai'),
+(7, '17:35:11', 7, '2023-01-17', 2, 24, 'Selesai'),
+(8, '17:36:28', 7, '2023-01-17', 1, 12, 'Selesai'),
+(9, '17:36:45', 7, '2023-01-17', 1, 12, 'Selesai'),
+(10, '17:38:46', 7, '2023-01-17', 1, 12, 'Selesai'),
+(11, '17:40:56', 7, '2023-01-17', 1, 12, 'Selesai'),
+(12, '17:41:07', 7, '2023-01-17', 1, 12, 'Selesai'),
+(13, '17:41:23', 7, '2023-01-17', 1, 12, 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -141,7 +204,8 @@ CREATE TABLE `tb_pendapatan` (
 --
 
 INSERT INTO `tb_pendapatan` (`id_pendapatan`, `sumber`, `tanggal`, `waktu`, `pendapatan`) VALUES
-(1, 'Top-Up', '2023-01-16', '12:54:28', '1000');
+(1, 'Top-Up', '2023-01-16', '12:54:28', '1000'),
+(2, 'Top-Up', '2023-01-16', '16:54:20', '1000');
 
 -- --------------------------------------------------------
 
@@ -177,7 +241,7 @@ CREATE TABLE `tb_saldo` (
 --
 
 INSERT INTO `tb_saldo` (`id_saldo`, `id_user`, `username`, `saldo`) VALUES
-(1, 7, 'testpengunjung', '5720000'),
+(1, 7, 'testpengunjung', '5658000'),
 (2, 8, 'nightshadow', '55000'),
 (3, 9, 'gilang', '1000000');
 
@@ -193,20 +257,19 @@ CREATE TABLE `tb_stand` (
   `nama_pemilik` varchar(100) NOT NULL,
   `tipe_stand` varchar(50) NOT NULL,
   `keterangan` text NOT NULL,
-  `gambar` varchar(50) NOT NULL,
-  `username` varchar(40) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_stand`
 --
 
-INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`, `username`, `password`) VALUES
-(3, 'cobaDong2', 'coba', 'Penyewaan', 'cobaaaa', 'Promo.png', 'coba', 'c3ec0f7b054e729c5a716c8125839829'),
-(4, 'coba yang ini', 'aasd', 'Penyewaan', 'adsad', 'OBerry_Jam1.png', 'coba yang ini', 'b28bfaf0c75475dbbd89e89db01fc826'),
-(5, 'testnambah', 'cobadoang', 'Resto', 'hehhehe', 'Promo_Mercent.png', 'testnambah', '51fb409ebaf3c8ecec80194f98d74961'),
-(6, 'testnambah', 'cobadoang', 'Resto', 'hehhehewwww', 'p1.png', 'testnambah', '51fb409ebaf3c8ecec80194f98d74961');
+INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`) VALUES
+(3, 'cobaDong2', 'coba', 'Penyewaan', 'cobaaaa', 'Promo.png'),
+(4, 'coba yang ini', 'aasd', 'Penyewaan', 'adsad', 'OBerry_Jam1.png'),
+(5, 'testnambahaha', 'cobadoang', 'Resto', 'hehhehe', 'Promo_Mercent.png'),
+(6, 'testnambah', 'cobadoang', 'Resto', 'hehhehewwww', 'p1.png'),
+(7, 'coba', 'cobaaa', 'Resto', 'Tidak Ada', '1_(1)1.jpg');
 
 -- --------------------------------------------------------
 
@@ -434,7 +497,8 @@ INSERT INTO `tb_user` (`id`, `first_name`, `last_name`, `email`, `username`, `pa
 (7, 'pengunjung', 'test', 'pengunjungcoba@gmail.com', 'testpengunjung', '098f6bcd4621d373cade4e832627b4f6', 3, ''),
 (8, 'Andre', 'Prasetya', 'andreseptaprasetya06@gmail.com', 'nightshadow', '7a7b46be978bf4b68bf74f39978e96ab', 3, ''),
 (9, 'Gilang', 'wkwkwk', 'gilang@gmail.com', 'gilang', 'c37fddfb7b3f538674c6e9a77e7bf486', 3, ''),
-(10, 'testnambah', '', '', 'testnambah', '51fb409ebaf3c8ecec80194f98d74961', 2, 'Resto');
+(10, 'testnambah', '', '', 'testnambah', '51fb409ebaf3c8ecec80194f98d74961', 2, 'Resto'),
+(11, 'coba', '', '', 'coba', 'c3ec0f7b054e729c5a716c8125839829', 2, 'Resto');
 
 --
 -- Indexes for dumped tables
@@ -446,6 +510,12 @@ INSERT INTO `tb_user` (`id`, `first_name`, `last_name`, `email`, `username`, `pa
 ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`),
   ADD KEY `id_user` (`id_user`);
+
+--
+-- Indeks untuk tabel `tb_detailpesanan`
+--
+ALTER TABLE `tb_detailpesanan`
+  ADD PRIMARY KEY (`id_detail`);
 
 --
 -- Indeks untuk tabel `tb_fasilitas`
@@ -526,6 +596,12 @@ ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `tb_detailpesanan`
+--
+ALTER TABLE `tb_detailpesanan`
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_fasilitas`
 --
 ALTER TABLE `tb_fasilitas`
@@ -535,13 +611,13 @@ ALTER TABLE `tb_fasilitas`
 -- AUTO_INCREMENT untuk tabel `tb_histori`
 --
 ALTER TABLE `tb_histori`
-  MODIFY `id_histori` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_histori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_menu`
 --
 ALTER TABLE `tb_menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pembelian`
@@ -553,13 +629,13 @@ ALTER TABLE `tb_pembelian`
 -- AUTO_INCREMENT untuk tabel `tb_pemesanan`
 --
 ALTER TABLE `tb_pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pendapatan`
 --
 ALTER TABLE `tb_pendapatan`
-  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_penyewaan`
@@ -577,7 +653,7 @@ ALTER TABLE `tb_saldo`
 -- AUTO_INCREMENT untuk tabel `tb_stand`
 --
 ALTER TABLE `tb_stand`
-  MODIFY `id_stand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_stand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_tiket`
@@ -589,7 +665,7 @@ ALTER TABLE `tb_tiket`
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -63,8 +63,6 @@ class M_admin extends CI_Model
         'tipe_stand' => $this->input->post('tipe_stand'),
         'keterangan' => $this->input->post('keterangan'),
         'gambar' => $gambar,
-        'username' => $this->input->post('nama_stand'),
-        'password' => md5($this->input->post('nama_stand')),
       );
       $this->db->insert('tb_stand', $insert);
       $insert_user = array(
