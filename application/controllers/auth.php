@@ -12,7 +12,7 @@ class auth extends CI_Controller {
     public function index()
     {
         $this->load->view('auth/header');
-        $this->load->view('auth/login_awal');
+        $this->load->view('auth/login');
         $this->load->view('layout/footer');
     }
     
