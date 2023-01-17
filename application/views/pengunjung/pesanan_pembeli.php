@@ -1,18 +1,32 @@
 <?php 
+$id_stand = $_SESSION['id_stand'];
 if(empty($this->cart->contents()))
 {
   echo "<script>alert('Pesanan kosong, Silahkan Pesan dahulu');</script>";
-  echo "<script>location= 'daftar_menu'</script>";
+  echo "<script>location= '/project_bb/pengunjung/c_pengunjung/detail_stand/$id_stand'</script>";
 }
 ?>
+<!-- where_togo_area_start  -->
+<div class="where_togo_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <?php foreach ($saldo->result_array() as $key) : ?>
+            <div class="form_area">
+                <h3>Saldo Anda : Rp.<?= number_format($key['saldo'], 0, ',', '.') ?></h3>
+            </div>
+            <?php endforeach ?>
 
+
+        </div>
+    </div>
+</div>
   <!-- Menu -->
 <div class="destination_details_info">
     <div class="container">
       <div class="judul-pesanan">
        
         <h3 class="text-center font-weight-bold">PESANAN ANDA</h3>
-        <a href="<?= base_url('cust/dashboard/deleteall')?>" class="btn btn-danger btn-sm">Batalkan Pesanan</a>
+        <a href="<?= base_url('pengunjung/c_pengunjung/deleteall_cart')?>" class="btn btn-danger btn-sm">Batalkan Pesanan</a>
         <h1></h1>
       </div>
       <table class="table table-bordered" id="example">
@@ -39,14 +53,14 @@ if(empty($this->cart->contents()))
               <td><?php echo $key['name']?></td>
               <td align="right">Rp. <?php echo number_format($key['price'], 0,',','.')?></td>
                 <th>
-                  <form action="<?= base_url('cust/dashboard/tambahcart/'.$key['rowid']) ?>" method="post">
+                  <form action="<?= base_url('pengunjung/c_pengunjung/tambahcart/'.$key['rowid']) ?>" method="post">
                     <input type="hidden" name="qty" value="<?php echo $jumlah ?>">
                     <button class="badge badge-success" type="submit">+</button>
                   </form>
                 </th>
                 <th><?php echo $jumlah?></th>
                   <th>
-                  <form action="<?= base_url('cust/dashboard/kurangcart/'.$key['rowid']) ?>" method="post">
+                  <form action="<?= base_url('pengunjung/c_pengunjung/kurangcart/'.$key['rowid']) ?>" method="post">
                     <input type="hidden" name="qty" value="<?php echo $jumlah ?>">
                     <button class="badge badge-success" type="submit">-</button>
                   </form>
@@ -66,9 +80,12 @@ if(empty($this->cart->contents()))
           </tr>
         </tfoot>
       </table><br>
-      <form method="POST" action="">
-        <a href="<?= base_url('cust/dashboard/daftar_menu')?>" class="btn btn-primary btn-sm">Lihat Menu</a>
-        <a href="<?= base_url('cust/dashboard/konfirmasi')?>" class="btn btn-success btn-sm">Konfirmasi Pesanan</a>
+      <form method="POST" action="<?= base_url('pengunjung/c_pengunjung/addpesan')?>">
+        <input type="text" name="jumlah" value="<?=$jumlah?>">
+        <input\>
+        <input\>
+        <a href="<?= base_url('pengunjung/c_pengunjung/detail_stand/'.$id_stand)?>" class="btn btn-primary btn-sm">Lihat Menu</a>
+        <button class="btn btn-success btn-sm">Pesan</a>
       </form>        
     </div>
 </div>

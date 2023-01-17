@@ -34,6 +34,11 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+    public function kembali_stand()
+    {
+        unset($_SESSION['id_stand']);
+        redirect('pengunjung/c_pengunjung/stand');
+    }
 
     public function menustand()
     {
@@ -50,6 +55,7 @@ class c_pengunjung extends CI_Controller
         $this->db->select('tipe_stand');
         $query=$this->db->get_where('tb_stand',array('id_stand'=>$id));
         $tipe=$query->row()->tipe_stand;
+        $this->session->set_userdata('id_stand', $id);
         if(!isset($_SESSION['username'])){
 		    redirect('index');
         }elseif($tipe=="Penyewaan"){
@@ -67,10 +73,12 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+    #CART
     public function deletecart($rowid)
 	{	
+        $id_stand = $_SESSION['id_stand'];
 		$this->cart->remove($rowid);
-		redirect('pengunjung/c_pengunjung/pesanan');
+		redirect('pengunjung/c_pengunjung/detail_stand/'.$id_stand);
 	}
 	public function addcart($id)
 	{
@@ -80,15 +88,51 @@ class c_pengunjung extends CI_Controller
 		$this->M_pengunjung->addcart($id);
 		redirect('pengunjung/c_pengunjung/detail_stand/'.$tipe);
 	}
+    public function deleteall_cart()
+	{
+        $id_stand = $_SESSION['id_stand'];
+		$this->cart->destroy();
+		redirect('pengunjung/c_pengunjung/detail_stand/'.$id_stand);
+	}
+    public function tambahcart($rowid)
+	{
+        $id_stand = $_SESSION['id_stand'];
+		foreach ($this->cart->contents() as $key) {
+			$data = array(
+				'rowid' => $rowid,
+				'qty' => $this->input->post('qty')+1,
+			);
+		}
+		$this->cart->update($data);
+		redirect('pengunjung/c_pengunjung/pesanan/'.$id_stand);
+	}
+	public function kurangcart($rowid)
+	{
+        $id_stand = $_SESSION['id_stand'];
+		foreach ($this->cart->contents() as $key) {
+			$data = array(
+				'rowid' => $rowid,
+				'qty' => $this->input->post('qty')-1,
+			);
+		}
+		$this->cart->update($data);
+		redirect('pengunjung/c_pengunjung/pesanan/'.$id_stand);
+	}
+    #PESANAN
     public function pesanan($id)
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/pesanan_pembeli');
+            $this->load->view('pengunjung/pesanan_pembeli',$data);
             $this->load->view('pengunjung/footer');
         }
+    }
+    public function addpesan()
+    {
+        
     }
 
     #TIKET
