@@ -99,6 +99,50 @@ class M_pengunjung extends CI_Model
 		$result=$this->cart->insert($data);
         return $result;
     }
+    public function addpemesanan()
+    {
+        $id_pengunjung = $this->input->post('id_pengunjung');
+        $this->db->select('saldo');
+        $this->db->from('tb_saldo');
+        $this->db->where('id_user', $id_pengunjung);
+        $query = $this->db->get();
+        $saldo = $query->row()->saldo;
+        $total = $this->input->post('total')*1000;
+        $saldo_akhir = $saldo-(int)$total;
+        if ($saldo_akhir < 0) {
+            return;
+        }else{
+            $topup_saldo = array(
+                'saldo' => $saldo_akhir,
+            );
+            $this->db->where('id_user', $id_pengunjung);
+            $this->db->update('tb_saldo', $topup_saldo);
+            date_default_timezone_set('Asia/Singapore');
+            $tgl = date("Y-m-d");
+            $waktu = date("H:i:s");
+            $data = array(
+                'id_pemesanan' => $this->input->post('id_pemesanan'),
+                'id_pengunjung' => $this->input->post('id_pengunjung'),
+                'total' => $this->input->post('total'),
+                'jumlah' => $this->input->post('jumlah'),
+                'tanggal' => $tgl,
+                'waktu' => $waktu,
+                'status' => 'Selesai',
+            );
+            $this->db->insert('tb_pemesanan', $data);
+            $id_pemesanan = $this->db->insert_id();
+            foreach ($this->cart->contents() as $key) {
+                $data = array(
+                    'id_pemesanan'	=> $id_pemesanan,
+                    'menu'			=> $key['name'],
+                    'jumlah'		=> $key['qty'],
+                    'harga'			=> $key['price'],
+                );
+                $result = $this->db->insert('tb_detailpesanan', $data);
+            }
+            return $result;
+        }
+    }
 }
 
 
