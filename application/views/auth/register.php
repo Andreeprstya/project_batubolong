@@ -1,4 +1,4 @@
-<body class="bg-dark">
+<body >
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
