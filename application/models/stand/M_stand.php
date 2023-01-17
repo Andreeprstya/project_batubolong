@@ -111,6 +111,21 @@ class M_stand extends CI_Model
       $result = $this->db->delete('tb_menu');
       return $result;
     }
+
+    #PENDAPATAN
+    public function getdetailpendapatan()
+    {
+      $id=$_SESSION['id'];
+      $this->db->where('id_stand', $id);
+      $this->db->order_by('id_pemesanan','desc');
+      $result = $this->db->get('tb_pemesanan');
+      return $result;
+    }
+    public function getdetailpemesanan($id)
+    {
+      $result = $this->db->get_where('tb_detailpesanan', array('id_pemesanan' => $id));
+      return $result;
+    }
                         
 }
 

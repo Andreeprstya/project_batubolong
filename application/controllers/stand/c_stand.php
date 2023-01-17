@@ -146,9 +146,25 @@ class c_stand extends CI_Controller {
     #PENDAPATAN resto
     public function pendapatan_resto()
     {
-        $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/pendapatan_resto');
-        $this->load->view('layout_stand/footer');
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $data['pendapatan']=$this->M_stand->getdetailpendapatan();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/pendapatan_resto',$data);
+            $this->load->view('layout_stand/footer');
+        }
+    }
+    public function detail($id)
+    {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }else{
+            $data['pendapatan']=$this->M_stand->getdetailpemesanan($id);
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/detail_pemesanan_resto',$data);
+            $this->load->view('layout_stand/footer');
+        }
     }
 
     #PENYEWAAN

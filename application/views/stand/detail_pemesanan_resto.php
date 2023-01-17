@@ -37,11 +37,9 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Tanggal</th>
-                                            <th>Waktu</th>
-                                            <th>Jumlah Item</th>
-                                            <th>Total Harga</th>
-                                            <th>Status</th>
+                                            <th>Menu</th>
+                                            <th>Jumlah</th>
+                                            <th>Harga</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,18 +48,15 @@
                                     foreach ($pendapatan->result_array() as $key ): ?>
                                         <tr>
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $key['tanggal']?></td>
-                                            <td><?php echo $key['waktu']?></td>
+                                            <td><?php echo $key['menu']?></td>
                                             <td><?php echo $key['jumlah']?></td>
-                                            <td><?php echo $key['total']?></td>
-                                            <td>
-                                                <a href="<?php echo base_url('stand/c_stand/detail/'.$key['id_pemesanan']) ?>">
-                                                <?php echo $key['status']?>
-                                                </a>
-                                            </td>
+                                            <td><?php echo $key['harga']?></td>
                                         </tr>
                                         <?php endforeach?>
                                     </tbody>
                                 </table>
+                                <div class="align-items-center mt-6 mb-0">
+                                    <a href="<?= base_url('stand/c_stand/pendapatan_resto') ?>" class="btn btn-danger">Kembali</a>
+                                </div>
                             </div>
                         </div>
