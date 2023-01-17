@@ -5,7 +5,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4 ">
                     <div class="footer_widget">
                         <div class="footer_logo">
-                            <a href="#">
+                            <a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>">
                                 <img src="<?= base_url('template_pengunjung/img/Logo_berwarna.png') ?>" alt="">
                             </a>
                         </div>
@@ -26,8 +26,8 @@
                             <li><a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>">Home</a></li>
                             <li><a href="<?= base_url("pengunjung/c_pengunjung/stand/") ?>">Stand</a></li>
                             <li><a href="<?= base_url("pengunjung/c_pengunjung/ticket/") ?>"> Tiket</a></li>
-                            <li><a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>"> Top Up</a></li>
-                            <li><a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>"> History</a></li>
+                            <li><a href="<?= base_url("pengunjung/c_pengunjung/tunai/") ?>"> Top Up</a></li>
+                            <li><a href="<?= base_url("pengunjung/c_pengunjung/history/") ?>"> History</a></li>
                         </ul>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
-    } );
+    });
 </script>
 <script src="<?= base_url('template_pengunjung/js/vendor/modernizr-3.5.0.min.js') ?>"></script>
 <script src="<?= base_url('template_pengunjung/js/vendor/jquery-1.12.4.min.js') ?>"></script>

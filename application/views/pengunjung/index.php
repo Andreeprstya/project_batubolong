@@ -78,7 +78,7 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="<?= base_url("pengunjung/c_pengunjung/index/") ?>">
+                <a href="<?= base_url("pengunjung/c_pengunjung/tunai/") ?>">
                 <div class="single_travel text-center">
                     <div class="icon">
                         <img src="<?= base_url('template_pengunjung/img/icon_topup.png') ?>" alt="">
