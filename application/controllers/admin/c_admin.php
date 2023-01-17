@@ -20,6 +20,32 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    #PROFILE
+    public function profile($id)
+    {
+        $this->x_rules();
+        if ($this->form_validation->run() == FALSE) {
+            $data['user'] = $this->M_admin->getdetailprofile($id);
+            $this->load->view('layout/header');
+            $this->load->view('admin/edit_profile', $data);
+            $this->load->view('layout/footer');
+        } else {
+            $this->M_admin->editProfile();
+            redirect('admin/c_admin/profile');
+        }
+    }
+    public function edit_profile($id)
+    {
+        if ($this->form_validation->run() == FALSE) {
+            $data['user'] = $this->M_admin->getdetailstand($id);
+            $this->load->view('layout/header');
+            $this->load->view('admin/edit_stand', $data);
+            $this->load->view('layout/footer');
+        } else {
+            $this->M_admin->editStand();
+            redirect('admin/c_admin/profile');
+        }
+    }
 
     #STAND
     public function stand()
@@ -47,7 +73,7 @@ class c_admin extends CI_Controller
 
     public function edit_stand($id)
     {
-        $this->r_rules();
+        $this->x_rules();
         if ($this->form_validation->run() == FALSE) {
             $data['stand'] = $this->M_admin->getdetailstand($id);
             $this->load->view('layout/header');
@@ -118,7 +144,6 @@ class c_admin extends CI_Controller
         $this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
-        $this->form_validation->set_rules('level', 'level', 'required');
     }
     public function tambah_pengunjung()
     {
