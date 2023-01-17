@@ -147,7 +147,7 @@ class c_stand extends CI_Controller {
     public function pendapatan_resto()
     {
         $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/pendapatan_RESTO');
+        $this->load->view('stand/pendapatan_resto');
         $this->load->view('layout_stand/footer');
     }
 
