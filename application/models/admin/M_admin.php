@@ -4,11 +4,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_admin extends CI_Model
 {
   #PROFILE
-  public function getdetailprofile($id)
+  public function getdetailprofile()
   {
-      $this->db->where('id', $id);
-      $result = $this->db->get('tb_user')->result_array();
-      return $result[0];
+    $id=$_SESSION['id'];
+    $this->db->where('id', $id);
+    $result = $this->db->get('tb_user')->result_array();
+    return $result[0];
   }
 
   public function editProfile($id)
@@ -19,7 +20,7 @@ class M_admin extends CI_Model
           'email' => $this->input->post('email'),
           'username' => $this->input->post('username'),
       );
-      $this->db->where('id', $this->input->post('id'));
+      $this->db->where('id', $id);
       $result = $this->db->update('tb_user', $edit);    
       return $result;
   }

@@ -21,12 +21,23 @@ class c_admin extends CI_Controller
         }
     }
      #PROFILE
-     public function profile($id)
+     public function profile()
      {
          if (!isset($_SESSION['username'])) {
              redirect('profile');
          } else {
-             $data['profile']=$this->M_admin->getdetailprofile($id);
+             $data['profile']=$this->M_admin->getdetailprofile();
+             $this->load->view('layout/header');
+             $this->load->view('admin/tampil_profile',$data);
+             $this->load->view('layout/footer');
+         }
+     }
+     public function ubah_profile()
+     {
+         if (!isset($_SESSION['username'])) {
+             redirect('index');
+         } else {
+             $data['profile']=$this->M_admin->getdetailprofile();
              $this->load->view('layout/header');
              $this->load->view('admin/profile',$data);
              $this->load->view('layout/footer');
