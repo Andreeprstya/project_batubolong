@@ -51,6 +51,8 @@ class M_pengunjung extends CI_Model
                 );
                 $result = $this->db->insert('tb_tiket', $insert);
             }
+
+
             return $result;
         }
     }
@@ -142,6 +144,61 @@ class M_pengunjung extends CI_Model
             }
             return $result;
         }
+    }
+    public function cetakstruk()
+    {
+        $id_stand = $_SESSION['id_stand'];
+        date_default_timezone_set('Asia/Singapore');
+        $tgl = date("Y-m-d");
+        $this->db->select('*');
+        $query = $this->db->get_where('tb_stand', array('id_stand'=>$id_stand));
+        $namastand=$query->result();
+        foreach ($namastand as $data){
+            $nama=$data->nama_stand;
+
+        }
+        $this->load->library('cetak_pdf');
+        $pdf = new FPDF('L','mm',array(100,100));
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(0,5,$nama,0,1,'C');
+        $pdf->SetFont('Arial','B',16);
+        $pdf->Cell(0,10,$tgl,0,1,'C');
+        $pdf->SetLineWidth(1);
+        $pdf->Line(0,30,190,30);
+        $pdf->SetLineWidth(0);
+        $pdf->Line(0,31,190,31);
+
+        $this->db->select('*');
+        $query=$this->db->get_where('tb_detailpesanan', array('id_pemesanan'=>$this->input->post('id_pengunjung')));
+        $pesanan = $query->result();
+        $total=0;
+        //disini ya
+        foreach ($this->cart->contents() as $key) {
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(40,25,$key['name']);
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(10,25,$key['qty'],'C');
+            $totalharga=$key['price']*$key['qty'];
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(5,25,'*','C');
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(15,25,$key['price'],'C');
+            $pdf->SetFont('Arial','B',10);
+            $pdf->Cell(-1,25,$totalharga,'C');
+            $total+=$totalharga;
+        }
+
+        $pdf->SetLineWidth(0);
+        $pdf->Line(80,44,95,44);
+        $pdf->SetFont('Arial','B',10);
+        $pdf->Cell(50,45,$total,0,1);
+        $pdf->SetFont('Arial','B',10);
+        $pdf->Cell(125,-45,'Total :',0,1,'C');
+
+        $filename = "STRUCK.pdf";
+        $result=$pdf->Output($filename, 'D');
+        return $result;
     }
 }
 
