@@ -132,7 +132,18 @@ class c_pengunjung extends CI_Controller
     }
     public function addpesan()
     {
-        
+        $id_stand = $_SESSION['id_stand'];
+        $cek_saldo = $this->M_pengunjung->addpemesanan();
+        if ($cek_saldo === NULL) {
+            echo "<SCRIPT language=Javascript>
+			        alert('Saldo Lu Gak Cukup Tolol!, Sana Top-up Dulu!')
+		        </script>";
+            echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
+        }else{
+		    $this->cart->destroy();
+            redirect('pengunjung/c_pengunjung/detail_stand/'.$id_stand);
+        }
+		
     }
 
     #TIKET
