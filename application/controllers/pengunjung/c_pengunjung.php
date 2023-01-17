@@ -219,24 +219,12 @@ class c_pengunjung extends CI_Controller
     }
 
     #PROFILE
-    public function profile()
+    public function profile($id)
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $id=$_SESSION['id'];
             $data['profile']=$this->M_pengunjung->getdetailprofile($id);
-            $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/profile',$data);
-            $this->load->view('pengunjung/footer');
-        }
-    }
-    public function ubah_profile($id)
-    {
-        if (!isset($_SESSION['username'])) {
-            redirect('index');
-        } else {
-            $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/profile',$data);
             $this->load->view('pengunjung/footer');
@@ -245,16 +233,17 @@ class c_pengunjung extends CI_Controller
 
     public function edit_profile($id)
     {
-         
-        if ($this->form_validation->run() == FALSE) {
-            $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
-            $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/profile', $data);
-            $this->load->view('pengunjung/footer');
-        } else {
-            $this->M_pengunjung->editProfile();
-            redirect('pengunjung/c_pengunjung/profile/');
-        }
+        $this->M_pengunjung->editProfile($id);
+        redirect('pengunjung/c_pengunjung/profile/'.$id);
+        // if ($this->form_validation->run() == FALSE) {
+        //     $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
+        //     $this->load->view('pengunjung/header');
+        //     $this->load->view('pengunjung/profile', $data);
+        //     $this->load->view('pengunjung/footer');
+        // } else {
+        //     $this->M_pengunjung->editProfile();
+        //     redirect('pengunjung/c_pengunjung/profile/');
+        // }
     }
 }
 

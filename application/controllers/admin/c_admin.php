@@ -20,32 +20,32 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
-    #PROFILE
-    public function profile($id)
-    {
-        $this->x_rules();
-        if ($this->form_validation->run() == FALSE) {
-            $data['user'] = $this->M_admin->getdetailprofile($id);
-            $this->load->view('layout/header');
-            $this->load->view('admin/edit_profile', $data);
-            $this->load->view('layout/footer');
-        } else {
-            $this->M_admin->editProfile();
-            redirect('admin/c_admin/profile');
-        }
-    }
-    public function edit_profile($id)
-    {
-        if ($this->form_validation->run() == FALSE) {
-            $data['user'] = $this->M_admin->getdetailstand($id);
-            $this->load->view('layout/header');
-            $this->load->view('admin/edit_stand', $data);
-            $this->load->view('layout/footer');
-        } else {
-            $this->M_admin->editStand();
-            redirect('admin/c_admin/profile');
-        }
-    }
+     #PROFILE
+     public function profile($id)
+     {
+         if (!isset($_SESSION['username'])) {
+             redirect('index');
+         } else {
+             $data['profile']=$this->M_admin->getdetailprofile($id);
+             $this->load->view('admin/header');
+             $this->load->view('admin/profile',$data);
+             $this->load->view('admin/footer');
+         }
+     }
+     public function edit_profile($id)
+     {
+        $this->M_admin->editProfile($id);
+        redirect('admin/c_admin/profile/'.$_SESSION['id']);
+        //  if ($this->form_validation->run() == FALSE) {
+        //      $data['profile'] = $this->M_admin->getdetailprofile($id);
+        //      $this->load->view('admin/header');
+        //      $this->load->view('admin/profile', $data);
+        //      $this->load->view('admin/footer');
+        //  } else {
+        //      $this->M_admin->editProfile();
+        //      redirect('admin/c_admin/profile/');
+        //  }
+     }
 
     #STAND
     public function stand()

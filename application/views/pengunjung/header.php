@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="social_links d-none d-xl-block">
                                         <ul>
-                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/profile') ?>"> <i class="fa fa-user fa-2x"></i> </a></li>
+                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/profile/'.$_SESSION['id']) ?>"> <i class="fa fa-user fa-2x"></i> </a></li>
 
 
                                         </ul>

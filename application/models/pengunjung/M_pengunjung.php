@@ -208,16 +208,15 @@ class M_pengunjung extends CI_Model
         return $result[0];
     }
 
-    public function editProfile()
+    public function editProfile($id)
     {
         $edit = array(
             'first_name' => $this->input->post('first_name'),
             'last_name' => $this->input->post('last_name'),
             'email' => $this->input->post('email'),
             'username' => $this->input->post('username'),
-            
         );
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id', $id);
         $result = $this->db->update('tb_user', $edit);    
         return $result;
     }

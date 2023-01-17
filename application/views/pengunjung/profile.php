@@ -17,7 +17,7 @@
                             </div>
                             <div class=" col-lg-12">
                                 <div class="single_input">
-                                    <input name="first_name" id="input_last_name" cols="30" rows="10" value="<?php echo $profile['last_name'] ?>"></input>
+                                    <input name="last_name" id="input_last_name" cols="30" rows="10" value="<?php echo $profile['last_name'] ?>"></input>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -32,8 +32,8 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="submit_btn">
-                                    <button class="boxed-btn4">
-                                        <a href="<?= base_url('pengunjung/c_pengunjung/') ?>">Simpan</a>
+                                    <button class="boxed-btn4" type="submit">
+                                    Simpan
                                     </button>
                                 </div>
                                 <br>
