@@ -36,33 +36,27 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>No.</th>
+                                            <th>Tanggal</th>
+                                            <th>Waktu</th>
+                                            <th>Jumlah Item</th>
+                                            <th>Total Harga</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                    <?php
+                                    $no = 1;
+                                    foreach ($pendapatan->result_array() as $key ): ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td><?php echo $no++?></td>
+                                            <td><?php echo $key['tanggal']?></td>
+                                            <td><?php echo $key['waktu']?></td>
+                                            <td><?php echo $key['jumlah']?></td>
+                                            <td><?php echo $key['total']?></td>
+                                            <td><?php echo $key['status']?></td>
                                         </tr>
+                                        <?php endforeach?>
                                     </tbody>
                                 </table>
                             </div>

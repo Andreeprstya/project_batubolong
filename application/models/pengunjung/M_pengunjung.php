@@ -127,7 +127,7 @@ class M_pengunjung extends CI_Model
                 'id_pemesanan' => $this->input->post('id_pemesanan'),
                 'id_pengunjung' => $this->input->post('id_pengunjung'),
                 'id_stand' => $id_stand,
-                'total' => $this->input->post('total'),
+                'total' => $total,
                 'jumlah' => $this->input->post('jumlah'),
                 'tanggal' => $tgl,
                 'waktu' => $waktu,
