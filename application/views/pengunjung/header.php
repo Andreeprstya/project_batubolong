@@ -29,7 +29,12 @@
     <link rel="stylesheet" href="<?= base_url('template_pengunjung/css/styless.css') ?>">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
+<style type="text/css">
+.left { text-align: left;}
+.right { text-align: right;}
+.center { text-align: center;}
+.justify { text-align: justify;}
+</style>
 <body>
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -57,7 +62,14 @@
                                             <li><a href="<?= base_url('pengunjung/c_pengunjung/stand') ?>">stand</a>
                                             </li>
 
-                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/ticket') ?>">ticket</a>
+                                           
+                                            <li><a href="#">Ticket <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="<?= base_url('pengunjung/c_pengunjung/ticket') ?>">Beli Ticket</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url('pengunjung/c_pengunjung/cekticket') ?>">Cek Ticket
+                                                            </a></li>
+                                                </ul>
                                             </li>
                                             <li><a href="#">top up <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -83,7 +95,7 @@
                                     </div>
                                     <div class="social_links d-none d-xl-block">
                                         <ul>
-                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/profile') ?>"> <i class="fa fa-user fa-2x"></i> </a></li>
+                                            <li><a href="<?= base_url('pengunjung/c_pengunjung/profile')?>"> <i class="fa fa-user fa-2x"></i> </a></li>
 
 
                                         </ul>

@@ -141,7 +141,8 @@ class c_pengunjung extends CI_Controller
             echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
         }else{
             $this->M_pengunjung->cetakstruk();
-            redirect('pengunjung/c_pengunjung/deleteall_cart');
+            $this->cart->destroy();
+            //redirect('pengunjung/c_pengunjung/deleteall_cart');
         }
 		
     }
@@ -155,6 +156,17 @@ class c_pengunjung extends CI_Controller
             $data['saldo'] = $this->M_pengunjung->getsaldo();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/ticket', $data);
+            $this->load->view('pengunjung/footer');
+        }
+    }
+    public function cekticket()
+    {
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/cekticket', $data);
             $this->load->view('pengunjung/footer');
         }
     }
@@ -211,7 +223,7 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $data['history'] = $this->M_pengunjung->gethistory();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/history',$data);
             $this->load->view('pengunjung/footer');
@@ -224,19 +236,18 @@ class c_pengunjung extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $id=$_SESSION['id'];
-            $data['profile']=$this->M_pengunjung->getdetailprofile($id);
+            $data['profile']=$this->M_pengunjung->getdetailprofile();
             $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/profile',$data);
+            $this->load->view('pengunjung/tampil_profile',$data);
             $this->load->view('pengunjung/footer');
         }
     }
-    public function ubah_profile($id)
+    public function ubah_profile()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
-            $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
+            $data['profile']=$this->M_pengunjung->getdetailprofile();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/profile',$data);
             $this->load->view('pengunjung/footer');
@@ -245,16 +256,17 @@ class c_pengunjung extends CI_Controller
 
     public function edit_profile($id)
     {
-         
-        if ($this->form_validation->run() == FALSE) {
-            $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
-            $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/profile', $data);
-            $this->load->view('pengunjung/footer');
-        } else {
-            $this->M_pengunjung->editProfile();
-            redirect('pengunjung/c_pengunjung/profile/');
-        }
+        $this->M_pengunjung->editProfile($id);
+        redirect('pengunjung/c_pengunjung/profile');
+        // if ($this->form_validation->run() == FALSE) {
+        //     $data['profile'] = $this->M_pengunjung->getdetailprofile($id);
+        //     $this->load->view('pengunjung/header');
+        //     $this->load->view('pengunjung/profile', $data);
+        //     $this->load->view('pengunjung/footer');
+        // } else {
+        //     $this->M_pengunjung->editProfile();
+        //     redirect('pengunjung/c_pengunjung/profile/');
+        // }
     }
 }
 

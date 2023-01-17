@@ -84,7 +84,7 @@ if(empty($this->cart->contents()))
         </tfoot>
       </table><br>
       <form method="POST" action="<?= base_url('pengunjung/c_pengunjung/addpesan')?>">
-        <input type="hidden" name="total" value="<?= number_format($this->cart->total(), 0,',','.')?>">
+        <input type="hiiden" name="total" value="<?= number_format($this->cart->total(), 0,',','.')?>">
         <input type="hidden" name="jumlah" value="<?=(int)$this->cart->total_items()?>">
         <input type="hidden" name="id_pengunjung" value=<?=$id_pengunjung?>>
         <a href="<?= base_url('pengunjung/c_pengunjung/detail_stand/'.$id_stand)?>" class="btn btn-primary btn-sm">Lihat Menu</a>

@@ -23,6 +23,53 @@ class c_stand extends CI_Controller {
             $this->load->view('layout/footer');
         }
     }
+    #PROFILE
+    public function profile()
+     {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }elseif($_SESSION['type']=="Penyewaan"){
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/tampil_profile_sewa',$data);
+            $this->load->view('layout/footer');
+        }elseif($_SESSION['type']=="Resto") {
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/tampil_profile_resto',$data);
+            $this->load->view('layout/footer');
+        }
+     }
+     public function ubah_profile()
+     {
+        if(!isset($_SESSION['username'])){
+		    redirect('index');
+        }elseif($_SESSION['type']=="Penyewaan"){
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/fasilitas_header');
+            $this->load->view('stand/profile_sewa',$data);
+            $this->load->view('layout/footer');
+        }elseif($_SESSION['type']=="Resto") {
+            $data['profile']=$this->M_stand->getdetailprofile();
+            $this->load->view('layout_stand/resto_header');
+            $this->load->view('stand/profile_resto',$data);
+            $this->load->view('layout/footer');
+        }
+     }
+     public function edit_profile($id)
+     {
+        $this->M_stand->editProfile($id);
+        redirect('stand/c_stand/profile');
+        //  if ($this->form_validation->run() == FALSE) {
+        //      $data['profile'] = $this->M_admin->getdetailprofile($id);
+        //      $this->load->view('admin/header');
+        //      $this->load->view('admin/profile', $data);
+        //      $this->load->view('admin/footer');
+        //  } else {
+        //      $this->M_admin->editProfile();
+        //      redirect('admin/c_admin/profile/');
+        //  }
+     }
 
     #RESTORAN
     #MENU
@@ -96,17 +143,11 @@ class c_stand extends CI_Controller {
         redirect('stand/c_stand/menu');
     }
 
-    #LAPORAN
-    public function laporan_resto()
-    {
-        $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/laporan');
-        $this->load->view('layout_stand/footer');
-    }
+    #PENDAPATAN resto
     public function pendapatan_resto()
     {
         $this->load->view('layout_stand/resto_header');
-        $this->load->view('stand/pendapatan');
+        $this->load->view('stand/pendapatan_resto');
         $this->load->view('layout_stand/footer');
     }
 
@@ -121,16 +162,12 @@ class c_stand extends CI_Controller {
             $this->load->view('layout_stand/footer');
         }
     }
-    public function laporan_penyewaan()
-    {
-        $this->load->view('layout_stand/fasilitas_header');
-        $this->load->view('stand/laporan');
-        $this->load->view('layout_stand/footer');
-    }
+
+    #PENDAPATAN SEWA
     public function pendapatan_penyewaan()
     {
         $this->load->view('layout_stand/fasilitas_header');
-        $this->load->view('stand/pendapatan');
+        $this->load->view('stand/pendapatan_sewa');
         $this->load->view('layout_stand/footer');
     }
 }

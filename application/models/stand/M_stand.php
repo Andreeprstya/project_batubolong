@@ -3,6 +3,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         
 class M_stand extends CI_Model 
 {
+   #PROFILE
+
+   public function getdetailprofile()
+  {
+    $id=$_SESSION['id'];
+    $this->db->where('id_stand', $id);
+    $result = $this->db->get('tb_stand')->result_array();
+    return $result[0];
+  }
+
+  public function editProfile($id)
+  {
+      $edit = array(
+          'nama_stand' => $this->input->post('nama_stand'),
+          'nama_pemilik' => $this->input->post('nama_pemilik'),
+          'tipe_stand' => $this->input->post('tipe_stand'),
+      );
+      $this->db->where('id_stand', $id);
+      $result = $this->db->update('tb_stand', $edit);    
+      return $result;
+  }
+   
     public function getmenu()
     {
         $id_stand = $_SESSION['id'];

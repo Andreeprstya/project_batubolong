@@ -8,43 +8,38 @@
                     <center>
                         <h3>Profile</h3>
                     </center>
-                    <form action="<?php echo base_url('pengunjung/c_pengunjung/edit_profile/') . $profile['id'] ?>" method="post">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="single_input">
-                                    <input name="first_name" id="input_first_name" cols="30" rows="10" value="<?php echo $profile['first_name'] ?>"></input>
+                                    First Name : <b><?= $profile['first_name'] ?></b>
                                 </div>
                             </div>
                             <div class=" col-lg-12">
                                 <div class="single_input">
-                                    <input name="last_name" id="input_last_name" cols="30" rows="10" value="<?php echo $profile['last_name'] ?>"></input>
+                                    Last Name : <b><?php echo $profile['last_name'] ?></b>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single_input">
-                                    <input name="email" id="input_email" cols="30" rows="10" value="<?php echo $profile['email'] ?>"></input>
+                                    Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: 
+                                    <b><?php echo $profile['email'] ?></b>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="single_input">
-                                    <input name="username" id="input_username" cols="30" rows="10" value="<?php echo $profile['username'] ?>"></input>
+                                    Username &nbsp: <b><?php echo $profile['username'] ?></b>
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <div class="submit_btn">
-                                    <button class="boxed-btn4" type="submit">
-                                    Simpan
-                                    </button>
-                                </div>
+                                
                                 <br>
                                 <div class="submit_btn">
                                     <button class="boxed-btn3">
-                                        <a href="<?= base_url('pengunjung/c_pengunjung/profile') ?>">Kembali</a>
+                                        <a href="<?= base_url('pengunjung/c_pengunjung/ubah_profile') ?>">Edit</a>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

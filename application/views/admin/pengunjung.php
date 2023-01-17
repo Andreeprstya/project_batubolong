@@ -16,11 +16,6 @@
                                 .
                             </div>
                         </div> -->
-        <div class="mb-3">
-            <a href="<?= base_url('admin/c_admin/pengunjung') ?>">
-                <button class="btn btn-primary md-3">Semua Pengunjung</button>
-            </a>
-        </div>
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>

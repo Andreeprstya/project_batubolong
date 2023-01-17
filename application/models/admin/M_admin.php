@@ -4,32 +4,26 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class M_admin extends CI_Model
 {
   #PROFILE
-  public function getprofile()
+  public function getdetailprofile()
   {
-    $this->db->select('*');
-    $result = $this->db->get_where('tb_user'); //, array('level' => '2')
-    return $result;
+    $id=$_SESSION['id'];
+    $this->db->where('id', $id);
+    $result = $this->db->get('tb_user')->result_array();
+    return $result[0];
   }
 
-  public function getdetailprofile($id)
+  public function editProfile($id)
   {
-    $this->db->where('id',$id);
-		$result = $this->db->get('tb_user') -> result_array();
-		return $result[0];
+      $edit = array(
+          'first_name' => $this->input->post('first_name'),
+          'last_name' => $this->input->post('last_name'),
+          'email' => $this->input->post('email'),
+          'username' => $this->input->post('username'),
+      );
+      $this->db->where('id', $id);
+      $result = $this->db->update('tb_user', $edit);    
+      return $result;
   }
-
-  public function editProfile()
-  {
-					$edit = array(
-              'first_name' => $this->input->post('first_name'),
-              'last_name' => $this->input->post('last_name'),
-              'username' => $this->input->post('username'),
-              'password' => $this->input->post('password'),
-							);
-              $this->db->where('id', $this->input->post('id'));
-              $result = $this->db->update('tb_user', $edit);
-              return $result;
-				}
   
 
   #STAND
@@ -190,6 +184,7 @@ class M_admin extends CI_Model
 
     $history = array(
       'Tipe' => 'Tunai',
+      'id_user' => $this->input->post('id'),
       'tanggal' => $tgl,
       'waktu' => $waktu,
       'jumlah' => $this->input->post('jumlah')
