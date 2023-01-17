@@ -71,7 +71,7 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>No.</th>
+                                            <th>No</th>
                                             <th>Tanggal</th>
                                             <th>Waktu</th>
                                             <th>Sumber</th>
