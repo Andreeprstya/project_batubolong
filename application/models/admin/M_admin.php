@@ -161,11 +161,20 @@ class M_admin extends CI_Model
     $result = $this->db->get('tb_tiket');
     return $result;
   }
-  public function cariTiket()
+  public function cek_tiket()
   {
-    $cari = $this->input->GET('id_tiket');
-    $data = $this->db->query("SELECT * from tb_tiket where id_tiket = $cari");
-    return $data->result();
+    $this->db->order_by('id_tiket','desc');
+    $result = $this->db->get_where('tb_tiket',array('status'=>'Invalid'));
+    return $result;
+  }
+  public function validasi_tiket($id)
+  {
+    $edit = array(
+      'status' => 'Valid',
+      );
+      $this->db->where('id_tiket', $id);
+      $result = $this->db->update('tb_tiket', $edit);
+      return $result;
   }
 
   #TOP-UP

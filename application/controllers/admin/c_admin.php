@@ -277,18 +277,17 @@ class c_admin extends CI_Controller
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['tiket'] = $this->M_admin->cek_tiket();
             $this->load->view('layout/header');
-            $this->load->view('admin/scan');
+            $this->load->view('admin/scan', $data);
             $this->load->view('layout/footer');
         }
     }
 
-    public function cari_tiket($id)
+    public function cek_tiket($id)
     {
-        $data['cari'] = $this->M_admin->cariTiket();
-        $this->load->view('layout/header');
-        $this->load->view('admin/scan',$data);
-        $this->load->view('layout/footer');
+        $this->M_admin->validasi_tiket($id);
+        redirect('admin/c_admin/scan');
     }
 }
 
