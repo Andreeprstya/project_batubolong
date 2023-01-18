@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jan 2023 pada 03.44
--- Versi server: 10.4.21-MariaDB-log
--- Versi PHP: 8.0.10
+-- Generation Time: Jan 18, 2023 at 03:55 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `db_batubolong`;
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_barang`
+-- Table structure for table `tb_barang`
 --
 
 CREATE TABLE `tb_barang` (
@@ -42,7 +42,7 @@ CREATE TABLE `tb_barang` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_buktibayar`
+-- Table structure for table `tb_buktibayar`
 --
 
 CREATE TABLE `tb_buktibayar` (
@@ -53,7 +53,7 @@ CREATE TABLE `tb_buktibayar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_buktibayar`
+-- Dumping data for table `tb_buktibayar`
 --
 
 INSERT INTO `tb_buktibayar` (`id_bukti`, `id_user`, `gambar`, `status`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `tb_buktibayar` (`id_bukti`, `id_user`, `gambar`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_detailpesanan`
+-- Table structure for table `tb_detailpesanan`
 --
 
 CREATE TABLE `tb_detailpesanan` (
@@ -75,7 +75,7 @@ CREATE TABLE `tb_detailpesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_detailpesanan`
+-- Dumping data for table `tb_detailpesanan`
 --
 
 INSERT INTO `tb_detailpesanan` (`id_detail`, `id_pemesanan`, `menu`, `jumlah`, `harga`) VALUES
@@ -203,7 +203,7 @@ INSERT INTO `tb_detailpesanan` (`id_detail`, `id_pemesanan`, `menu`, `jumlah`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_fasilitas`
+-- Table structure for table `tb_fasilitas`
 --
 
 CREATE TABLE `tb_fasilitas` (
@@ -217,7 +217,7 @@ CREATE TABLE `tb_fasilitas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_histori`
+-- Table structure for table `tb_histori`
 --
 
 CREATE TABLE `tb_histori` (
@@ -230,7 +230,7 @@ CREATE TABLE `tb_histori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_histori`
+-- Dumping data for table `tb_histori`
 --
 
 INSERT INTO `tb_histori` (`id_histori`, `id_user`, `Tipe`, `tanggal`, `waktu`, `jumlah`) VALUES
@@ -241,7 +241,7 @@ INSERT INTO `tb_histori` (`id_histori`, `id_user`, `Tipe`, `tanggal`, `waktu`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_menu`
+-- Table structure for table `tb_menu`
 --
 
 CREATE TABLE `tb_menu` (
@@ -254,7 +254,7 @@ CREATE TABLE `tb_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_menu`
+-- Dumping data for table `tb_menu`
 --
 
 INSERT INTO `tb_menu` (`id_menu`, `nama_menu`, `harga`, `kategori`, `gambar`, `id_stand`) VALUES
@@ -265,7 +265,7 @@ INSERT INTO `tb_menu` (`id_menu`, `nama_menu`, `harga`, `kategori`, `gambar`, `i
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pembelian`
+-- Table structure for table `tb_pembelian`
 --
 
 CREATE TABLE `tb_pembelian` (
@@ -281,7 +281,7 @@ CREATE TABLE `tb_pembelian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pemesanan`
+-- Table structure for table `tb_pemesanan`
 --
 
 CREATE TABLE `tb_pemesanan` (
@@ -296,7 +296,7 @@ CREATE TABLE `tb_pemesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pemesanan`
+-- Dumping data for table `tb_pemesanan`
 --
 
 INSERT INTO `tb_pemesanan` (`id_pemesanan`, `waktu`, `id_pengunjung`, `id_stand`, `tanggal`, `jumlah`, `total`, `status`) VALUES
@@ -407,7 +407,7 @@ INSERT INTO `tb_pemesanan` (`id_pemesanan`, `waktu`, `id_pengunjung`, `id_stand`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pendapatan`
+-- Table structure for table `tb_pendapatan`
 --
 
 CREATE TABLE `tb_pendapatan` (
@@ -419,7 +419,7 @@ CREATE TABLE `tb_pendapatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_pendapatan`
+-- Dumping data for table `tb_pendapatan`
 --
 
 INSERT INTO `tb_pendapatan` (`id_pendapatan`, `sumber`, `tanggal`, `waktu`, `pendapatan`) VALUES
@@ -435,7 +435,7 @@ INSERT INTO `tb_pendapatan` (`id_pendapatan`, `sumber`, `tanggal`, `waktu`, `pen
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_penyewaan`
+-- Table structure for table `tb_penyewaan`
 --
 
 CREATE TABLE `tb_penyewaan` (
@@ -451,7 +451,7 @@ CREATE TABLE `tb_penyewaan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_saldo`
+-- Table structure for table `tb_saldo`
 --
 
 CREATE TABLE `tb_saldo` (
@@ -462,7 +462,7 @@ CREATE TABLE `tb_saldo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_saldo`
+-- Dumping data for table `tb_saldo`
 --
 
 INSERT INTO `tb_saldo` (`id_saldo`, `id_user`, `username`, `saldo`) VALUES
@@ -473,7 +473,7 @@ INSERT INTO `tb_saldo` (`id_saldo`, `id_user`, `username`, `saldo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_stand`
+-- Table structure for table `tb_stand`
 --
 
 CREATE TABLE `tb_stand` (
@@ -486,20 +486,20 @@ CREATE TABLE `tb_stand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_stand`
+-- Dumping data for table `tb_stand`
 --
 
 INSERT INTO `tb_stand` (`id_stand`, `nama_stand`, `nama_pemilik`, `tipe_stand`, `keterangan`, `gambar`) VALUES
-(3, 'cobaDong2', 'coba', 'Penyewaan', 'cobaaaa', 'Promo.png'),
-(4, 'coba yang inidbwel;[khfvhcgweb', 'aasd', 'Penyewaan', 'adsad', 'OBerry_Jam1.png'),
-(5, 'testnambahaha', 'cobadoang', 'Penyewaan', 'hehhehe', 'Promo_Mercent.png'),
-(6, 'testnambahgila', 'cobadoang', 'Resto', 'hehhehewwww', 'p1.png'),
+(3, 'O\'tella Chocolate', 'Andre', 'Resto', 'Minuman Coklat', 'Promo2.png'),
+(4, 'Hinata Clothes', 'Surya Risky', 'Resto', 'Toko Pakaian', 'standbaju2.jpg'),
+(5, 'Surfing Mania', 'Julkifli', 'Resto', 'Alat Selancar', 'surping3.jpg'),
+(6, 'Omelette Waw', 'Yandi', 'Resto', 'Warung telur', 'omelete2.jpg'),
 (7, 'coba', 'cobaaa', 'Resto', 'Tidak Ada', '1_(1)1.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_tiket`
+-- Table structure for table `tb_tiket`
 --
 
 CREATE TABLE `tb_tiket` (
@@ -512,7 +512,7 @@ CREATE TABLE `tb_tiket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_tiket`
+-- Dumping data for table `tb_tiket`
 --
 
 INSERT INTO `tb_tiket` (`id_tiket`, `id_user`, `tanggal`, `waktu`, `tiket`, `status`) VALUES
@@ -698,7 +698,7 @@ INSERT INTO `tb_tiket` (`id_tiket`, `id_user`, `tanggal`, `waktu`, `tiket`, `sta
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_user`
+-- Table structure for table `tb_user`
 --
 
 CREATE TABLE `tb_user` (
@@ -713,7 +713,7 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_user`
+-- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `first_name`, `last_name`, `email`, `username`, `password`, `level`, `type`) VALUES
@@ -733,198 +733,198 @@ INSERT INTO `tb_user` (`id`, `first_name`, `last_name`, `email`, `username`, `pa
 --
 
 --
--- Indeks untuk tabel `tb_barang`
+-- Indexes for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
   ADD PRIMARY KEY (`id_barang`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indeks untuk tabel `tb_buktibayar`
+-- Indexes for table `tb_buktibayar`
 --
 ALTER TABLE `tb_buktibayar`
   ADD PRIMARY KEY (`id_bukti`);
 
 --
--- Indeks untuk tabel `tb_detailpesanan`
+-- Indexes for table `tb_detailpesanan`
 --
 ALTER TABLE `tb_detailpesanan`
   ADD PRIMARY KEY (`id_detail`);
 
 --
--- Indeks untuk tabel `tb_fasilitas`
+-- Indexes for table `tb_fasilitas`
 --
 ALTER TABLE `tb_fasilitas`
   ADD PRIMARY KEY (`id_fasilitas`);
 
 --
--- Indeks untuk tabel `tb_histori`
+-- Indexes for table `tb_histori`
 --
 ALTER TABLE `tb_histori`
   ADD PRIMARY KEY (`id_histori`);
 
 --
--- Indeks untuk tabel `tb_menu`
+-- Indexes for table `tb_menu`
 --
 ALTER TABLE `tb_menu`
   ADD PRIMARY KEY (`id_menu`),
   ADD KEY `id_user` (`id_stand`);
 
 --
--- Indeks untuk tabel `tb_pembelian`
+-- Indexes for table `tb_pembelian`
 --
 ALTER TABLE `tb_pembelian`
   ADD PRIMARY KEY (`id_pembelian`);
 
 --
--- Indeks untuk tabel `tb_pemesanan`
+-- Indexes for table `tb_pemesanan`
 --
 ALTER TABLE `tb_pemesanan`
   ADD PRIMARY KEY (`id_pemesanan`);
 
 --
--- Indeks untuk tabel `tb_pendapatan`
+-- Indexes for table `tb_pendapatan`
 --
 ALTER TABLE `tb_pendapatan`
   ADD PRIMARY KEY (`id_pendapatan`);
 
 --
--- Indeks untuk tabel `tb_penyewaan`
+-- Indexes for table `tb_penyewaan`
 --
 ALTER TABLE `tb_penyewaan`
   ADD PRIMARY KEY (`id_penyewaan`);
 
 --
--- Indeks untuk tabel `tb_saldo`
+-- Indexes for table `tb_saldo`
 --
 ALTER TABLE `tb_saldo`
   ADD PRIMARY KEY (`id_saldo`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indeks untuk tabel `tb_stand`
+-- Indexes for table `tb_stand`
 --
 ALTER TABLE `tb_stand`
   ADD PRIMARY KEY (`id_stand`);
 
 --
--- Indeks untuk tabel `tb_tiket`
+-- Indexes for table `tb_tiket`
 --
 ALTER TABLE `tb_tiket`
   ADD PRIMARY KEY (`id_tiket`);
 
 --
--- Indeks untuk tabel `tb_user`
+-- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_barang`
+-- AUTO_INCREMENT for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
   MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_buktibayar`
+-- AUTO_INCREMENT for table `tb_buktibayar`
 --
 ALTER TABLE `tb_buktibayar`
   MODIFY `id_bukti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_detailpesanan`
+-- AUTO_INCREMENT for table `tb_detailpesanan`
 --
 ALTER TABLE `tb_detailpesanan`
   MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_fasilitas`
+-- AUTO_INCREMENT for table `tb_fasilitas`
 --
 ALTER TABLE `tb_fasilitas`
   MODIFY `id_fasilitas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_histori`
+-- AUTO_INCREMENT for table `tb_histori`
 --
 ALTER TABLE `tb_histori`
   MODIFY `id_histori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_menu`
+-- AUTO_INCREMENT for table `tb_menu`
 --
 ALTER TABLE `tb_menu`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pembelian`
+-- AUTO_INCREMENT for table `tb_pembelian`
 --
 ALTER TABLE `tb_pembelian`
   MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pemesanan`
+-- AUTO_INCREMENT for table `tb_pemesanan`
 --
 ALTER TABLE `tb_pemesanan`
   MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pendapatan`
+-- AUTO_INCREMENT for table `tb_pendapatan`
 --
 ALTER TABLE `tb_pendapatan`
   MODIFY `id_pendapatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_penyewaan`
+-- AUTO_INCREMENT for table `tb_penyewaan`
 --
 ALTER TABLE `tb_penyewaan`
   MODIFY `id_penyewaan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_saldo`
+-- AUTO_INCREMENT for table `tb_saldo`
 --
 ALTER TABLE `tb_saldo`
   MODIFY `id_saldo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_stand`
+-- AUTO_INCREMENT for table `tb_stand`
 --
 ALTER TABLE `tb_stand`
   MODIFY `id_stand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_tiket`
+-- AUTO_INCREMENT for table `tb_tiket`
 --
 ALTER TABLE `tb_tiket`
   MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_user`
+-- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tb_barang`
+-- Constraints for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
   ADD CONSTRAINT `tb_barang_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_menu`
+-- Constraints for table `tb_menu`
 --
 ALTER TABLE `tb_menu`
   ADD CONSTRAINT `tb_menu_ibfk_1` FOREIGN KEY (`id_stand`) REFERENCES `tb_user` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_saldo`
+-- Constraints for table `tb_saldo`
 --
 ALTER TABLE `tb_saldo`
   ADD CONSTRAINT `tb_saldo_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id`);
