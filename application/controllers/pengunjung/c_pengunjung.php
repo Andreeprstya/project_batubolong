@@ -227,16 +227,16 @@ class c_pengunjung extends CI_Controller
 
     public function uploadbukti()
     {
-        $this->rules_bukti();
-        if ($this->form_validation->run() == FALSE) {
-            $data['saldo'] = $this->M_pengunjung->getsaldo();
-            $this->load->view('pengunjung/header');
-            $this->load->view('pengunjung/nontunai',$data);
-            $this->load->view('pengunjung/footer');
-        } else {
             $this->M_pengunjung->prosesupload();
             redirect('pengunjung/c_pengunjung/nontunai');
-        }
+        // $this->rules_bukti();
+        // if ($this->form_validation->run() == FALSE) {
+        //     $data['saldo'] = $this->M_pengunjung->getsaldo();
+        //     $this->load->view('pengunjung/header');
+        //     $this->load->view('pengunjung/nontunai',$data);
+        //     $this->load->view('pengunjung/footer');
+        // } else {
+        // }
     
 
     }

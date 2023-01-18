@@ -242,13 +242,26 @@ class c_admin extends CI_Controller
             $this->load->view('layout/footer');
         }
     }
+    public function proses_bayar($id)
+    {   
+        if (!isset($_SESSION['username'])) {
+            redirect('index');
+        } else {
+            $data['nontunai']=$this->M_admin->get_id_nontunai($id);
+            $this->load->view('layout/header');
+            $this->load->view('admin/topupnon', $data);
+            $this->load->view('layout/footer');
+        }
+    }
+
     public function nontunai()
     {
         if (!isset($_SESSION['username'])) {
             redirect('index');
         } else {
+            $data['nontunai']=$this->M_admin->getnontunai();
             $this->load->view('layout/header');
-            $this->load->view('admin/nontunai');
+            $this->load->view('admin/nontunai', $data);
             $this->load->view('layout/footer');
         }
     }
@@ -256,6 +269,11 @@ class c_admin extends CI_Controller
     public function topup_rules()
     {
         $this->form_validation->set_rules('id', 'id', 'required');
+        $this->form_validation->set_rules('jumlah', 'jumlah', 'required|numeric|greater_than_equal_to[10000]');
+        $this->form_validation->set_rules('bayar', 'bayar', 'required');
+    }
+    public function topup_non_rules()
+    {
         $this->form_validation->set_rules('jumlah', 'jumlah', 'required|numeric|greater_than_equal_to[10000]');
         $this->form_validation->set_rules('bayar', 'bayar', 'required');
     }
@@ -273,6 +291,26 @@ class c_admin extends CI_Controller
             }
         } else {
             $this->M_admin->tambahsaldo();
+            echo "<SCRIPT language=Javascript>
+			        alert('Top-Up Saldo Berhasil!')
+		        </script>";
+		    echo "<meta http-equiv='refresh' content='0'; url=<?= base_url('auth')?>>";
+        }
+    }
+    public function prosestopup_non($id)
+    {
+        $this->topup_non_rules();
+        if ($this->form_validation->run() == FALSE) {
+            if (!isset($_SESSION['username'])) {
+                redirect('index');
+            } else {
+                $data['nontunai']=$this->M_admin->get_id_nontunai($id);
+                $this->load->view('layout/header');
+                $this->load->view('admin/topupnon', $data);
+                $this->load->view('layout/footer');
+            }
+        } else {
+            $this->M_admin->tambahsaldo_non();
             echo "<SCRIPT language=Javascript>
 			        alert('Top-Up Saldo Berhasil!')
 		        </script>";

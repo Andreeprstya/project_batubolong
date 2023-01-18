@@ -253,6 +253,7 @@ class M_pengunjung extends CI_Model
             $insert = array(
                 'id_user' => $id,
                 'gambar' => $gambar,
+                'status'=>'Invalid'
             );
             $this->db->insert('tb_buktibayar', $insert);    
             return $result;

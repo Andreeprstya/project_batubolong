@@ -40,12 +40,12 @@
                             <div class="place_info">
                                 <h3><?php echo $keyy['nama_stand'] ?></h3>
                     </a>
-                    <p><?php echo $keyy['nama_pemilik'] ?></p>
                     <p><?php echo $keyy['tipe_stand'] ?></p>
                 </div>
             </div>
             </a>
         </div>
+        </br>
         <?php endforeach ?>
     </div>
 </div>

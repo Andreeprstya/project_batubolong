@@ -36,15 +36,15 @@
                                 <th>Waktu</th>
                             </tr>
                         </thead>
-                        <body>
+                        <tbody>
                             <?php foreach ($tiket->result_array() as $key) : ?>
                             <tr>
-                                <th><?=$key['id_tiket']?></th>
-                                <th><?=$key['tanggal']?></th>
-                                <th><?=$key['waktu']?></th>
+                                <th><p><?=$key['id_tiket']?></p></th>
+                                <th><p><?=$key['tanggal']?></p></th>
+                                <th><p><?=$key['waktu']?></p></th>
                             </tr>
                             <?php endforeach ?>
-                        </body>                       
+                        </tbody>                       
                     </table>
                 </div>
 </div>

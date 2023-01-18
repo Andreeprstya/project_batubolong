@@ -215,6 +215,58 @@ class M_admin extends CI_Model
     $result = $this->db->update('tb_saldo', $topup_saldo);
     return $result;
   }
+  public function tambahsaldo_non()
+  {
+    date_default_timezone_set('Asia/Singapore');
+    $tgl = date("Y-m-d");
+    $waktu = date("H:i:s");
+    $pendapatan = array(
+      'sumber' => 'Top-Up',
+      'tanggal' => $tgl,
+      'waktu' => $waktu,
+      'pendapatan' => '1000'
+    );
+    $this->db->insert('tb_pendapatan', $pendapatan);
+
+    $history = array(
+      'Tipe' => 'Non-Tunai',
+      'id_user' => $this->input->post('id'),
+      'tanggal' => $tgl,
+      'waktu' => $waktu,
+      'jumlah' => $this->input->post('jumlah')
+    );
+    $this->db->insert('tb_histori', $history);
+
+    $topup = $this->input->post('jumlah');
+    $idpelanggan = $this->input->post('id');
+    $this->db->select('saldo');
+    $this->db->from('tb_saldo');
+    $this->db->where('id_user', $idpelanggan);
+    $query = $this->db->get();
+    $sisa = $query->row()->saldo;
+    $saldo = $sisa + $topup;
+    $topup_saldo = array(
+      'saldo' => $saldo,
+    );
+    $this->db->where('id_user', $this->input->post('id'));
+    $result = $this->db->update('tb_saldo', $topup_saldo);
+    return $result;
+  }
+
+  public function getnontunai()
+  {
+    $id=$_SESSION['id'];
+    $this->db->select('*');
+    $this->db->where('status','Invalid');
+    $result = $this->db->get('tb_buktibayar');
+    return $result;
+  }
+  public function get_id_nontunai($id)
+  {
+    $this->db->where('id_bukti',$id);
+		$result = $this->db->get('tb_buktibayar') -> result_array();
+		return $result[0];
+  }
 
   #PENDAPATAN
   public function getpendapatan()

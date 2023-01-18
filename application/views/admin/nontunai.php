@@ -24,13 +24,26 @@
                             <tr>
                                 <th>Nomor Pengunjung</th>
                                 <th>Biaya Admin</th>
-                                <th>Jumlah Top Up</th>
-                                <th>Total Biaya</th>
-                                <th>Bayar </th>
-                                <th>Kembalian</th>
+                                <th>Bukti Bayar</th>
+                                <th>Bayar</th>
                             </tr>
                         </thead>
-                        
+                        <tbody>
+                            <?php foreach ($nontunai->result_array() as $key) : ?>
+                            <tr>
+                                <th><p><?=$key['id_user']?></p></th>
+                                <th><p>Rp.1000</p></th>
+                                <th>
+                                    <img src="<?= base_url('') . 'img_bukti/' . $key['gambar']?>" width="183" height="183" alt="">        
+                                </th>
+                                <th>
+                                    <a class="btn btn-success" type="submit"
+                                        href="<?= base_url('admin/c_admin/proses_bayar/' . $key['id_bukti']) ?>">Proses
+                                    </a>
+                                </th>
+                            </tr>
+                            <?php endforeach ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
