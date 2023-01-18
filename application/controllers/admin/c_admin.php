@@ -17,7 +17,7 @@ class c_admin extends CI_Controller
         } else {
             $this->load->view('layout/header');
             $this->load->view('admin/body');
-            $this->load->view('layout/footer');
+            //this->load->view('layout/footer');
         }
     }
      #PROFILE
