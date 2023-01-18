@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
+        <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('template_pengunjung/img/logo_berwarna.png') ?>">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="<?= base_url('template_admin/css/styles.css')?>" rel="stylesheet" />
         <link rel="stylesheet" href="<?= base_url('template_admin/css/sweetalert2/sweetalert.min.css')?>">
