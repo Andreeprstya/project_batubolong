@@ -37,7 +37,7 @@
                 <br>
 
                 <div class="align-items-center mt-6 mb-0">
-                    <button class="btn btn-primary" type="submit">Tambah menu</button>
+                    <button class="btn btn-primary" type="submit">Edit menu</button>
                     <a href="<?= base_url('stand/c_stand/menu') ?>" class="btn btn-danger">Kembali</a>
                 </div>
             </form>

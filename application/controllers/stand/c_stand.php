@@ -20,7 +20,7 @@ class c_stand extends CI_Controller {
         }elseif($_SESSION['type']=="Resto") {
             $this->load->view('layout_stand/resto_header');
             $this->load->view('stand/resto_body');
-            $this->load->view('layout/footer');
+            //$this->load->view('layout/footer');
         }
     }
     #PROFILE
