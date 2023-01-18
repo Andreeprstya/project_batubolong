@@ -40,12 +40,14 @@
                             <p>Saldo akan bertambah otomatis paling lama 1x24 jam</p>
                         </div>
                     </div>
-                    <form >
+                    <form action="<?= base_url('pengunjung/c_pengunjung/uploadbukti') ?>" method="post"
+                    enctype="multipart/form-data">
                     <div class="single_destination">
                         
                         <h4>Upload Bukti Pembayaran</h4>
                             
                             <input type="file" name="bukti_pembayaran" class="form-control">
+                            <?php echo form_error('gambar', '<div class="alert alert-danger">', '</div>') ?>
                         
                     </div>
                     <center><div class="mt-3">

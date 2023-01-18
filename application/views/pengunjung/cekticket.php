@@ -34,11 +34,17 @@
                                 <th>Id Ticket</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
-                                <th>Ticket</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
-                       
+                        <body>
+                            <?php foreach ($tiket->result_array() as $key) : ?>
+                            <tr>
+                                <th><?=$key['id_tiket']?></th>
+                                <th><?=$key['tanggal']?></th>
+                                <th><?=$key['waktu']?></th>
+                            </tr>
+                            <?php endforeach ?>
+                        </body>                       
                     </table>
                 </div>
 </div>

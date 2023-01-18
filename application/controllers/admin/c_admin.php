@@ -84,7 +84,7 @@ class c_admin extends CI_Controller
 
     public function edit_stand($id)
     {
-        $this->x_rules();
+        $this->edit_r_rules();
         if ($this->form_validation->run() == FALSE) {
             $data['stand'] = $this->M_admin->getdetailstand($id);
             $this->load->view('layout/header');
@@ -113,13 +113,22 @@ class c_admin extends CI_Controller
         redirect('admin/c_admin/stand');
     }
 
-    public function r_rules()
+    public function edit_r_rules()
     {
         $this->form_validation->set_rules('nama_stand', 'nama_stand', 'required');
         $this->form_validation->set_rules('nama_pemilik', 'nama_pemilik', 'required');
         $this->form_validation->set_rules('tipe_stand', 'tipe_stand', 'required');
         $this->form_validation->set_rules('keterangan', 'keterangan', 'required');
         //$this->form_validation->set_rules('gambar','gambar','required');
+    }
+
+    public function r_rules()
+    {
+        $this->form_validation->set_rules('nama_stand', 'nama_stand', 'required');
+        $this->form_validation->set_rules('nama_pemilik', 'nama_pemilik', 'required');
+        $this->form_validation->set_rules('tipe_stand', 'tipe_stand', 'required');
+        $this->form_validation->set_rules('keterangan', 'keterangan', 'required');
+        $this->form_validation->set_rules('gambar','gambar','required');
     }
 
     public function prosestambah_stand()

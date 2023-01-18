@@ -44,6 +44,7 @@ class M_pengunjung extends CI_Model
                 $this->db->insert('tb_pendapatan', $pendapatan);
 
                 $insert = array(
+                    'id_user'=>$id,
                     'tanggal' => $this->input->post('tanggal'),
                     'waktu' => $this->input->post('jam'),
                     'tiket' => 'test',
@@ -51,10 +52,17 @@ class M_pengunjung extends CI_Model
                 );
                 $result = $this->db->insert('tb_tiket', $insert);
             }
-
-
             return $result;
         }
+    }
+    public function gettiket()
+    {
+        $id=$_SESSION['id'];
+        $this->db->select('*');
+        $this->db->where('id_user',$id);
+        $this->db->where('status','Invalid');
+        $result = $this->db->get('tb_tiket');
+        return $result;
     }
 
     public function cetaktiket()
@@ -222,6 +230,33 @@ class M_pengunjung extends CI_Model
         $this->db->select('*');
         $result = $this->db->get_where('tb_histori',array('id_user'=>$id)); //, array('level' => '2')
         return $result;
+    }
+
+    #TOPUP
+    public function prosesupload()
+    {
+        $id=$_SESSION['id'];
+        $config['upload_path']          = './img_bukti/';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png';
+        $config['max_size']             = 100000; // 1MB
+        $config['max_width']            = 100000;
+        $config['max_height']           = 100000;
+
+        $this->load->library('upload');
+        $this->upload->initialize($config);
+
+        if (!$this->upload->do_upload('gambar')) {
+            return;
+        } else {
+            $gambar = $this->upload->data();
+            $gambar = $gambar['file_name'];
+            $insert = array(
+                'id_user' => $id,
+                'gambar' => $gambar,
+            );
+            $this->db->insert('tb_buktibayar', $insert);    
+            return $result;
+        }
     }
 }
 

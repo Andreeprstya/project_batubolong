@@ -165,6 +165,7 @@ class c_pengunjung extends CI_Controller
             redirect('index');
         } else {
             $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $data['tiket'] = $this->M_pengunjung->gettiket();
             $this->load->view('pengunjung/header');
             $this->load->view('pengunjung/cekticket', $data);
             $this->load->view('pengunjung/footer');
@@ -194,6 +195,7 @@ class c_pengunjung extends CI_Controller
         // }
     }
 
+    #TOPUP
     public function tunai()
     {
         if (!isset($_SESSION['username'])) {
@@ -217,6 +219,28 @@ class c_pengunjung extends CI_Controller
             $this->load->view('pengunjung/footer');
         }
     }
+
+    public function rules_bukti()
+    {
+        $this->form_validation->set_rules('gambar','gambar','required');
+    }
+
+    public function uploadbukti()
+    {
+        $this->rules_bukti();
+        if ($this->form_validation->run() == FALSE) {
+            $data['saldo'] = $this->M_pengunjung->getsaldo();
+            $this->load->view('pengunjung/header');
+            $this->load->view('pengunjung/nontunai',$data);
+            $this->load->view('pengunjung/footer');
+        } else {
+            $this->M_pengunjung->prosesupload();
+            redirect('pengunjung/c_pengunjung/nontunai');
+        }
+    
+
+    }
+
     #HISTORY
     public function history()
     {
