@@ -275,7 +275,7 @@ class c_admin extends CI_Controller
     public function topup_non_rules()
     {
         $this->form_validation->set_rules('jumlah', 'jumlah', 'required|numeric|greater_than_equal_to[10000]');
-        $this->form_validation->set_rules('bayar', 'bayar', 'required');
+        //$this->form_validation->set_rules('bayar', 'bayar', 'required');
     }
 
     public function prosestopup()

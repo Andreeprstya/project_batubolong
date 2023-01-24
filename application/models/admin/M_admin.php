@@ -237,6 +237,13 @@ class M_admin extends CI_Model
     );
     $this->db->insert('tb_histori', $history);
 
+    $update = array(
+      'status' => 'Valid',
+    );
+    $this->db->where('id_user', $this->input->post('id'));
+    $this->db->update('tb_buktibayar', $update);
+
+
     $topup = $this->input->post('jumlah');
     $idpelanggan = $this->input->post('id');
     $this->db->select('saldo');

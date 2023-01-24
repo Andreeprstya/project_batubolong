@@ -16,23 +16,11 @@
                                     <input class="form-control" id="inputHarga" type="text" readonly value="1000" />
                                     <label for="inputJumlah">Biaya Admin</label>
                                 </div>
+                                <img src="<?= base_url('') . 'img_bukti/' . $nontunai['gambar']?>" width="183" height="183" alt="">
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="inputJumlah" type="text" name="jumlah"/>
                                     <label for="inputJumlah">Jumlah Top-Up</label>
                                     <?php echo form_error('jumlah','<div class="alert alert-danger">','</div>') ?>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <span class="form-control" id="Total" type="text" name="total"></span>
-                                    <label for="Total">Total Biaya</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputbayar" type="text" name="bayar"/>
-                                    <label for="inputbayar">Bayar</label>
-                                    <?php echo form_error('bayar','<div class="alert alert-danger">','</div>') ?>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <span class="form-control" id="kembalian" type="text"></span>
-                                    <label for="kembalian">Kembalian</label>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <button class="btn btn-primary" type="submit">Top-Up</button>
